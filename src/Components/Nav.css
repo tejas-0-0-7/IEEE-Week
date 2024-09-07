@@ -1,0 +1,23 @@
+.bgu{
+    background-color: rgba(0, 0, 0, 1) !important;
+    color: white !important;
+}
+.links{
+    color: #afb6bd !important;
+    padding: 8px 12px !important;
+}
+.links:hover{
+    color: #000000 !important;
+    background: #d9dbdd;
+    box-shadow: 0px 4px 0px 0px 
+}
+.btn{
+    color: #196d87 !important;
+    border-color: #196d87 !important;
+}
+.btn:hover{
+    color: #fff !important;
+    border-color: #196d87 !important;
+    background-color: #196d87 !important;
+    box-shadow: rgb(25, 76, 135) !important;
+}
