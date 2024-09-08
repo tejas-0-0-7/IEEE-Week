@@ -39,3 +39,29 @@ h1 {
 .text-center {
     text-align: center;
 }
+.sponsor-marquee {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+}
+
+.marquee-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    animation: marquee 15s linear infinite;
+}
+
+.sponsor-image {
+    width: 150px;
+    margin: 0 30px;
+}
+
+@keyframes marquee {
+    0% {
+        transform: translateX(100%);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
