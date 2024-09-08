@@ -9,6 +9,9 @@ import {
   MDBBtn
 } from 'mdb-react-ui-kit';
 import './Foot.css';
+import { FaFacebook, FaLinkedin, FaInstagram, FaYoutube, FaGoogle } from 'react-icons/fa';
+// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+// import { faFacebook, faTwitter, faGithub } from '@fortawesome/free-brands-svg-icons';
 
 
 
@@ -17,29 +20,22 @@ export default function Footer() {
     <MDBFooter className='text-center fnu' color='white' bgColor='dark'>
       <MDBContainer className='p-4'>
         <section className='mb-4'>
-          <MDBBtn outline color="light" floating className='m-1' href='#!' role='button'>
-            <MDBIcon fab icon='facebook-f' />
-          </MDBBtn>
+          <span className="btnu">
+            <a href="https://facebook.com"><FaFacebook size={20} className='iconu' /></a>
+          </span>
+          <span className="btnu">
+            <a href="https://facebook.com"><FaInstagram size={20} className='iconu' /></a>
+          </span>
+          <span className="btnu">
+            <a href="https://facebook.com"><FaLinkedin size={20} className='iconu' /></a>
+          </span>
+          <span className="btnu">
+            <a href="https://facebook.com"><FaYoutube size={20} className='iconu' href='' /></a>
+          </span>
+          <span className="btnu">
+            <a href="https://facebook.com"><FaGoogle size={20} className='iconu' /></a>
+          </span>
 
-          <MDBBtn outline color="light" floating className='m-1' href='#!' role='button'>
-            <MDBIcon fab icon='twitter' />
-          </MDBBtn>
-
-          <MDBBtn outline color="light" floating className='m-1' href='#!' role='button'>
-            <MDBIcon fab icon='google' />
-          </MDBBtn>
-
-          <MDBBtn outline color="light" floating className='m-1' href='#!' role='button'>
-            <MDBIcon fab icon='instagram' />
-          </MDBBtn>
-
-          <MDBBtn outline color="light" floating className='m-1' href='#!' role='button'>
-            <MDBIcon fab icon='linkedin-in' />
-          </MDBBtn>
-
-          <MDBBtn outline color="light" floating className='m-1' href='#!' role='button'>
-            <MDBIcon fab icon='github' />
-          </MDBBtn>
         </section>
 
         <section className=''>
@@ -52,7 +48,7 @@ export default function Footer() {
               </MDBCol>
 
               <MDBCol md='5' start>
-                <MDBInput contrast type='email' label='Email address' className='mb-4' />
+                <MDBInput contrast type='email' placeholder='Email address' className='mb-4' />
               </MDBCol>
 
               <MDBCol size="auto">
@@ -74,10 +70,9 @@ export default function Footer() {
       </MDBContainer>
 
       <div className='text-center p-3' style={{ backgroundColor: 'rgba(0, 0, 0, 0.2)' }}>
-        © 2020 Copyright:
-        <a className='text-white' href='https://mdbootstrap.com/'>
-          MDBootstrap.com
-        </a>
+        © 2024 Copyright:
+        <a className='text-white' href='https://bmsceieee.com/'>
+          BMSCE IEEE        </a>
       </div>
     </MDBFooter>
   );

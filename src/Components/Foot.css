@@ -1,5 +1,35 @@
-.fnu{
-    position: absolute;
-    width: 100%;
-    bottom: 0px;
+html, body {
+    height: 100%;
+    margin: 0;
+  }
+  
+  #root {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+  
+  footer {
+    margin-top: auto;
+  }
+.btnu a{
+    border-radius: 33%;
+    margin: 1px 5px;
+    border: 2px solid #fff;
+    padding-bottom: 8px;
+    padding-top: 2px;
+    padding-left: 6px;
+    color: white;
+    padding-right: 6px;
 }
+.btnu a:hover{
+    color: #333 !important;
+}
+.iconu:hover {
+    background-color: #fff;  
+    color: #333;
+}
+.iconu {
+    color: white;
+    transition: color 0.3s ease; 
+  }

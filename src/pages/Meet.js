@@ -1,4 +1,5 @@
 import Navbaring from '../Components/Nav';
+import Footer from '../Components/Foot';
 import { Container, Row, Col, Card } from 'react-bootstrap';
 import './Meet.css';
 
@@ -182,13 +183,14 @@ const Meet = () => {
 
                 <div className="sponsor-marquee my-4">
                     <div className="marquee-inner">
-                        <img src="/images/sponsor1.png" alt="Sponsor 1" className="sponsor-image" />
-                        <img src="/images/sponsor2.png" alt="Sponsor 2" className="sponsor-image" />
-                        <img src="/images/sponsor3.png" alt="Sponsor 3" className="sponsor-image" />
-                        <img src="/images/sponsor4.png" alt="Sponsor 4" className="sponsor-image" />
+                        <img src="./sponsor1.png" alt="Sponsor 1" className="sponsor-image" />
+                        <img src="./sponsor1.png" alt="Sponsor 2" className="sponsor-image" />
+                        <img src="./sponsor1.png" alt="Sponsor 3" className="sponsor-image" />
+                        <img src="./sponsor1.png" alt="Sponsor 4" className="sponsor-image" />
                     </div>
                 </div>
             </Container>
+            <Footer/>
         </div>
     );
 }

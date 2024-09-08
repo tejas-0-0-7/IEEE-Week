@@ -1,9 +1,10 @@
 import Navbaring from '../Components/Nav';
+import Footer from '../Components/Foot';
 const Nopage = () => {
     return ( 
         <div>
-            <h1>No Page</h1>
             <Navbaring />
+            <Footer />
         </div>
      );
 }
