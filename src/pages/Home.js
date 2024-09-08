@@ -1,13 +1,15 @@
 import Navbaring from '../Components/Nav';
+import Footer from '../Components/Foot';
 import './Home.css';
 
 function Home() {
   return (
-    <header className="con">
-      {/* <h1>Hii</h1> */}
-      <Navbaring></Navbaring>
-    </header>
-  );
+    <div>
+        <Navbaring />
+        <Footer />
+    </div>
+
+    );
 }
 
 export default Home;
