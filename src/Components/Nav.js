@@ -32,7 +32,7 @@ function Navbaring() {
               className="me-2"
               aria-label="Search"
             />
-            <Button variant="outline-success btnu">Search</Button>
+            <Button variant="outline-success btnu" className='btnnnn'>Search</Button>
           </Form>
         </Navbar.Collapse>
       </Container>

@@ -11,11 +11,12 @@
     background: #d9dbdd;
     box-shadow: 0px 4px 0px 0px 
 }
-.btn{
+.btnnnn{
     color: #196d87 !important;
     border-color: #196d87 !important;
+    margin-right: 15px;
 }
-.btn:hover{
+.btnnnn:hover{
     color: #fff !important;
     border-color: #196d87 !important;
     background-color: #196d87 !important;
