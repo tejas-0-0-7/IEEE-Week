@@ -1,61 +1,52 @@
-
+/* Container for the slide */
 .slideC {
   position: relative;
-  perspective: 1200px; 
+  perspective: 1200px;
   transform-style: preserve-3d;
-  width: 400px; 
-  height: 320px;
+  width: 90%;
+  max-width: 400px;
+  height: auto;
+  aspect-ratio: 4/3;
   margin: 0 auto;
 }
 
+/* Individual slide */
 .slide {
-  width: 400px;
-  height: 320px;
   transition: transform 500ms ease 0s, opacity 500ms ease 0s, visibility 500ms ease 0s;
   position: absolute;
   top: 0;
   border-radius: 12px;
+  overflow: hidden;
 }
 
+/* Reflection effect */
 
-.reflection {
-  position: absolute;
-  width: 100%;
-  height: 70px; 
-  bottom: -70px; 
-  border-radius: 12px;
-  transition: transform 500ms ease 0s, opacity 500ms ease 0s, visibility 500ms ease 0s;
-}
 
-.slide {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
+/* Flexbox settings for content */
 .sliderContent {
   display: flex;
   flex-direction: column;
   color: white;
-  padding: 30px;
+  padding: 1.5rem; /* Use rem for responsiveness */
   align-items: flex-start;
-  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  font-family: "Lucida Sans", "Lucida Grande", sans-serif;
 }
 
 .sliderContent h2 {
-  margin: 16px 0;
+  margin: 1rem 0;
 }
 
 .sliderContent p {
   margin: 0;
-  margin-bottom: 16px;
+  margin-bottom: 1rem;
 }
 
 /* Global settings */
 body {
   width: 100vw;
   min-height: 100vh;
-  overflow: hidden;
+  overflow-x: hidden;
+  font-size: 16px;
 }
 
 .center {
@@ -67,22 +58,44 @@ body {
   height: 100vh;
 }
 
-.btns {
-  padding-top: 100px;
+/* Responsive adjustments */
+@media screen and (max-width: 768px) {
+  .slideC {
+    max-width: 100%; /* Use full width on smaller screens */
+    height: auto;
+  }
+
+  .slide {
+    height: auto; /* Allow height to be flexible */
+  }
+
+  .sliderContent {
+    padding: 1rem; /* Reduce padding on smaller screens */
+  }
+
+  .reflection {
+    height: 15%; /* Adjust reflection height for smaller screens */
+  }
+
+  .btns {
+    padding-top: 2rem;
+  }
+
+  .btns .btn:last-child {
+    margin-left: 1.5rem;
+  }
 }
 
-.btns .btn {
-  cursor: pointer;
-}
+@media screen and (max-width: 480px) {
+  .slideC {
+    max-width: 90%; /* Reduce width on very small screens */
+  }
 
-.btns .btn:last-child {
-  margin-left: 40px;
-}
+  .sliderContent {
+    padding: 0.75rem; /* Further reduce padding */
+  }
 
-/* Additional reflection settings for the effect */
-.reflection {
-  background: rgba(255, 255, 255, 0.4);
-  filter: blur(8px);
-  transform: scaleY(-1); /* Reflect vertically */
-  opacity: 0.6; /* Make the reflection slightly transparent */
+  .btns .btn {
+    font-size: 0.9rem; /* Adjust button font size */
+  }
 }

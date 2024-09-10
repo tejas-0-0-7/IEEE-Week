@@ -122,9 +122,9 @@ const SliderContent = (props) => {
     <div className="sliderContent">
       <img src={props.image} 
       style={{
-        width: "400px" ,
-        height: "320px",
-        WebkitBoxReflect: "below 3px -webkit-gradient(linear, left top, left bottom, from(transparent), color-stop(75%, transparent), to(white))",
+        width:"100%",
+        objectFit:"cover",
+        borderRadius: "12px",
       }}>
       </img>
     </div>

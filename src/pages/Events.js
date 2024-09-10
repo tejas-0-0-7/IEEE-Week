@@ -1,10 +1,12 @@
 import Navbaring from '../Components/Nav';
 import Footer from '../Components/Foot';
+import EventCard from '../Components/EventCard';
 const Events = () => {
     return ( 
         <div className="events">
-            <header>Events</header>
+            <header></header>
             <Navbaring />
+            <EventCard/>
             <Footer />
         </div>
      );
