@@ -52,7 +52,7 @@ export default function Footer() {
               </MDBCol>
 
               <MDBCol size="auto">
-                <MDBBtn outline color='light' type='submit' className='mb-4'>
+                <MDBBtn outline color='light' type='submit' className='mb-478'>
                   Subscribe
                 </MDBBtn>
               </MDBCol>

@@ -30,3 +30,12 @@ html, body {
     color: white;
     transition: color 0.3s ease; 
   }
+
+  .mb-478:hover{
+    color: #333 !important;
+    background-color: #fff !important;
+  }
+  .mb-478{
+    width: 140px !important;
+    height: 40px !important;
+  }
