@@ -24,10 +24,7 @@ html, body {
 }
 .btnu a:hover{
     color: #333 !important;
-}
-.iconu:hover {
-    background-color: #fff;  
-    color: #333;
+    background-color: #319393;  
 }
 .iconu {
     color: white;
