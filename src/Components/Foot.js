@@ -21,19 +21,19 @@ export default function Footer() {
       <MDBContainer className='p-4'>
         <section className='mb-4'>
           <span className="btnu">
-            <a href="https://facebook.com"><FaFacebook size={20} className='iconu' /></a>
+            <a href="https://facebook.com" target='_blank'><FaFacebook size={20} className='iconu' /></a>
           </span>
           <span className="btnu">
-            <a href="https://facebook.com"><FaInstagram size={20} className='iconu' /></a>
+            <a href="https://www.instagram.com/bmsce_ieee/profilecard/?igsh=MTN1cTEwaWlweWxvdQ==" target='_blank'><FaInstagram size={20} className='iconu' /></a>
           </span>
           <span className="btnu">
-            <a href="https://facebook.com"><FaLinkedin size={20} className='iconu' /></a>
+            <a href="https://www.linkedin.com/company/bmsce-ieee/" target='_blank'><FaLinkedin size={20} className='iconu' /></a>
           </span>
           <span className="btnu">
-            <a href="https://facebook.com"><FaYoutube size={20} className='iconu' href='' /></a>
+            <a href="https://youtube.com/@bmsceieee?si=34nyqBDgKDiIXYFv" target='_blank'><FaYoutube size={20} className='iconu' href='' /></a>
           </span>
           <span className="btnu">
-            <a href="https://facebook.com"><FaGoogle size={20} className='iconu' /></a>
+            <a href="https://bmsceieee.com/" target='_blank'><FaGoogle size={20} className='iconu' /></a>
           </span>
 
         </section>
