@@ -2,11 +2,13 @@ import React from 'react';
 import Navbaring from '../Components/Nav';
 import Footer from '../Components/Foot';
 import './ErrorPage.css'; // Import the CSS file for styling
+import CountDown from '../Components/CountDown';
 
 const Nopage = () => {
     return ( 
         <div>
             <Navbaring />
+            <CountDown />
             <div className="error-page">
                 <div className="error-content">
                     <h1>404</h1>
@@ -15,6 +17,7 @@ const Nopage = () => {
                     <a href="/">Go back to Home</a>
                 </div>
             </div>
+
             <Footer />
         </div>
     );
