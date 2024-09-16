@@ -1,0 +1,136 @@
+.contact-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 90vh;
+    background-color: #1c1c1c;
+    padding-top: 100px;
+    padding-bottom: 50px;
+}
+
+.contact-card {
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.1);
+    width: 70%;
+    max-width: 1000px;
+    padding: 30px;
+    animation: slide-down 1s ease-in-out;
+    position: relative;
+}
+
+.contact-title {
+    text-align: center;
+    font-size: 28px;
+    font-weight: bold;
+    color: #000;
+}
+
+.contact-description {
+    text-align: center;
+    color: #000;
+    font-size: 14px;
+    margin: 10px 0 30px 0;
+}
+
+.contact-content {
+    display: flex;
+    justify-content: space-between;  
+    gap: 30px;
+    flex-wrap: wrap; 
+}
+
+.contact-info {
+    flex: 1;
+    min-width: 300px; 
+}
+
+.contact-details {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.contact-icon {
+    background-color: #000;
+    padding: 8px;
+    border-radius: 50%;
+    color: white;
+    font-size: 30px;
+}
+
+.contact-details h3 {
+    margin: 0;
+    color: #000000;
+    font-size: 16px;
+}
+
+.contact-details p {
+    margin: 0;
+    color: #000;
+    font-size: 14px;
+}
+
+
+.message-form {
+    flex: 1;
+    min-width: 300px; 
+    background-color: #f8f9fa;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.message-form h2 {
+    color: #000;
+    font-size: 24px;
+}
+
+.message-form form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.message-form input,
+.message-form textarea {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+::placeholder {
+    font-size: 12px;
+    color: #999;
+}
+
+.message-form textarea {
+    resize: none;
+    height: 80px;
+}
+
+.message-form button {
+    padding: 10px;
+    background-color: #000;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.message-form button:hover {
+    background-color: #000000;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .contact-content {
+        flex-direction: column;
+    }
+    .contact-info, .message-form {
+        min-width: 100%; 
+    }
+}
