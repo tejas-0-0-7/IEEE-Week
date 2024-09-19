@@ -1,4 +1,57 @@
-body{
-    overflow-y: scroll !important;
+body {
+  overflow-y: scroll !important;
+  background-color: black !important; 
+}
+
+.video-container {
+  width: 100%;
+  height: 100vh; 
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  position: relative;
+}
+
+video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: none;
+}
+
+#video-initial {
+  display: block;
+}
+
+@media (max-width: 768px) {
+  #video-initial {
+    display: none; 
+  }
+  #video-background {
+    display: block; 
+  }
+}
+
+video::-webkit-media-controls {
+  display: none !important; 
+}
+
+video::-webkit-media-controls-enclosure {
+  display: none !important; 
+}
+
+video::-webkit-media-controls-start-playback-button {
+  display: none !important; 
+}
+
+video::-webkit-media-controls-overlay-play-button {
+  display: none !important; 
+}
+
+video::-webkit-media-controls-fullscreen-button {
+  display: none !important; 
 }
 
