@@ -33,20 +33,6 @@ function Home() {
 
   return (
     <div>
-<<<<<<< HEAD
-        <Navbaring />
-        <div className="H-container">
-          <h1><center>BMSCE IEEE Presents</center></h1>
-          <h1><center>IEEE Week 2024</center></h1>
-          <h1><center>October 21<sup>st</sup  ></center></h1>
-        </div>
-        <CountDown />
-        <div className='center'>
-          <Slider  data={data} activeSlide={5} />
-        </div>
-        <Footer />
-    </div>
-=======
       <Navbaring />
       
       <div className="video-container">
@@ -58,8 +44,7 @@ function Home() {
           <source src="static.mp4" type="video/mp4" />
           Your browser does not support the video tag.
         </video>
-      </div>
->>>>>>> ad3dba3c82b2935217693389fe3a0dd604b3bdd0
+      </div> 
 
       <CountDown />
 
