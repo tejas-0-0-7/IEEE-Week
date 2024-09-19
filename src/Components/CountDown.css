@@ -28,10 +28,10 @@
     font-size: 3em;
 }
 
-@media screen and (max-width: 48opx) {
+/* @media screen and (max-width: 48opx) {
     .timer div{
         margin-left:1em ;
         margin-right:1em ;
         padding: 2em 1em;
     }
-}
+} */
