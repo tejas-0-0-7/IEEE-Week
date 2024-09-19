@@ -1,6 +1,9 @@
+body{
+    background-color: black !important;
+}
 .team-card {
     margin-bottom: 20px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: #c9980b;
     transition: transform 0.3s ease-in-out;
     text-align: center;
     padding: 1rem;
@@ -10,6 +13,8 @@
     width: 250px;
     min-height: 350px;
     margin: 0 auto;
+    color: aliceblue !important;
+    background-color:black!important;
 }
 
 .team-card:hover {
@@ -38,6 +43,7 @@ h1 {
 
 .text-center {
     text-align: center;
+    color:aliceblue
 }
 .sponsor-marquee {
     width: 100%;
