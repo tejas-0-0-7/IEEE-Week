@@ -10,22 +10,39 @@
     font-family: "Parata", serif;
 }
 .links{
-    color: #ffffff !important;
-    padding: 8px 12px !important;
+    position: relative;
+    color: #a0a0a0 !important;
+    padding: 0px 10px !important;
+    margin-left: 10px;
+    margin-right: 10px;
+    letter-spacing: 0.5px;
 }
 .links:hover{
-    color: #fcd462 !important;
+    color: #ffffff !important;
     /* background: #d9dbdd; */
-    box-shadow: 0px 4px 0px 0px 
 }
 .btnnnn{
-    color: #196d87 !important;
-    border-color: #196d87 !important;
+    color: #fcd462 !important;
+    border-color: #fcd462 !important;
     margin-right: 15px;
 }
 .btnnnn:hover{
-    color: #fff !important;
-    border-color: #196d87 !important;
-    background-color: #196d87 !important;
+    color: #0a0a0a !important;
+    border-color: #fcd462 !important;
+    background-color: #fcd462 !important;
     box-shadow: rgb(25, 76, 135) !important;
+}
+.links:after{
+    content: "";
+    position: absolute;
+    background-color: #fcd462;
+    height: 3px;
+    width: 0;
+    left: 0px;
+    bottom: -10px;
+    transition: 0.3s !important;
+}
+
+.links:hover:after{
+    width: 100%;
 }

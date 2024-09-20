@@ -1,10 +1,11 @@
 import Navbaring from '../Components/Nav';
 import Footer from '../Components/Foot';
+import MdForm from '../Components/Form';
 const Membership = () => {
     return ( 
         <div>
-            <h1>Membership</h1>
             <Navbaring />
+            <MdForm />
             <Footer />
         </div>
      );
