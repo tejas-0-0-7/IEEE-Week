@@ -51,7 +51,7 @@ const Contact = () => {
                                     <FaPhone />
                                 </div>
                                 <div>
-                                    <h3>Mohit Poddar, Chairperson</h3>
+                                    <h3>MPodu, Chairperson</h3>
                                     <p>90517 60973</p>
                                 </div>
                             </div>

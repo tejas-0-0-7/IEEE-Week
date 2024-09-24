@@ -1,34 +1,39 @@
-import React from 'react'
-import './EventCard.css'
+import React from 'react';
+import './EventCard.css';
+import { useNavigate } from 'react-router-dom'; 
+import EventDescription from '../pages/EventDescription';
 
 function EventCard(props) {
+  const navigate = useNavigate(); 
+  const handleClick = () => {
+    navigate('/eventdescription'); 
+  };
+
   return (
-    <div class="event-container">
-    <div class="item-container">
-        <div class="img-container">
-            <img src="./images\Tejas(Treasurer).jpg" alt="Event image"></img>
+    <div className="event-container">
+      <div className="item-container">
+        <div className="img-container">
+          <img src="./images/Tejas(Treasurer).jpg" alt="Event image" />
         </div>
 
-        <div class="body-container">
-            <div class="overlay"></div>
+        <div className="body-container">
+          <div className="overlay"></div>
 
-            <div class="event-info">
-                <p class="title">Bihar ka Majdur</p>
-                <div class="separator"></div>
+          <div className="event-info">
+            <p className="title">Bihar ka Majdur</p>
+            <div className="separator"></div>
 
-                <div class="additional-info">
-                    <p class="info description">
-                        Has experience of travelling over 50 kilometers everyday. A little weak in english but his proficiency in Minecraft makes him the perfect worker. Hire him today! Pro tip: Keep him fed or he can start getting annoying pretty quick.
-                    </p>
-                </div>
+            <div className="additional-info">
+              <p className="info description">
+                Has experience of travelling over 50 kilometers everyday. A little weak in English but his proficiency in Minecraft makes him the perfect worker. Hire him today! Pro tip: Keep him fed or he can start getting annoying pretty quick.
+              </p>
             </div>
-            <button class="action">Book him!</button>
+          </div>
+          <button className="action" onClick={handleClick}>Book him!</button>
         </div>
+      </div>
     </div>
-    </div>
-  )
+  );
 }
 
-
-export default EventCard
-
+export default EventCard;
