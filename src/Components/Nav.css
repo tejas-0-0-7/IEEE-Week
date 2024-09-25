@@ -32,7 +32,7 @@
     background-color: #fcd462 !important;
     box-shadow: rgb(25, 76, 135) !important;
 }
-.links:after{
+.links:after {
     content: "";
     position: absolute;
     background-color: #fcd462;
@@ -40,7 +40,7 @@
     width: 0;
     left: 0px;
     bottom: -10px;
-    transition: 0.3s !important;
+    transition: width 0.3s ease-in, right 0.3s ease-out !important;
 }
 
 .links:hover:after{
