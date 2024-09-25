@@ -21,7 +21,7 @@ export default function Footer() {
       <MDBContainer className='p-4'>
         <section className='mb-4'>
           <span className="btnu">
-            <a href="https://facebook.com" target='_blank'><FaFacebook size={20} className='iconu' /></a>
+            <a href="https://www.facebook.com/bmsce.ieee/" target='_blank'><FaFacebook size={20} className='iconu' /></a>
           </span>
           <span className="btnu">
             <a href="https://www.instagram.com/bmsce_ieee/profilecard/?igsh=MTN1cTEwaWlweWxvdQ==" target='_blank'><FaInstagram size={20} className='iconu' /></a>
