@@ -6,7 +6,6 @@ import Meet from './pages/Meet';
 import Membership from './pages/Membership';
 import Membershipone from './pages/Membershipact';
 import Nopage from './pages/nopage';
-import EventDescription from './pages/EventDescription';
 import './App.css';
 
 function App() {
@@ -21,7 +20,6 @@ function App() {
           <Route path="/membership" element={<Membership />} />
           <Route path="/membershipact" element={<Membershipone />} />
           <Route path="/contact" element={<Contact />} />
-          <Route path="/eventdescription" element={<EventDescription />} />
           <Route path="*" element={<Nopage />} />
         </Routes>
       </BrowserRouter>
