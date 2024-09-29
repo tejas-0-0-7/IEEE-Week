@@ -55,7 +55,7 @@ function Home() {
         <Slider data={data} activeSlide={5} />
       </div>
       <div>
-
+  {/* Flagship Events Section */}
   <h2 className="flagship-title">Flagship Event</h2>
 
   <div className="flagship-container">

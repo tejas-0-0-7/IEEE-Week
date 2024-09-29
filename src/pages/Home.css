@@ -1,6 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
 body {
   overflow-y: scroll !important;
   background-color: black !important; 
+  font-family: 'Orbitron';
 }
 
 .video-container {
@@ -125,11 +127,12 @@ video::-webkit-media-controls-fullscreen-button {
   padding: 30px;
   color: white;
   display: flex;
+  font-family: or;
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
   font-size: 1.2rem;
-  opacity: 0;
+  opacity: 1;
   transition: all 0.3s ease-in-out;
   position: relative;
 }
@@ -144,11 +147,24 @@ video::-webkit-media-controls-fullscreen-button {
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255, 215, 0, 0.6));
+  background: linear-gradient(45deg, transparent, goldenrod);
   animation: slide 0.5s backwards;
 }
 .flagship-event:hover::before {
   animation: slide 0.5s forwards, fadeOut 0.5s forwards 0.5s;
+}
+.flagship-event.reverse:hover::before {
+  animation: slide 0.5s backwards, fadeOut 0.5s backwards 0.5s;
+}
+.flagship-event.reverse:hover::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0; /* Start from the right */
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(270deg, transparent, goldenrod);
+  animation: slideRightToLeft 0.5s forwards, fadeOut 0.5s forwards 0.5s; 
 }
 
 @keyframes slide {
@@ -157,6 +173,14 @@ video::-webkit-media-controls-fullscreen-button {
   }
   to {
     width: 100%;
+  }
+}
+@keyframes slideRightToLeft {
+  from {
+    width: 0%; /* Start fully visible */
+  }
+  to {
+    width: 100; /* Slide out completely */
   }
 }
 
@@ -211,4 +235,18 @@ video::-webkit-media-controls-fullscreen-button {
   .flagship-event.reverse {
     flex-direction: column;
   }
+}
+.know-more-button{
+  background-color: black;
+  color:white;
+  border:2px solid goldenrod;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size:16px;
+  cursor:pointer;
+}
+.know-more-button:hover {
+  background-color: goldenrod ;
+  color: black;
+  transition: 0.3s ease;
 }
