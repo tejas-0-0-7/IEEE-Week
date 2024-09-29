@@ -1,5 +1,6 @@
 import React from 'react'
 import './EventRegistration.css'
+import { useState } from 'react';
 
 const EventRegistration = () => {
   const [formData,setformData]=useState({
@@ -104,4 +105,4 @@ const EventRegistration = () => {
   );
 };
 
-export default EventDescription;
+export default EventRegistration;
