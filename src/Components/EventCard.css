@@ -154,28 +154,3 @@
 .item-container:hover {
     transform: scale(1.05);
 }
-.event-container {
-    padding: 20px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  /* Blur effect on the event card only */
-  .event-container.blurred .item-container {
-    filter: blur(4px);
-  }
-  
-  /* Other styles for the event card */
-  .item-container {
-    position: relative;
-    width: 320px;
-    height: 435px;
-    overflow: hidden;
-    background-color: #fff;
-    box-shadow: 0 0 30px 5px rgba(0, 0, 0, 0.15);
-    cursor: pointer;
-    border-radius: 8px;
-    transition: transform 0.3s ease;
-  }
-  

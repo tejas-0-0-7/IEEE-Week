@@ -1,9 +1,14 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './EventCard.css';
 
 const EventCard = ({ onShowForm }) => {
+
+  const handleClick = () => {
+    onShowForm(); 
+  };
+
   return (
-    <div className="event-container">
+    <div className={`event-container`}>
       <div className="item-container">
         <div className="img-container">
           <img src="/images/sod.jpeg" alt="Event image" />
@@ -22,7 +27,7 @@ const EventCard = ({ onShowForm }) => {
               </p>
             </div>
           </div>
-          <button className="action" onClick={onShowForm}>Register</button>
+          <button className="action" onClick={handleClick}>Register!</button>
         </div>
       </div>
     </div>

@@ -7,7 +7,6 @@
         align-content: center;
     
 }
-      
       .modal {
         position: fixed !important;
         top: 0 !important;
@@ -28,5 +27,8 @@
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2) !important;
         width: 100% !important;
         max-width: 600px !important;
+      }
+      .cancel-btn svg{
+        color:#ffd700
       }
       

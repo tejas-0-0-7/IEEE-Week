@@ -4,6 +4,7 @@ import EventCard from '../Components/EventCard';
 import './Events.css'
 import { useState } from 'react';
 import EventRegistration from '../Components/EventRegistration';
+import { MdCancel } from "react-icons/md";
 
 const Events = () => {
     const [showForm,setShowForm]=useState(false);
@@ -18,15 +19,17 @@ const Events = () => {
         <div className="events">
             <header></header>
             <Navbaring />
-            <div className={`events-page ${showForm ? 'blurred' : ''}`}>
+            <div className={`events-page`}>
             <EventCard onShowForm={handleForm}/>
             <EventCard onShowForm={handleForm}/>
             <EventCard onShowForm={handleForm}/>
             {showForm && (
         <div className="modal">
           <div className="modal-content">
-            <button className="close-button" onClick={closeForm}>X</button>
-            <EventRegistration />
+            <div className='cancel-btn'>
+            <MdCancel style={{size:'100px'}} onClick={closeForm}/>
+            </div>
+            <EventRegistration/>
           </div>
         </div>
       )}
