@@ -1,9 +1,9 @@
 import React from 'react';
 import './EventCard.css';
 import { useNavigate } from 'react-router-dom'; 
-import EventDescription from '../pages/EventDescription';
 
 function EventCard(props) {
+
   const navigate = useNavigate(); 
   const handleClick = () => {
     navigate('/eventdescription'); 
