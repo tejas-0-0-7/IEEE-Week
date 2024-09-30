@@ -22,7 +22,7 @@ const EventCard = ({ onShowForm }) => {
             <div className="separator"></div>
 
             <div className="additional-info">
-              <p className="info description">
+              <p className="info">
                 Event description goes here...
               </p>
             </div>
