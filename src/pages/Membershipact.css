@@ -1,0 +1,40 @@
+.head{
+    color: whitesmoke;
+}
+.IEEE-SB{
+    margin-top: 4em;
+}
+.mem-drive{
+    margin-top: 2em;
+    margin-left: 5em;
+    margin-right: 5em;
+    color: whitesmoke;
+    max-width: 99vw;
+}
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); 
+    gap: 1.5em; 
+    padding: 1.5em;
+  }
+  
+  .card-item {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .card-item:nth-child(odd):last-child {
+    grid-column: span 2; 
+    justify-content: center;
+  }
+  
+  @media (max-width: 768px) {
+    .card-grid {
+      grid-template-columns: 1fr; 
+    }
+  
+    .card-item:nth-child(odd):last-child {
+      grid-column: auto; 
+    }
+  }
+  

@@ -1,0 +1,126 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Roboto:wght@400;500&display=swap');
+
+body {
+  font-family: 'Roboto', sans-serif;
+}
+
+/* Container to hold two cards side by side */
+.card-wrapper {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  margin: 2em auto;
+  width: 85vw;
+}
+
+/* Individual card styling */
+.descriptive-card-container {
+  display: flex;
+  flex-direction: column;
+  width: 40vw;
+  max-width: 100%;
+  border-radius: 0.625em;
+  box-shadow: 0 0.5em 1em rgb(213, 165, 68);
+  margin: 1.25em;
+  overflow: hidden;
+  background-color: #1a1a1a;
+  transition: transform 0.3s;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid #d4af37;
+}
+
+.descriptive-card-container:hover {
+  transform: scale(1.05);
+}
+
+.card-image-container {
+  width: 50%;
+  height: auto;
+}
+
+.card-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.card-content {
+  width: 80%;
+  padding: 2em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.card-titleee {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.5em;
+  margin-bottom: 0.75em;
+  color: #f1c40f;
+  font-weight: 700;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+.card-description {
+  font-family: 'Roboto', sans-serif;
+  font-size: 1.2em;
+  color: #ddd;
+  margin-bottom: 1.5em;
+  font-weight: 300;
+}
+
+.know-more-btn {
+  font-family: 'Roboto', sans-serif;
+  background-color: #f1c40f;
+  color: #1a1a1a;
+  border: none;
+  padding: 0.75em 1.5em;
+  cursor: pointer;
+  border-radius: 0.3125em;
+  font-size: 1em;
+  transition: background-color 0.3s;
+  align-self: flex-start;
+}
+
+.know-more-btn:hover {
+  background-color: #b7950b;
+}
+
+/* Responsive Design for tablets and smaller */
+@media (max-width: 1024px) {
+  .card-image-container {
+    width: 50%;
+  }
+
+  .card-content {
+    width: 50%;
+  }
+}
+
+/* Mobile view: Single column layout */
+@media (max-width: 768px) {
+  .card-wrapper {
+    flex-direction: column; /* Stack cards vertically */
+    align-items: center;
+  }
+
+  .descriptive-card-container {
+    width: 85vw; /* Take full width on mobile */
+  }
+
+  .card-image-container {
+    width: 100%;
+    height: 250px;
+  }
+
+  .card-content {
+    width: 100%;
+    padding: 1.5em;
+  }
+
+  .know-more-btn {
+    align-self: center;
+  }
+}
