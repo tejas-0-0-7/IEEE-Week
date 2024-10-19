@@ -5,6 +5,7 @@ import Slider from '../Components/Slider.js';
 import './Slider.css';
 import fetchEvents from '../Components/data.js';
 import CountDown from '../Components/CountDown.js';
+import Overtheyears from '../Components/Overtheyears'; // Import the new component
 
 function Home() {
   const initialVideoRef = useRef(null);
@@ -61,6 +62,7 @@ function Home() {
       <div className='center'>
         <Slider data={events} activeSlide={5} />
       </div>
+<<<<<<< HEAD
 
       {/* Flagship Events Section */}
       <h2 className="flagship-title">Flagship Event</h2>
@@ -89,3 +91,35 @@ function Home() {
 }
 
 export default Home;
+=======
+
+      <div>
+        <h2 className="flagship-title">Flagship Event</h2>
+        <div className="flagship-container">
+          <div className="flagship-event">
+            <img src="/images/sod.jpeg" alt="Flagship Event Poster" className="poster" />
+            <div className="description">
+              <h3>Event Name 1</h3>
+              <p>Short description about the first flagship event. Details about the event, time, and participants.</p>
+              <button className="know-more-button">Know More</button>
+            </div>
+          </div>
+
+          <div className="flagship-event reverse">
+            <div className="description">
+              <h3>Event Name 2</h3>
+              <p>Short description about the second flagship event. Details about the event, time, and participants.</p>
+              <button className="know-more-button">Know More</button>
+            </div>
+            <img src="/images/sod.jpeg" alt="Flagship Event Poster" className="poster" />
+          </div>
+        </div>
+      </div>
+      {/* "Over the Years" Section */}
+      <Overtheyears /> {/* Call the new component here */}
+
+    </div>
+  );
+}
+export default Home;
+>>>>>>> 90f28bf56f2bf445c4e4f4673c042ded62e0e5eb
