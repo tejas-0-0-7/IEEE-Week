@@ -23,7 +23,7 @@ const EventCard = ({ onShowForm }) => {
 
             <div className="additional-info">
               <p className="info">
-                Event description goes here...
+                Event description goes here. I really do not know how to fix the underflow. Pls help madi.
               </p>
             </div>
           </div>
