@@ -63,7 +63,7 @@ const Meet = () => {
                     </Col>
                     <Col xs={12} sm={6} md={3}>
                         <Card className="team-card">
-                            <Card.Img variant="top" src="/images/Tejas(Treasurer).jpg" alt="Team Member 3" className="team-image" />
+                            <Card.Img variant="top" src="/images/Tejas.jpg" alt="Team Member 3" className="team-image" />
                             <Card.Body>
                                 <Card.Title>Tejas</Card.Title>
                                 <Card.Text>Treasurer</Card.Text>
@@ -102,7 +102,7 @@ const Meet = () => {
                     </Col>
                     <Col xs={12} sm={6} md={4}>
                         <Card className="team-card">
-                            <Card.Img variant="top" src="/images/Vignesh(Joint Secretary).png" alt="Team Member 7" className="team-image" />
+                            <Card.Img variant="top" src="/images/vignesh.jpg" alt="Team Member 7" className="team-image" />
                             <Card.Body>
                                 <Card.Title>Vignesh B</Card.Title>
                                 <Card.Text>Joint Secretary</Card.Text>
@@ -118,7 +118,7 @@ const Meet = () => {
                 <Row>
                     <Col xs={12} sm={6} md={3}>
                         <Card className="team-card">
-                            <Card.Img variant="top" src="/images/Aadhya M.jpg" alt="Team Member 1" className="team-image" />
+                            <Card.Img variant="top" src="/images/aadhya.jpg" alt="Team Member 1" className="team-image" />
                             <Card.Body>
                                 <Card.Title>Aadhya M</Card.Title>
                             </Card.Body>
@@ -126,7 +126,7 @@ const Meet = () => {
                     </Col>
                     <Col xs={12} sm={6} md={3}>
                         <Card className="team-card">
-                            <Card.Img variant="top" src="/images/Nakul N.jpg" alt="Team Member 2" className="team-image" />
+                            <Card.Img variant="top" src="/images/nakul.jpg" alt="Team Member 2" className="team-image" />
                             <Card.Body>
                                 <Card.Title>Nakul N</Card.Title>
                             </Card.Body>
@@ -160,7 +160,7 @@ const Meet = () => {
                     </Col>
                     <Col xs={12} sm={6} md={4}>
                         <Card className="team-card">
-                            <Card.Img variant="top" src="/images/Sushanth C.jpg" alt="Team Member 6" className="team-image" />
+                            <Card.Img variant="top" src="/images/sushanth.jpg" alt="Team Member 6" className="team-image" />
                             <Card.Body>
                                 <Card.Title>Sushanth C</Card.Title>
                             </Card.Body>
@@ -168,7 +168,7 @@ const Meet = () => {
                     </Col>
                     <Col xs={12} sm={6} md={4}>
                         <Card className="team-card">
-                            <Card.Img variant="top" src="/images/Uday Ramageri.jpg" alt="Team Member 7" className="team-image" />
+                            <Card.Img variant="top" src="/images/uday.jpg" alt="Team Member 7" className="team-image" />
                             <Card.Body>
                                 <Card.Title>Uday Ramageri</Card.Title>
                             </Card.Body>
