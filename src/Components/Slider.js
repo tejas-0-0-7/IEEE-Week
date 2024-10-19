@@ -1,82 +1,67 @@
-import React,{useState} from 'react'
-export default (props) => {
-  const [activeSlide, setactiveSlide] = useState(props.activeSlide);
+import React, { useState } from 'react';
+
+const Slider = (props) => {
+  const [activeSlide, setActiveSlide] = useState(props.activeSlide);
+
   const handleSlideClick = (index) => {
-    setactiveSlide(index); 
+    setActiveSlide(index); 
   };
 
   const next = () =>
-    activeSlide < props.data.length - 1 && setactiveSlide(activeSlide + 1);
+    activeSlide < props.data.length - 1 && setActiveSlide(activeSlide + 1);
 
-  const prev = () => activeSlide > 0 && setactiveSlide(activeSlide - 1);
+  const prev = () => activeSlide > 0 && setActiveSlide(activeSlide - 1);
 
   const getStyles = (index) => {
     if (activeSlide === index) {
-      // Center card (fully visible)
       return {
         opacity: 1,
         transform: "translateX(0px) translateZ(0px) rotateY(0deg)",
         zIndex: 10
       };
-    } 
-    else if (activeSlide - 1 === index) {
-      // First card to the left
+    } else if (activeSlide - 1 === index) {
       return {
         opacity: 1,
         transform: "translateX(-240px) translateZ(-300px) rotateY(30deg)",
         zIndex: 9
       };
-    } 
-    else if (activeSlide + 1 === index) {
-      // First card to the right
+    } else if (activeSlide + 1 === index) {
       return {
         opacity: 1,
         transform: "translateX(240px) translateZ(-300px) rotateY(-30deg)",
         zIndex: 9
       };
-    } 
-    else if (activeSlide - 2 === index) {
-      // Second card to the left (wider angle, further back)
+    } else if (activeSlide - 2 === index) {
       return {
         opacity: 1,
         transform: "translateX(-480px) translateZ(-400px) rotateY(45deg)",
         zIndex: 8
       };
-    } 
-    else if (activeSlide + 2 === index) {
-      // Second card to the right (wider angle, further back)
+    } else if (activeSlide + 2 === index) {
       return {
         opacity: 1,
         transform: "translateX(480px) translateZ(-400px) rotateY(-45deg)",
         zIndex: 8
       };
-    } 
-    else if (activeSlide - 3 === index) {
-      // Third card to the left (even wider angle, even further back)
+    } else if (activeSlide - 3 === index) {
       return {
         opacity: 1,
         transform: "translateX(-720px) translateZ(-500px) rotateY(60deg)",
         zIndex: 7
       };
-    } 
-    else if (activeSlide + 3 === index) {
-      // Third card to the right (even wider angle, even further back)
+    } else if (activeSlide + 3 === index) {
       return {
         opacity: 1,
         transform: "translateX(720px) translateZ(-500px) rotateY(-60deg)",
         zIndex: 7
       };
-    } 
-    else if (index < activeSlide - 3) {
-      // Cards further left (barely visible)
+    } else if (index < activeSlide - 3) {
       return {
         opacity: 1,
         transform: "translateX(-960px) translateZ(-600px) rotateY(75deg)",
         zIndex: 6
       };
-    } 
-    else if (index > activeSlide + 3) {
-      // Cards further right (barely visible)
+    } else if (index > activeSlide + 3) {
       return {
         opacity: 1,
         transform: "translateX(960px) translateZ(-600px) rotateY(-75deg)",
@@ -84,12 +69,9 @@ export default (props) => {
       };
     }
   };
-  
-  
 
   return (
     <>
-      {/* carousel */}
       <div className="slideC">
         {props.data.map((item, i) => (
           <React.Fragment key={item.id}>
@@ -100,7 +82,7 @@ export default (props) => {
               }}
               onClick={() => handleSlideClick(i)}
             >
-              <SliderContent {...item} />
+              <SliderContent image={item.image} />
             </div>
             <div
               className="reflection"
@@ -111,23 +93,24 @@ export default (props) => {
           </React.Fragment>
         ))}
       </div>
-      {/* carousel */}
-
     </>
   );
 };
 
-const SliderContent = (props) => {
+const SliderContent = ({ image }) => {
   return (
     <div className="sliderContent">
-      <img src={props.image} 
-      style={{
-        width:"100%",
-        objectFit:"cover",
-        borderRadius: "12px",
-      }}>
-      </img>
+      <img 
+        src={image} 
+        alt="Event"
+        style={{
+          width: "100%",
+          objectFit: "cover",
+          borderRadius: "12px",
+        }}
+      />
     </div>
   );
 };
 
+export default Slider;
