@@ -13,6 +13,7 @@
     align-items: center;
 }
 
+/* Card container */
 .item-container {
     position: relative;
     width: 320px;
@@ -31,6 +32,7 @@
     height: 100%;
 }
 
+/* Styling for the event image */
 .img-container img {
     width: 100%;
     height: 100%;
@@ -38,6 +40,7 @@
     border-radius: 8px 8px 0 0;
 }
 
+/* Overlay effect on hover */
 .overlay {
     position: relative;
     width: 100%;
@@ -51,10 +54,9 @@
 .item-container:hover .overlay {
     opacity: 1;
     height: 150px;
-    bottom:0px;
 }
 
-
+/* Event information inside the card */
 .event-info {
     background-color: #fff;
     display: flex;
@@ -64,8 +66,9 @@
     padding: 5px;
 }
 
-
-.title {
+/* Title and price styles */
+.title,
+.price {
     color: #18537a;
     font-size: 1.5em;
     font-weight: bold;
@@ -74,12 +77,14 @@
     text-align: center;
 }
 
+/* Information text styles */
 .info {
     letter-spacing: 0.5px;
     margin-bottom: 6px;
     text-align: center;
 }
 
+/* Separator styling between title and additional info */
 .separator {
     width: 20%;
     height: 6px;
@@ -88,7 +93,7 @@
     border-radius: 3px;
 }
 
-
+/* Additional info section */
 .additional-info {
     border-top: 1px solid #bbb;
     margin-top: 12px;
@@ -96,6 +101,7 @@
     padding-bottom: 0;
     text-align: justify;
     text-justify: inter-word;
+    bottom:0
 }
 
 .additional-info .info {
@@ -103,6 +109,8 @@
     margin-bottom: 20px;
     text-align: center;
 }
+
+/* Info icon and span styling */
 .info i {
     color: #18537a;
     font-size: 1.1em;
@@ -114,7 +122,7 @@
     font-weight: bold;
 }
 
-
+/* Action button styling */
 .action {
     color: #fff;
     border: 3px solid #fff;
@@ -141,6 +149,7 @@
     color: #fff;
 }
 
+/* Hover effects on card */
 .item-container:hover {
     transform: scale(1.05);
 }
