@@ -27,6 +27,17 @@
 .App-link {
   color: #61dafb;
 }
+body {
+  font-family: 'Orbitron', sans-serif; /* Set Orbitron font globally */
+  margin: 0; /* Optional: remove default margin */
+  padding: 0; /* Optional: remove default padding */
+  box-sizing: border-box; /* Optional: better box model */
+}
+
+/* If you want to ensure all elements use this font */
+* {
+  font-family: 'Orbitron', sans-serif;
+}
 
 @keyframes App-logo-spin {
   from {

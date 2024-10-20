@@ -7,30 +7,48 @@ import fetchEvents from '../Components/data.js';
 import CountDown from '../Components/CountDown.js';
 import Overtheyears from '../Components/Overtheyears'; // Import the new component
 
+
 function Home() {
-  const initialVideoRef = useRef(null);
-  const backgroundVideoRef = useRef(null);
+  // const initialVideoRef = useRef(null);
+  // const backgroundVideoRef = useRef(null);
+  const vantaRef = useRef(null);
   const [events, setEvents] = useState([]);
 
   useEffect(() => {
-    const hasWatchedVideo = localStorage.getItem('hasWatchedVideo');
+ //   const hasWatchedVideo = localStorage.getItem('hasWatchedVideo');
 
-    if (!hasWatchedVideo) {
-      initialVideoRef.current.style.display = 'block';
-      initialVideoRef.current.play();
+    // if (!hasWatchedVideo) {
+    //   initialVideoRef.current.style.display = 'block';
+    //   initialVideoRef.current.play();
 
-      initialVideoRef.current.addEventListener('ended', () => {
-        initialVideoRef.current.style.display = 'none';
-        backgroundVideoRef.current.style.display = 'block';
-        backgroundVideoRef.current.play();
-        localStorage.setItem('hasWatchedVideo', 'true');
-      });
-    } else {
-      initialVideoRef.current.style.display = 'none';
-      backgroundVideoRef.current.style.display = 'block';
-      backgroundVideoRef.current.play();
-    }
-
+    //   initialVideoRef.current.addEventListener('ended', () => {
+    //     initialVideoRef.current.style.display = 'none';
+    //     backgroundVideoRef.current.style.display = 'block';
+    //     backgroundVideoRef.current.play();
+    //     localStorage.setItem('hasWatchedVideo', 'true');
+    //   });
+    // } else {
+    //   initialVideoRef.current.style.display = 'none';
+    //   backgroundVideoRef.current.style.display = 'block';
+    //   backgroundVideoRef.current.play();
+    // }
+    const vantaEffect = window.VANTA.NET({
+      el: ".net",
+      mouseControls: true,
+      touchControls: true,
+      gyroControls: false,
+      minHeight: 200.00,
+      minWidth: 200.00,
+      scale: 1.00,
+      scaleMobile: 1.00,
+      color: 0xdaa520,
+      backgroundColor: 0x0,
+      points: 13.00,
+      maxDistance: 16.00,
+      spacing: 20.00,
+      showDots: false
+    })
+    
     const loadEvents = async () => {
       const fetchedEvents = await fetchEvents();
       const eventImages = fetchedEvents.map(event => ({ id: event._id, image: event.image }));
@@ -40,10 +58,11 @@ function Home() {
   }, []);
 
   return (
+    
     <div>
       <Navbaring />
 
-      <div className="video-container">
+      {/* <div className="video-container">
         <video ref={initialVideoRef} id="video-initial" autoPlay muted>
           <source src="intro.mp4" type="video/mp4" />
           Your browser does not support the video tag.
@@ -52,7 +71,7 @@ function Home() {
           <source src="static.mp4" type="video/mp4" />
           Your browser does not support the video tag.
         </video>
-      </div>
+      </div> */}
 
       <div className="countdown-container">
         <CountDown />

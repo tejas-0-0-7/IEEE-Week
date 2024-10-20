@@ -16,17 +16,19 @@
     height: 100vh;
     padding-top: 2em;
     padding-bottom: 3em;
+    z-index: 1;
 }
 
 .timer div {
     border: 1px solid #fff;
-    border-radius: 5px;
+    border-radius: 10px;
     display: grid;
     grid-template-columns: repeat(7, 1fr);
     padding: 3em;
-    background: rgba(255, 255, 255, 0.05);
+    background: rgba(0, 0, 0, 0.8);
     box-shadow: 0 8px 15px rgba(0, 0, 0, 0.6);
     transition: box-shadow 0.5s ease-in-out;
+    z-index: 1;
 }
 
 .timer div:hover {
