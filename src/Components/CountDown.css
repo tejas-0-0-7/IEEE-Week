@@ -8,23 +8,21 @@
 }
 
 .timer {
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 0.7);
     display: flex;
-    flex-direction: column;
     align-items: center;
     justify-content: center;
     width: 100%;
-    height: 100%;
+    height: 100vh;
     padding-top: 2em;
     padding-bottom: 3em;
 }
 
 .timer div {
     border: 1px solid #fff;
-    border-radius: 3px;
+    border-radius: 5px;
     display: grid;
     grid-template-columns: repeat(7, 1fr);
-    margin-top: 1em;
     padding: 3em;
     background: rgba(255, 255, 255, 0.05);
     box-shadow: 0 8px 15px rgba(0, 0, 0, 0.6);
@@ -35,15 +33,17 @@
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.9);
 }
 
-.HENRY p:first-child, .timer div span {
-    font-size: 3em;
+.HENRY p:first-child,
+.timer div span {
+    font-size: 3.5em;
     font-family: 'Orbitron', sans-serif;
-    color: #00FFFF;
-    text-shadow: 0 4px 10px rgba(0, 255, 255, 0.8);
+    color: rgb(233, 113, 33);
+    text-shadow: 0 4px 6px rgba(249, 179, 132, 1);
     transition: color 0.3s ease-in-out, text-shadow 0.3s ease-in-out;
 }
 
-.timer div span:hover, .HENRY p:first-child:hover {
+.timer div span:hover,
+.HENRY p:first-child:hover {
     color: #f9b384;
     text-shadow: 0 4px 20px rgba(249, 179, 132, 1);
 }
@@ -57,9 +57,11 @@
 }
 
 @keyframes pulse {
-    0%, 100% {
+    0%,
+    100% {
         transform: scale(1);
     }
+    
     50% {
         transform: scale(1.05);
     }
@@ -69,10 +71,46 @@
     animation: pulse 2s infinite;
 }
 
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 768px) {
     .timer div {
-        margin-left: 1em;
-        margin-right: 1em;
-        padding: 2em 1em;
+        margin-left: auto; 
+        margin-right: auto; 
+        padding: 2em; 
+        grid-template-columns: repeat(4, 1fr); 
+        width: calc(100% - 2em); 
+        text-align: center; 
     }
+
+   .HENRY p:first-child,
+   .timer div span {
+       font-size: 3em; 
+       text-align: center; 
+       margin-bottom:.5em; 
+   }
+}
+
+@media screen and (max-width: 480px) {
+   .timer div {
+       margin-left: auto; 
+       margin-right: auto; 
+       padding: 1.5em; 
+       grid-template-columns: repeat(1, 1fr); 
+       width: calc(100% - 2em); 
+       text-align: center; 
+   }
+   
+   .HENRY p:first-child,
+   .timer div span {
+       font-size: 2.5em; 
+       text-align: center; 
+       margin-bottom:.5em; 
+   }
+
+   .HENRY p small {
+       font-size:1em; 
+   }
+   
+   span {
+       display: none; 
+   }
 }
