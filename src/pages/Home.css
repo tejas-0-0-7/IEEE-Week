@@ -1,3 +1,12 @@
+.net{
+  height:100%;
+  width: 100%;
+  position: absolute;
+  left:0;
+  top:0;
+  z-index:-1;
+}
+
 /* Video container styling */
 .video-container {
   position: relative;
@@ -22,16 +31,16 @@
 }
 
 /* Background video styling */
-#video-background {
+/* #video-background {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
   object-fit: cover; /* Cover the entire area */
-  z-index: 0; /* Appear behind other content */
-  display: none; /* Hidden by default */
-}
+  /* z-index: 0; 
+  display: none; Hidden by default
+} */ 
 
 /* Increase font size and adjust spacing for Events and Flagship Titles */
 .events-title, .flagship-title {
