@@ -4,6 +4,7 @@ const path = require("path");
 const dotenv = require("dotenv");
 const connectDB = require("./config/db");
 const eventsRouter = require("./routes/events");
+const contactRouter = require("./routes/contact")
 
 dotenv.config();
 
@@ -28,6 +29,7 @@ app.get("*", (req, res) => {
 
 // Routes
 app.use("/api/events", eventsRouter);
+app.use(contactRouter);
 
 const PORT = process.env.PORT || 5000;
 
