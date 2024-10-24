@@ -19,8 +19,8 @@ const Meet = () => {
                         <Card className="team-card">
                             <Card.Img variant="top" src="/images/Archana_H_R.jpg" alt="Faculty Coordinator 1" className="team-image" />
                             <Card.Body>
-                                <Card.Title>Dr Archana H R</Card.Title>
-                                <Card.Text>Branch Counsellor</Card.Text>
+                                <Card.Title  className="team-name">Dr Archana H R</Card.Title>
+                                <Card.Text className="team-role">Branch Counsellor</Card.Text>
                             </Card.Body>
                         </Card>
                     </Col>
@@ -28,8 +28,8 @@ const Meet = () => {
                         <Card className="team-card">
                             <Card.Img variant="top" src="/images/Gururaj.jpg" alt="Faculty Coordinator 2" className="team-image" />
                             <Card.Body>
-                                <Card.Title>Dr Gururaja H S</Card.Title>
-                                <Card.Text>Branch Mentor</Card.Text>
+                                <Card.Title  className="team-name">Dr Gururaja H S</Card.Title>
+                                <Card.Text className="team-role">Branch Mentor</Card.Text>
                             </Card.Body>
                         </Card>
                     </Col>
@@ -37,7 +37,7 @@ const Meet = () => {
 
                 {/* Execom Section */}
                 <header className="text-center my-4">
-                    <h1>Execom</h1>
+                    <h1>Organizing</h1>
                 </header>
                 
                 {/* Execom Cards */}
@@ -47,8 +47,8 @@ const Meet = () => {
                         <Card className="team-card">
                             <Card.Img variant="top" src="/images/Mohit (Chairperson).jpg" alt="Team Member 1" className="team-image" />
                             <Card.Body>
-                                <Card.Title>Mohit Poddar</Card.Title>
-                                <Card.Text>Chairperson</Card.Text>
+                                <Card.Title  className="team-name">Mohit Poddar</Card.Title>
+                                <Card.Text className="team-role">Chairperson</Card.Text>
                             </Card.Body>
                         </Card>
                     </Col>
@@ -56,8 +56,8 @@ const Meet = () => {
                         <Card className="team-card">
                             <Card.Img variant="top" src="/images/Disha (Vice Chairperson).jpeg" alt="Team Member 2" className="team-image" />
                             <Card.Body>
-                                <Card.Title>Disha Lohia</Card.Title>
-                                <Card.Text>Vice Chairperson</Card.Text>
+                                <Card.Title  className="team-name">Disha Lohia</Card.Title>
+                                <Card.Text className="team-role">Vice Chairperson</Card.Text>
                             </Card.Body>
                         </Card>
                     </Col>
@@ -65,8 +65,8 @@ const Meet = () => {
                         <Card className="team-card">
                             <Card.Img variant="top" src="/images/Tejas.jpg" alt="Team Member 3" className="team-image" />
                             <Card.Body>
-                                <Card.Title>Tejas</Card.Title>
-                                <Card.Text>Treasurer</Card.Text>
+                                <Card.Title  className="team-name">Tejas</Card.Title>
+                                <Card.Text className="team-role">Treasurer</Card.Text>
                             </Card.Body>
                         </Card>
                     </Col>
@@ -74,8 +74,8 @@ const Meet = () => {
                         <Card className="team-card">
                             <Card.Img variant="top" src="/images/Hardik(Joint Treasurer).png" alt="Team Member 4" className="team-image" />
                             <Card.Body>
-                                <Card.Title>Hardik Jain</Card.Title>
-                                <Card.Text>Joint Treasurer</Card.Text>
+                                <Card.Title  className="team-name">Hardik Jain</Card.Title>
+                                <Card.Text className="team-role">Joint Treasurer</Card.Text>
                             </Card.Body>
                         </Card>
                     </Col>
@@ -86,8 +86,8 @@ const Meet = () => {
                         <Card className="team-card">
                             <Card.Img variant="top" src="/images/Suhas (Secretary).jpg" alt="Team Member 5" className="team-image" />
                             <Card.Body>
-                                <Card.Title>Suhas Shenoy Udyavara</Card.Title>
-                                <Card.Text>Secretary</Card.Text>
+                                <Card.Title  className="team-name">Suhas Shenoy Udyavara</Card.Title>
+                                <Card.Text className="team-role">Secretary</Card.Text>
                             </Card.Body>
                         </Card>
                     </Col>
@@ -95,8 +95,8 @@ const Meet = () => {
                         <Card className="team-card">
                             <Card.Img variant="top" src="/images/SriKrishna Pejathaya P S (Joint Secretary).jpg" alt="Team Member 6" className="team-image" />
                             <Card.Body>
-                                <Card.Title>Srikrishna Pejatheya PS</Card.Title>
-                                <Card.Text>Joint Secretary</Card.Text>
+                                <Card.Title  className="team-name">Srikrishna Pejatheya PS</Card.Title>
+                                <Card.Text className="team-role">Joint Secretary</Card.Text>
                             </Card.Body>
                         </Card>
                     </Col>
@@ -104,8 +104,8 @@ const Meet = () => {
                         <Card className="team-card">
                             <Card.Img variant="top" src="/images/vignesh.jpg" alt="Team Member 7" className="team-image" />
                             <Card.Body>
-                                <Card.Title>Vignesh B</Card.Title>
-                                <Card.Text>Joint Secretary</Card.Text>
+                                <Card.Title  className="team-name">Vignesh B</Card.Title>
+                                <Card.Text className="team-role">Joint Secretary</Card.Text>
                             </Card.Body>
                         </Card>
                     </Col>
@@ -120,7 +120,7 @@ const Meet = () => {
                         <Card className="team-card">
                             <Card.Img variant="top" src="/images/aadhya.jpg" alt="Team Member 1" className="team-image" />
                             <Card.Body>
-                                <Card.Title>Aadhya M</Card.Title>
+                                <Card.Title  className="team-name">Aadhya M</Card.Title>
                             </Card.Body>
                         </Card>
                     </Col>
@@ -128,7 +128,7 @@ const Meet = () => {
                         <Card className="team-card">
                             <Card.Img variant="top" src="/images/nakul.jpg" alt="Team Member 2" className="team-image" />
                             <Card.Body>
-                                <Card.Title>Nakul N</Card.Title>
+                                <Card.Title  className="team-name">Nakul N</Card.Title>
                             </Card.Body>
                         </Card>
                     </Col>
@@ -136,7 +136,7 @@ const Meet = () => {
                         <Card className="team-card">
                             <Card.Img variant="top" src="/images/Namratha.jpg" alt="Team Member 3" className="team-image" />
                             <Card.Body>
-                                <Card.Title>Namratha P</Card.Title>
+                                <Card.Title  className="team-name">Namratha P</Card.Title>
                             </Card.Body>
                         </Card>
                     </Col>
@@ -144,7 +144,7 @@ const Meet = () => {
                         <Card className="team-card">
                             <Card.Img variant="top" src="/images/Ninaada Ranga.JPG" alt="Team Member 4" className="team-image" />
                             <Card.Body>
-                                <Card.Title>Ninaada Ranga</Card.Title>
+                                <Card.Title  className="team-name">Ninaada Ranga</Card.Title>
                             </Card.Body>
                         </Card>
                     </Col>
@@ -154,7 +154,7 @@ const Meet = () => {
                         <Card className="team-card">
                             <Card.Img variant="top" src="/images/Shreeya K.jpg" alt="Team Member 5" className="team-image" />
                             <Card.Body>
-                                <Card.Title>Shreeya K</Card.Title>
+                                <Card.Title  className="team-name">Shreeya K</Card.Title>
                             </Card.Body>
                         </Card>
                     </Col>
@@ -162,7 +162,7 @@ const Meet = () => {
                         <Card className="team-card">
                             <Card.Img variant="top" src="/images/sushanth.jpg" alt="Team Member 6" className="team-image" />
                             <Card.Body>
-                                <Card.Title>Sushanth C</Card.Title>
+                                <Card.Title  className="team-name">Sushanth C</Card.Title>
                             </Card.Body>
                         </Card>
                     </Col>
@@ -170,7 +170,7 @@ const Meet = () => {
                         <Card className="team-card">
                             <Card.Img variant="top" src="/images/uday.jpg" alt="Team Member 7" className="team-image" />
                             <Card.Body>
-                                <Card.Title>Uday Ramageri</Card.Title>
+                                <Card.Title  className="team-name">Uday Ramageri</Card.Title>
                             </Card.Body>
                         </Card>
                     </Col>

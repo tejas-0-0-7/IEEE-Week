@@ -1,9 +1,10 @@
 body{
     background-color: black !important;
+    color: #fcd462 !important; /* Ensuring all text uses this color */
+    letter-spacing: 0.05em;
 }
 .team-card {
-    margin-bottom: 20px;
-    box-shadow: #c9980b;
+    margin-bottom: 20px; 
     transition: transform 0.3s ease-in-out;
     text-align: center;
     padding: 1rem;
@@ -18,9 +19,14 @@ body{
 }
 
 .team-card:hover {
-    transform: translateY(-10px);
+    transform: translateY(-15px);
 }
-
+header.text-center.my-4 h1 {
+    margin-top: 60px; /* Add space above the header */
+}
+header.text-center.my-4 + .team-card {
+    margin-top: 60px; /* Space after the header */
+}
 .team-image {
     border-radius: 50%; 
     width: 120px; 
@@ -28,7 +34,17 @@ body{
     object-fit: cover; 
     margin-bottom: 1rem; 
 }
+.team-name, .team-role {
+    color: #fcd462;
+    transition: color 0.3s ease, text-shadow 0.3s ease;
+    letter-spacing: 0.08em;
+    margin: 0; /* Remove default margin */
+    white-space: nowrap; /* Prevent text from wrapping to the next line */
+}
 
+/* .team-card:hover .team-name, .team-card:hover .team-role {
+    color: white; /* Keeping the same color but adding glow 
+} */
 .card-body {
     display: flex;
     flex-direction: column;
@@ -38,7 +54,10 @@ body{
 h1 {
     font-size: 2.5rem;
     font-weight: bold;
-    margin-bottom: 20px;
+    margin-bottom: 100px;
+    margin-top: 40px !important;
+    color: #fcd462 !important;
+    letter-spacing: 0.08em; 
 }
 
 .text-center {
