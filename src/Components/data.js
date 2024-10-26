@@ -1,7 +1,7 @@
 const fetchEvents = async () => {
   try {
-    const response = await fetch('/api/events');
-    if (!(response.status===201)) {
+    const response = await fetch('http://localhost:5000/api/events');
+    if (!response.ok) {
       throw new Error(`HTTP error! status: ${response.status}`);
     }
     const data = await response.json();
@@ -9,6 +9,8 @@ const fetchEvents = async () => {
     return data;
   } catch (error) {
     console.error('Error fetching events:', error);
-    return [];
+    return []; 
   }
 };
+
+export default fetchEvents;
