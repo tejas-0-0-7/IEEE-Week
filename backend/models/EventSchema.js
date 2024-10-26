@@ -12,6 +12,7 @@ const EventSchema = new mongoose.Schema({
   image: {
     type: String,
     required: true,
+    get: (v) => `http://localhost:5000/images/${v}` 
   },
   date: {
     type: Date,
@@ -30,6 +31,11 @@ const EventSchema = new mongoose.Schema({
     default: true,
   },
   
-});
+},
+{
+  toJSON: { getters: true },
+  toObject: { getters: true },
+}
+);
 
-module.exports = mongoose.model('EventSchema', EventSchema);
+module.exports = mongoose.model('Events', EventSchema);

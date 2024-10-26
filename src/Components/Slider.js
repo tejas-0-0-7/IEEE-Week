@@ -1,6 +1,10 @@
 import React,{useState} from 'react'
 export default (props) => {
+  console.log(props);
   const [activeSlide, setactiveSlide] = useState(props.activeSlide);
+  if(props.data.length === 0){
+    return <div>Loading...</div>;
+  }
   const handleSlideClick = (index) => {
     setactiveSlide(index); 
   };
@@ -86,13 +90,14 @@ export default (props) => {
   };
   
   
-
   return (
     <>
       {/* carousel */}
       <div className="slideC">
-        {props.data.map((item, i) => (
+        {console.log('props.data:', props.data)}  
+        {props.data && props.data.map((item, i) => (  // Add null check
           <React.Fragment key={item.id}>
+            {console.log('Rendering item:', item)}
             <div
               className="slide"
               style={{
@@ -112,7 +117,6 @@ export default (props) => {
         ))}
       </div>
       {/* carousel */}
-
     </>
   );
 };
@@ -120,7 +124,7 @@ export default (props) => {
 const SliderContent = (props) => {
   return (
     <div className="sliderContent">
-      <img src={props.image} 
+      <img src={`${props.image}`} 
       style={{
         width:"100%",
         objectFit:"cover",

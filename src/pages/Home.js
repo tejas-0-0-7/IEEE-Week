@@ -11,6 +11,8 @@ import Overtheyears from '../Components/Overtheyears'; // Import the new compone
 function Home() {
   const vantaRef = useRef(null);
   const [events, setEvents] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
 
   useEffect(() => {
     const vantaEffect = window.VANTA.NET({
@@ -31,13 +33,20 @@ function Home() {
     });
 
     const loadEvents = async () => {
+      try{
+      setLoading(true);
       const fetchedEvents = await fetchEvents();
-      const eventImages = fetchedEvents.map(event => ({ id: event._id, image: event.image }));
-      setEvents(eventImages);
+      console.log('fetchedEvents:', fetchedEvents);
+      setEvents(fetchedEvents||[]);
+      }catch(error){
+        setError(error);
+      }finally{
+        setLoading(false);
+      }
     };
     loadEvents();
   }, []);
-
+    console.log('events after loading:', events);
   return (
     <div>
       <Navbaring />
@@ -48,10 +57,10 @@ function Home() {
       <h2 className="events-title">Events</h2>
 
       <div className='center'>
+        {console.log('events:', events)}
         <Slider data={events} activeSlide={5} />
       </div>
-
-      {/* Flagship Events Section */}
+      
       <h2 className="flagship-title">Flagship Event</h2>
 
       <div className="flagship-container">
