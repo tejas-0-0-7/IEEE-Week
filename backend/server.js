@@ -22,7 +22,7 @@ app.use(express.json());
 
 // Routes
 console.log("Setting up routes...");
-app.use('/images', express.static(path.join(__dirname, 'public/images')));
+app.use('/images', express.static(path.join(__dirname, 'images')));
 app.use("/api/events", eventsRouter);
 app.use("/api", contactRouter);  // Assuming this is for API routes
 

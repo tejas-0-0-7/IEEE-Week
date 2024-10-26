@@ -1,8 +1,8 @@
 import React,{useState} from 'react'
 export default (props) => {
   console.log(props);
-  const [activeSlide, setactiveSlide] = useState(props.activeSlide);
-  if(props.data.length === 0){
+  const [activeSlide, setactiveSlide] = useState(props.activeSlide || 0);
+  if(!props.data || props.data.length === 0){
     return <div>Loading...</div>;
   }
   const handleSlideClick = (index) => {

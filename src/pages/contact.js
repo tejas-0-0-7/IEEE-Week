@@ -31,7 +31,7 @@ const ContactUs = () => {
         setEmail('');
         setMessage('');
       } else {
-        alert('Error sending message. Please try again.');
+        alert('Error sending message. Please tr.');
         console.error('Error:', result.error);
       }
     } catch (error) {

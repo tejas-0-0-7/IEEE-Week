@@ -52,17 +52,18 @@ function Home() {
     })
     
     const loadEvents = async () => {
-      try{
-      setLoading(true);
-      const fetchedEvents = await fetchEvents();
-      console.log('fetchedEvents:', fetchedEvents);
-      setEvents(fetchedEvents);
-      }catch(error){
+      try {
+        setLoading(true);
+        const fetchedEvents = await fetchEvents();
+        console.log('fetchedEvents:', fetchedEvents);
+        setEvents(fetchedEvents);
+      } catch (error) {
         setError(error);
-      }finally{
+      } finally {
         setLoading(false);
       }
     };
+
     loadEvents();
   }, []);
 
