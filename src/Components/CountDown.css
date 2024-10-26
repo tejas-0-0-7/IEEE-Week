@@ -1,22 +1,61 @@
-@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
-
-.timer-container {
-    box-sizing: border-box;
+/* Countdown container */
+.countdown-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    text-align: center;
     margin: 0;
     padding: 0;
-    font-size: 100%;
+}
+.countdown-content {
+    display: flex;
+    flex-direction: column; /* Stack title, dates, and timer */
+    align-items: center;
+    justify-content: center;
+    gap: 10px; /* Adjust this for spacing between title and timer */
+}
+
+/* Title and Date styles */
+.countdown-header {
+    margin-bottom: 0px;
+}
+
+.ieee-week-title {
+    margin-top: 100px;
+    font-size: 5rem;
+    font-weight: bold;
+    color: #81b9a2!important;
+    margin: 0px 0;
+}
+
+.ieee-week-dates {
+    font-size: 4rem;
+    color: #81b9a2;
+    margin-bottom: 0px;
+}
+
+/* Timer container styles */
+.timer-container {
+    box-sizing: border-box;
+    padding: 0;
+    display: flex;
+    flex-direction: column; /* Stack the timer elements vertically */
+    align-items: center; /* Center the timer elements horizontally */
+    justify-content: center; /* Center them vertically */
+    margin-top: -10px; /* Add a small margin for spacing */
 }
 
 .timer {
     background-color: rgba(0, 0, 0, 0.7);
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
-    width: 100%;
-    height: 100vh;
-    padding-top: 2em;
-    padding-bottom: 3em;
-    z-index: 1;
+    width: auto;
+    padding: 1em;
+    height: 55vh !important;
 }
 
 .timer div {
@@ -24,32 +63,32 @@
     border-radius: 10px;
     display: grid;
     grid-template-columns: repeat(7, 1fr);
+    margin-top: 1em;
     padding: 3em;
     background: rgba(0, 0, 0, 0.8);
     box-shadow: 0 8px 15px rgba(0, 0, 0, 0.6);
     transition: box-shadow 0.5s ease-in-out;
-    z-index: 1;
 }
 
 .timer div:hover {
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.9);
 }
 
-.HENRY p:first-child,
-.timer div span {
-    font-size: 3.5em;
+/* Countdown numbers and colon */
+.HENRY p:first-child, .timer div span {
+    font-size: 3em;
     font-family: 'Orbitron', sans-serif;
-    color: rgb(233, 113, 33);
-    text-shadow: 0 4px 6px rgba(249, 179, 132, 1);
+    color: #00FFFF;
+    text-shadow: 0 4px 10px rgba(0, 255, 255, 0.8);
     transition: color 0.3s ease-in-out, text-shadow 0.3s ease-in-out;
 }
 
-.timer div span:hover,
-.HENRY p:first-child:hover {
-    color: #f9b384;
-    text-shadow: 0 4px 20px rgba(249, 179, 132, 1);
+.timer div span:hover, .HENRY p:first-child:hover {
+    color: #428679;
+    text-shadow: 0 4px 20px #428679;
 }
 
+/* Label below countdown numbers */
 .HENRY p small {
     color: #fff;
     font-family: 'Orbitron', sans-serif;
@@ -58,61 +97,46 @@
     letter-spacing: 1px;
 }
 
+/* Animation for the numbers */
+.HENRY p:first-child {
+    animation: pulse 2s infinite;
+}
+
 @keyframes pulse {
-    0%,
-    100% {
+    0%, 100% {
         transform: scale(1);
     }
-    
     50% {
         transform: scale(1.05);
     }
 }
 
-.HENRY p:first-child {
-    animation: pulse 2s infinite;
-}
-
-@media screen and (max-width: 768px) {
+/* Responsive design for mobile */
+@media screen and (max-width: 480px) {
     .timer div {
-        margin-left: auto; 
-        margin-right: auto; 
-        padding: 2em; 
-        grid-template-columns: repeat(4, 1fr); 
-        width: calc(100% - 2em); 
-        text-align: center; 
+        grid-template-columns: repeat(2, 1fr);
+        margin-left: 1em;
+        margin-right: 1em;
+        padding: 2em 1em;
+    }
+    .colon {
+        display: none; /* Hide colon */
     }
 
-   .HENRY p:first-child,
-   .timer div span {
-       font-size: 3em; 
-       text-align: center; 
-       margin-bottom:.5em; 
-   }
-}
+    /* Adjust font sizes for mobile */
+    .HENRY p:first-child, .timer div span {
+        font-size: 2.2em;
+    }
 
-@media screen and (max-width: 480px) {
-   .timer div {
-       margin-left: auto; 
-       margin-right: auto; 
-       padding: 1.5em; 
-       grid-template-columns: repeat(1, 1fr); 
-       width: calc(100% - 2em); 
-       text-align: center; 
-   }
-   
-   .HENRY p:first-child,
-   .timer div span {
-       font-size: 2.5em; 
-       text-align: center; 
-       margin-bottom:.5em; 
-   }
+    .HENRY p small {
+        font-size: 1em;
+    }
 
-   .HENRY p small {
-       font-size:1em; 
-   }
-   
-   span {
-       display: none; 
-   }
+    .ieee-week-title {
+        font-size: 2.5rem;
+    }
+
+    .ieee-week-dates {
+        font-size: 1.2rem;
+    }
 }

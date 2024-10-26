@@ -37,15 +37,15 @@
 .timer div span {
     font-size: 3.5em;
     font-family: 'Orbitron', sans-serif;
-    color: rgb(233, 113, 33);
-    text-shadow: 0 4px 6px rgba(249, 179, 132, 1);
+    color:#81b9a2;
+    text-shadow: 0 4px 6px #428679;
     transition: color 0.3s ease-in-out, text-shadow 0.3s ease-in-out;
 }
 
 .timer div span:hover,
 .HENRY p:first-child:hover {
-    color: #f9b384;
-    text-shadow: 0 4px 20px rgba(249, 179, 132, 1);
+    color: #bfedc8;
+    text-shadow: 0 4px 20px #428679;
 }
 
 .HENRY p small {
