@@ -1,0 +1,22 @@
+.about-us-container {
+    background-color: #000; /* Match your theme */
+    color: #c1d9d8; /* Light green color for text */
+    padding: 50px;
+    text-align: center;
+    border-top: 2px solid #428679; /* Gold border on top */
+    font-family: 'Agrandir', sans-serif; /* Use your chosen font */
+  }
+  
+  .about-us-container h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #bfedc8; /* Gold color for the heading */
+  }
+  
+  .about-us-container p {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
