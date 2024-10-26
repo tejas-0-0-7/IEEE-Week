@@ -1,6 +1,6 @@
 const fetchEvents = async () => {
   try {
-    const response = await fetch('/api/events');
+    const response = await fetch('http://localhost:5000/api/events');
     if (!response.ok) {
       throw new Error(`HTTP error! status: ${response.status}`);
     }
@@ -9,6 +9,8 @@ const fetchEvents = async () => {
     return data;
   } catch (error) {
     console.error('Error fetching events:', error);
-    return [];
+    return []; 
   }
 };
+
+export default fetchEvents;

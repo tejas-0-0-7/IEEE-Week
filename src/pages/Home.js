@@ -56,7 +56,7 @@ function Home() {
       setLoading(true);
       const fetchedEvents = await fetchEvents();
       console.log('fetchedEvents:', fetchedEvents);
-      setEvents(fetchedEvents);
+      setEvents(fetchedEvents||[]);
       }catch(error){
         setError(error);
       }finally{
@@ -65,7 +65,7 @@ function Home() {
     };
     loadEvents();
   }, []);
-
+    console.log('events after loading:', events);
   return (
     
     <div>
