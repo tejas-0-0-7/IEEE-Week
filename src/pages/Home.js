@@ -2,11 +2,9 @@ import React, { useEffect, useRef, useState } from 'react';
 import Navbaring from '../Components/Nav';
 import './Home.css';
 import Slider from '../Components/Slider.js';
-import './Slider.css';
 import fetchEvents from '../Components/data.js';
 import CountDown from '../Components/CountDown.js';
 import AboutUs from '../Components/about_us.js';
-import Overtheyears from '../Components/Overtheyears'; // Import the new component
 
 function Home() {
   const vantaRef = useRef(null);
@@ -33,12 +31,11 @@ function Home() {
     });
 
     const loadEvents = async () => {
-      try{
-      setLoading(true);
-      const fetchedEvents = await fetchEvents();
-      console.log('fetchedEvents:', fetchedEvents);
-      setEvents(fetchedEvents||[]);
-      }catch(error){
+      try {
+        setLoading(true);
+        const fetchedEvents = await fetchEvents();
+        setEvents(fetchedEvents || []);
+      } catch (error) {
         setError(error);
       } finally {
         setLoading(false);
@@ -47,44 +44,37 @@ function Home() {
 
     loadEvents();
   }, []);
-    console.log('events after loading:', events);
+
   return (
     <div>
       <Navbaring />
-
       <div className="countdown-container">
         <CountDown />
       </div>
       <h2 className="events-title">Events</h2>
-
-      <div className='center'>
-        {console.log('events:', events)}
+      <div className="center">
         <Slider data={events} activeSlide={5} />
       </div>
       
       <h2 className="flagship-title">Flagship Event</h2>
-
       <div className="flagship-container">
         <div className="flagship-event">
           <img src="/images/sod.jpeg" alt="Flagship Event Poster" className="poster" />
           <div className="description">
-            <h3>Event Name 1</h3>
-            <p>Short description about the first flagship event. Details about the event, time, and participants.</p>
+            <h3>The Nine Circles of Hell </h3>
+            <p>Join us for The Nine Circles of Hell, a thrilling non-technical flagship event by the BMSCE IEEE Student Branch! Inspired by Dante's Inferno, this immersive journey challenges participants with unique trials in each circle. Overcome the infernal obstacles to compete for exciting prizes! Are you ready to face the depths? Register now</p>
             <button className="know-more-button">Know More</button>
           </div>
         </div>
-
         <div className="flagship-event reverse">
+          <img src="/images/sod.jpeg" alt="Flagship Event Poster" className="poster" />
           <div className="description">
-            <h3>Event Name 2</h3>
-            <p>Short description about the second flagship event. Details about the event, time, and participants.</p>
+            <h3>TECH EXPO</h3>
+            <p>Join us at the Tech Expo, where innovation meets opportunity! This event will showcase a variety of companies presenting their cutting-edge products and solutions, creating a vibrant platform for networking and collaboration within the tech community. </p>
             <button className="know-more-button">Know More</button>
           </div>
-          <img src="/images/sod.jpeg" alt="Flagship Event Poster" className="poster" />
         </div>
-        <div>
         <AboutUs />
-        </div>
       </div>
     </div>
   );

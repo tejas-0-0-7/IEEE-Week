@@ -26,14 +26,22 @@
     margin-top: 100px;
     font-size: 5rem;
     font-weight: bold;
-    color: #81b9a2!important;
+    background: linear-gradient(90deg, #236e65, #7ecd73, #cff8d6); /* Gradient colors */
+    -webkit-background-clip: text; /* Clip the background to the text */
+    -webkit-text-fill-color: transparent; /* Make text color transparent for the gradient to show */
+    background-clip: text;
+    color: transparent;
     margin: 0px 0;
 }
 
 .ieee-week-dates {
     font-size: 4rem;
-    color: #81b9a2;
-    margin-bottom: 0px;
+    background: linear-gradient(90deg, #236e65, #7ecd73, #cff8d6);
+    -webkit-background-clip: text; /* Clip the background to the text */
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+    margin-bottom: 0px; 
 }
 
 /* Timer container styles */
@@ -113,6 +121,16 @@
 
 /* Responsive design for mobile */
 @media screen and (max-width: 480px) {
+    .countdown-container{
+        grid-template-columns: repeat(2, 1fr);
+        width: 100vw;
+    }
+    .ieee-week-dates{
+        margin-bottom: 3rem;
+    }
+    .timer{
+        width: 200% !important;
+    }
     .timer div {
         grid-template-columns: repeat(2, 1fr);
         margin-left: 1em;
@@ -122,7 +140,9 @@
     .colon {
         display: none; /* Hide colon */
     }
-
+    .HENRY{
+        margin-right: 2rem;
+    }
     /* Adjust font sizes for mobile */
     .HENRY p:first-child, .timer div span {
         font-size: 2.2em;

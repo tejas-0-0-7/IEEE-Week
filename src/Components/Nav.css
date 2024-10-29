@@ -1,8 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
-
-body{
-    
-}
 .bgu:after, .bgu:before{
     padding: 0;
     margin: 0;
@@ -12,7 +7,7 @@ body{
     background-color: rgba(0, 0, 0, 1) !important;
     color: white !important;
     /* position: fixed !important; */
-    font-family: 'Orbitron', sans-serif !important;
+    font-family: "Parata", serif;
 }
 .links{
     position: relative;
@@ -27,20 +22,21 @@ body{
     /* background: #d9dbdd; */
 }
 .btnnnn{
-    color: #fcd462 !important;
-    border-color: #fcd462 !important;
+    /* color: #7ecd73 !important;
+    border-color: #7ecd73 !important; */
+    background: linear-gradient(90deg, #236e65, #7ecd73, #cff8d6);
     margin-right: 15px;
 }
 .btnnnn:hover{
     color: #0a0a0a !important;
-    border-color: #fcd462 !important;
-    background-color: #fcd462 !important;
+    border-color: #7ecd73 !important;
+    background-color: #7ecd73 !important;
     box-shadow: rgb(25, 76, 135) !important;
 }
 .links:after {
     content: "";
     position: absolute;
-    background-color: #fcd462;
+    background-color: #7ecd73;
     height: 3px;
     width: 0;
     left: 0px;

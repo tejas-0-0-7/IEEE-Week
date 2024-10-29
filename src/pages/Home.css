@@ -1,190 +1,190 @@
-.net{
-  height:100%;
+/* General Styling */
+.net {
+  height: 100%;
   width: 100%;
   position: absolute;
-  left:0;
-  top:0;
-  z-index:-1;
+  left: 0;
+  top: 0;
+  z-index: -1;
 }
 
 body, html {
   margin: 0;
   padding: 0;
   height: 100%;
+  overflow-x: hidden;
 }
-.countdown-section {
-  display: flex;
-  flex-direction: column;
-  justify-content: center; /* Center vertically */
-  align-items: center; /* Center horizontally */
-  position: absolute; /* Position it over the video */
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 2; /* Ensure it appears above other content */
+.reverse {
+  display: flex !important;
+  flex-direction: row-reverse !important; 
+  align-items: center !important;
+}
+.reverse img{
+  margin-left: 2rem;
 }
 
-/* Video container styling */
-.video-container {
-  position: relative;
-  width: 100%;
-  height: 100vh; /* Full screen height */
-  overflow: hidden;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-/* Initial video styling */
-#video-initial {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover; /* Ensure the video covers the entire area */
-  z-index: 1; /* Appear on top initially */
-  display: none; /* Hidden by default */
-}
-
-/* Increase font size and adjust spacing for Events and Flagship Titles */
-.events-title, .flagship-title {
-  font-size: 3rem;
-  text-align: center;
-  color: #c1d9d8;
-  margin: 40px 0;
-}
-
-/* Center Slider for Events */
-.center {
-  padding: 20px 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-/* Shared styling for Events and Flagship Event containers */
-.flagship-container, .events-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 40px 50px;
-  margin: 0 auto;
-  gap: 50px; /* Spacing between events */
-}
-
-/* Shared styling for individual event cards (both Events and Flagship) */
-.flagship-event, .event-card {
-  display: flex;
-  flex-direction: row;
-  width: 100%;
-  max-width: 1200px;
-  border: 2px solid #428679;
-  border-radius: 10px; /* Rounded corners */
-  margin-bottom: 30px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth hover transition */
-  position: relative; /* Required for hover effects */
-}
-
-/* Image styling shared between Events and Flagship Event */
-.poster, .event-image {
-  flex: 0 0 300px;
-  height: 300px;
-  margin: 10px;
-  transition: transform 0.3s ease-in-out;
-  object-fit: cover;
-  border-radius: 5px; /* Rounded corners for images */
-}
-
-/* Description shared between Events and Flagship Event */
-.description {
-  flex: 1;
-  padding: 30px;
-  color: white;
-  background-color: rgba(0, 0, 0, 0.8);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  font-size: 1.5rem;
-  border-radius: 5px; /* Rounded corners */
-}
-
-/* Hover effects for both Events and Flagship Event */
-.flagship-event:hover .poster, .event-card:hover .event-image {
-  transform: scale(1.05);
-}
-
-.flagship-event:hover::before, .event-card:hover::before {
+.flagship-page::before {
   content: '';
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  z-index: -1; /* Place behind content */
-  animation: slide 0.5s forwards;
+  background: rgba(0, 0, 0, 0.6); /* Semi-transparent black overlay */
+  z-index: 0;
 }
 
-.flagship-event:hover, .event-card:hover {
-  box-shadow: 0 10px 30px 0, 0.2; /* Add shadow on hover */
+.flagship-container {
+  position: relative;
+  z-index: 1;
 }
 
-/* Responsive adjustments for small screens */
-@media (max-width: 768px) {
-  .flagship-event, .event-card {
-    flex-direction: column; /* Stack vertically */
-    align-items: center;
-  }
-
-  .poster, .event-image {
-    width: 100%;
-    height: auto;
-  }
-
-  .description {
-    text-align: center;
-    margin-top: 10px;
-  }
-
-  .events-title, .flagship-title {
-    font-size: 2rem; /* Adjust font size for mobile */
-  }
-
-  .flagship-container, .events-container {
-    padding: 20px;
-  }
-
-  /* Remove hover effects for smaller screens */
-  .flagship-event:hover .poster, .event-card:hover .event-image {
-    transform: none;
-  }
-
-  .flagship-event:hover::before, .event-card:hover::before {
-    animation: none;
-  }
-
-  .flagship-event:hover, .event-card:hover {
-    box-shadow: none; /* Remove the box-shadow on hover */
-  }
+/* Countdown Section Styling */
+.countdown-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
 }
 
-/* Shared button styling */
-.know-more-button {
-  background-color: black;
-  color: white;
-  border: 2px solid #fcd462;
-  padding: 5px 10px; /* Adjust padding for a tighter fit */
+/* Events and Flagship Styling Adjustments */
+.events-title, .flagship-title {
+  margin: 20px 0;
+  text-align: center;
+  font-size: 2rem;
+  color: #c1d9d8;
+}
+
+.flagship-event {
+  display: flex;
+  flex-direction: row;
+  width: 90%;
+  max-width: 1000px;
+  margin: 40px auto 20px;
+  padding: 15px;
+  border-radius: 8px;
+  overflow: hidden;
+  position: relative;
+  background: rgba(36, 40, 44, 0.8); /* Darker overlay for each event card */
+  transition: all 0.3s ease;
+  z-index: -1;
+}
+
+.flagship-event img {
+  width: 40%;
+  height: auto;
   border-radius: 5px;
-  font-size: 1rem;
-  
+  margin-right: 15px;
+}
+
+/* .flagship-event.reverse img {
+  margin-left: 15px;
+  margin-right: 0;
+} */
+
+/* Sliding Gradient Animation on Hover */
+.flagship-event::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: -100%; /* Start offscreen */
+  width: 200%; /* Width large enough to slide across */
+  height: 100%;
+  background: linear-gradient(90deg,rgba(0, 0, 0, 0.3) , rgba(0, 0, 0, 0.5), rgba(35, 110, 101, 0.3));
+  transition: all 0.5s ease;
+}
+.reverse::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%; /* Start offscreen */
+  width: 200%; /* Width large enough to slide across */
+  height: 100%;
+  background: linear-gradient(90deg,rgba(35, 110, 101, 0.3) , rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.3));
+  transition: all 0.5s ease;
+}
+.flagship-event:hover::before {
+  right: 0; /* Slide gradient across the event */
+}
+.reverse:hover::before {
+  left: 0; /* Slide gradient across the event */
+}
+.description {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex: 1;
+  line-height: 200%;
+  text-align: justify;
+  font-size: 1.0rem;
+  color: #cff8d6;
+  position: relative;
+  z-index: 1;
+}
+
+.know-more-button {
+  background-color: #236e65;
+  color: #cff8d6;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 5px;
+  font-size: 0.9rem;
   cursor: pointer;
+  display: inline-block;
   transition: background-color 0.3s ease;
-  width: auto !important; /* Let the button resize based on content */
-  display: inline-block !important; /* Ensures it only takes the space needed by its content */
+  align-self: flex-start;
+  position: relative;
+  z-index: 1;
 }
 
 .know-more-button:hover {
-  background-color: goldenrod;
-  color: black;
+  background-color: #cff8d6;
+  color: #236e65;
+}
+
+.footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background-color: #333; /* Optional for styling */
+  padding: 20px;
+  z-index: 1;
+}
+
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .flagship-event {
+    flex-direction: column !important;
+    align-items: center !important;
+    width: 100%;
+    padding: 10px;
+  }
+  
+  .flagship-event img {
+    width: 80%;
+    margin: 0 0 10px;
+  }
+  .description h3 {
+    text-align: center;
+    margin-top: 1rem;
+    margin-bottom: 3rem;
+  }
+  .know-more-button{
+    margin: auto !important;
+  }
+  .description {
+    margin: 1rem;
+    text-align: justify;
+  }
+
+  .events-title, .flagship-title {
+    font-size: 1.5rem;
+  }
 }

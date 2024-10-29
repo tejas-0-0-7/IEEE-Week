@@ -19,13 +19,12 @@ function Navbaring() {
             style={{ maxHeight: '100px' }}
             navbarScroll
           >
-            <Nav.Link href="/home" className='links'>Home</Nav.Link>
             <Nav.Link href="/meet" className='links'>Meet the Team</Nav.Link>
             <Nav.Link href="/events" className='links'>Events</Nav.Link>
             <Nav.Link href="/membership" className='links'>Membership</Nav.Link>
             <Nav.Link href="/contact" className='links'>Contact Us</Nav.Link>
           </Nav>
-          <Form className="d-flex">
+          {/* <Form className="d-flex">
             <Form.Control
               type="search"
               placeholder="Search"
@@ -33,7 +32,7 @@ function Navbaring() {
               aria-label="Search"
             />
             <Button variant="outline-success btnu" className='btnnnn'>Search</Button>
-          </Form>
+          </Form> */}
         </Navbar.Collapse>
       </Container>
     </Navbar>

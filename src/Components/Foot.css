@@ -1,41 +1,48 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron&display=swap');
+
 html, body {
   height: 100%;
   margin: 0;
 }
-  
+
 #root {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
 }
-  
+
 footer {
   margin-top: auto;
+  background-color: black; /* Change background to black */
+  color: white; /* Ensures text is white */
+  font-family: 'Roboto Mono', sans-serif !important;
 }
-.btnu a{
+
+.btnu a {
   border-radius: 33%;
   margin: 1px 5px;
   border: 2px solid #fff;
-  padding-bottom: 8px;
-  padding-top: 5px;
-  padding-left: 6px;
+  padding: 5px 6px; /* Adjust padding for consistency */
   color: white;
-  padding-right: 6px;
 }
-.btnu a:hover{
+
+.btnu a:hover {
   color: #333 !important;
   background-color: #7b611a;  
 }
+
 .iconu {
   color: white;
   transition: color 0.3s ease; 
 }
 
-.mb-478:hover{
+.mb-478:hover {
   color: #333 !important;
   background-color: #fff !important;
 }
-.mb-478{
+
+.mb-478 {
   width: 140px !important;
   height: 40px !important;
+  font-family: 'Roboto Mono', sans-serif !important;
 }

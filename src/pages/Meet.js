@@ -37,7 +37,7 @@ const Meet = () => {
 
                 {/* Execom Section */}
                 <header className="text-center my-4">
-                    <h1>Organizing</h1>
+                    <h1>Executive Committee</h1>
                 </header>
                 
                 {/* Execom Cards */}
@@ -112,7 +112,7 @@ const Meet = () => {
                 </Row>
 
                 <header className="text-center my-4">
-                    <h1>SAC</h1>
+                    <h1>SAC Coordinators</h1>
                 </header>
                 
                 <Row>
