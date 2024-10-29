@@ -27,11 +27,11 @@ const ContactUs = () => {
       if (response.status === 201) {
         alert("Message sent successfully!");
         // Do NOT reset the fields after successful submission
-        formData({
-          name: "",
-          email: "",
-          message: ""
-      });
+      //   formData({
+      //     name: "",
+      //     email: "",
+      //     message: ""
+      // });
 
       } else {
         alert('Error sending message. Please tr.');
