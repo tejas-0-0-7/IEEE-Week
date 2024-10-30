@@ -8,6 +8,7 @@
     text-align: center;
     margin: 0;
     padding: 0;
+    /* margin-top:2em; */
 }
 .countdown-content {
     display: flex;
@@ -41,7 +42,7 @@
     -webkit-text-fill-color: transparent;
     background-clip: text;
     color: transparent;
-    margin-bottom: 0px; 
+    /* margin-bottom: 2em;  */
 }
 
 /* Timer container styles */
