@@ -12,30 +12,40 @@ const EventSchema = new mongoose.Schema({
   image: {
     type: String,
     required: true,
-    get: (v) => `http://localhost:5000/images/${v}` 
+    get: (v) => `https://ieee-week.onrender.com/images/${v}` 
   },
   date: {
-    type: Date,
-    required: true,
-  },
-  venue: {
     type: String,
     required: true,
   },
-  time:{
+  time: {
     type: String,
     required: true,
+  },
+  price:{
+    type:String,
+    required:true,
+  },
+  priceIEEE:{
+    type:String,
+    required:true,
+  },
+  category: {
+    type: String,
+    required:true
   },
   registrationOpen: {
     type: Boolean,
     default: true,
   },
-  
-},
-{
-  toJSON: { getters: true },
-  toObject: { getters: true },
-}
-);
+  registrationForm: {
+    type: String,
+    required:true
+  },
+}, {
+  toJSON: { getters: true },  // Applying getters in JSON conversion
+  toObject: { getters: true } // Applying getters in object conversion
+  // Moved the options object outside of the schema fields to correct syntax
+});
 
 module.exports = mongoose.model('Event', EventSchema);

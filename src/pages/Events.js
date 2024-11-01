@@ -2,8 +2,7 @@ import React, { useState, useEffect } from 'react';
 import Navbaring from '../Components/Nav';
 import Footer from '../Components/Foot';
 import EventCard from '../Components/EventCard';
-import './Events.css'
-import EventRegistration from '../Components/EventRegistration';
+import './Events.css';
 import { MdCancel } from "react-icons/md";
 import fetchEvents from '../Components/data';
 
@@ -34,12 +33,16 @@ const Events = () => {
     const handleForm = (event) => {
         setSelectedEvent(event);
         setShowForm(true);
-    }
+    };
 
     const closeForm = () => {
         setShowForm(false);
         setSelectedEvent(null);
-    }
+    };
+
+    // Separate events into technical and non-technical categories
+    const technicalEvents = events.filter(event => event.category === "Technical");
+    const nonTechnicalEvents = events.filter(event => event.category === "Non-Technical");
 
     if (loading) return <div>Loading events...</div>;
     if (error) return <div>Error: {error}</div>;
@@ -48,28 +51,34 @@ const Events = () => {
         <div className="events">
             <header></header>
             <Navbaring />
+
             <div className={`events-page`}>
-                {events.length > 0 ? (
-                    events.map(event => (
-                        <EventCard key={event._id} event={event} onShowForm={handleForm} />
-                    ))
-                ) : (
-                    <div>No events available</div>
-                )}
-                {showForm && (
-                    <div className="modal">
-                        <div className="modal-content">
-                            <div className='cancel-btn'>
-                                <MdCancel style={{size:'100px'}} onClick={closeForm}/>
-                            </div>
-                            <EventRegistration event={selectedEvent} />
-                        </div>
-                    </div>
-                )}
+                <h1>Technical Events</h1>
+                <div className="events-section">
+                    {technicalEvents.length > 0 ? (
+                        technicalEvents.map(event => (
+                            <EventCard key={event._id} event={event} />
+                        ))
+                    ) : (
+                        <div>No technical events available</div>
+                    )}
+                </div>
+
+                <h1>Non-Technical Events</h1>
+                <div className="events-section">
+                    {nonTechnicalEvents.length > 0 ? (
+                        nonTechnicalEvents.map(event => (
+                            <EventCard key={event._id} event={event}/>
+                        ))
+                    ) : (
+                        <div>No non-technical events available</div>
+                    )}
+                </div>
             </div>
+
             <Footer />
         </div>
-     );
-}
- 
+    );
+};
+
 export default Events;

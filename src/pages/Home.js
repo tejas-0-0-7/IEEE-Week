@@ -35,6 +35,7 @@ function Home() {
         setLoading(true);
         const fetchedEvents = await fetchEvents();
         setEvents(fetchedEvents || []);
+        console.log(events)
       } catch (error) {
         setError(error);
       } finally {

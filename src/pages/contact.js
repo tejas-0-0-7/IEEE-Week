@@ -48,7 +48,7 @@ const ContactUs = () => {
     const formData = { name, email, message };
 
     try {
-      const response = await fetch("http://localhost:5000/api/contact", {
+      const response = await fetch(`${process.env.REACT_APP_API_URL}/api/contact`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -58,6 +58,9 @@ const ContactUs = () => {
 
       if (response.ok) {
         alert("Message sent successfully!");
+        setName("");
+        setEmail("");
+        setMessage("");
       } else {
         alert("Error sending message. Please try again.");
       }
