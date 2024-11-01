@@ -15,10 +15,6 @@ const EventSchema = new mongoose.Schema({
     get: (v) => `http://localhost:5000/images/${v}` 
   },
   date: {
-    type: Date,
-    required: true,
-  },
-  venue: {
     type: String,
     required: true,
   },
@@ -30,6 +26,9 @@ const EventSchema = new mongoose.Schema({
     type: Boolean,
     default: true,
   },
+  registrationForm:{
+    type:String,
+  }
   
 },
 {
