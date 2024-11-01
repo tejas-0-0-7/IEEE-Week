@@ -137,10 +137,52 @@ body {
 .message-form button:hover {
     background-color: #236e65; /* Darker accent on hover */
 }
+/* Tablet-specific styling */
+@media (min-width: 768px) and (max-width: 1024px) {
+    .contact-container {
+        padding-top: 20px;
+        padding-bottom: 40px;
+    }
+
+    .contact-card {
+        width: 85%; /* Make the contact card a bit smaller */
+        padding: 25px;
+    }
+
+    .contact-title {
+        font-size: 50px; /* Smaller font size for the title */
+        margin-bottom: 15px;
+        letter-spacing: 1.5px; /* Slightly reduced letter spacing */
+    }
+
+    .contact-description {
+        font-size: 13px; /* Slightly smaller font for description */
+        margin-bottom: 25px;
+        letter-spacing: 1.2px;
+    }
+
+    .message-form h2 {
+        font-size: 22px; /* Smaller form header */
+    }
+
+    .message-form input, .message-form textarea {
+        padding: 10px; /* Reduce padding */
+        font-size: 13px; /* Smaller text in inputs */
+        letter-spacing: 1px;
+    }
+
+    .message-form button {
+        font-size: 15px; /* Slightly smaller button text */
+        padding: 10px;
+        letter-spacing: 1.2px;
+    }
+}
 
 @media (max-width: 768px) {
     .contact-card {
         width: 90%;
+        margin-top: 8rem;
+        margin-bottom: 12rem;
     }
     .contact-container{
         margin-top: 20px;

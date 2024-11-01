@@ -117,7 +117,7 @@ const Meet = () => {
                         <h1  className="section-header">SAC Coordinators</h1>
                     </header>
                 </div>
-                    <Row>
+                    <Row className='team-row'>
                         <Col xs={12} sm={6} md={3}>
                             <Card className="team-card">
                                 <Card.Img variant="top" src="/images/aadhya.png" alt="Team Member 1" className="team-image" />

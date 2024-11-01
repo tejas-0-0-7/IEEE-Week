@@ -1,7 +1,8 @@
-body{
+body {
     background-color: black !important;
     letter-spacing: 0.05em;
 }
+
 .team-card {
     margin-bottom: 20px; 
     transition: transform 0.3s ease-in-out;
@@ -13,20 +14,23 @@ body{
     width: 250px;
     min-height: 350px;
     margin: 0 auto;
-    color: aliceblue!important;
-    background-color:black!important;
+    color: aliceblue !important;
+    background-color: black !important;
     border: #236e65 !important;
 }
 
 .team-card:hover {
     transform: translateY(-15px);
 }
+
 header.text-center.my-4 h1 {
     margin-top: 60px; /* Add space above the header */
 }
+
 header.text-center.my-4 + .team-card {
     margin-top: 60px; /* Space after the header */
 }
+
 .team-image {
     border-radius: 50%; 
     width: 120px; 
@@ -35,21 +39,18 @@ header.text-center.my-4 + .team-card {
     margin-bottom: 1rem; 
 }
 
-.team-name{
+.team-name {
     font-weight: 900 !important;
 }
+
 .team-name, .team-role {
     color: #cff8d6;
     transition: color 0.3s ease, text-shadow 0.3s ease;
     letter-spacing: 0.08em;
     margin: 0; /* Remove default margin */
-    white-space: nowrap; /* Prevent text from wrapping to the next line */
-    
+    white-space: nowrap; /* Prevent text from wrapping */
 }
 
-/* .team-card:hover .team-name, .team-card:hover .team-role {
-    color: white; /* Keeping the same color but adding glow 
-} */
 .card-body {
     display: flex;
     flex-direction: column;
@@ -62,7 +63,7 @@ h1 {
     margin-bottom: 100px;
     margin-top: 40px !important;
     background: linear-gradient(0deg, #236e65, #7ecd73, #cff8d6);
-    -webkit-background-clip: text; /* Clip the background to the text */
+    -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
     color: transparent;
@@ -71,8 +72,9 @@ h1 {
 
 .text-center {
     text-align: center;
-    color:aliceblue;
+    color: aliceblue;
 }
+
 .sponsor-marquee {
     width: 100%;
     overflow: hidden;
@@ -92,16 +94,16 @@ h1 {
 }
 
 .section-header {
-    display: inline-block; /* Ensure the border wraps around the text */
-    padding: 10px 20px; /* Add some padding for a better look */
-    border: 2px solid transparent; /* Set a transparent border to create space for the gradient */
-    background-image: linear-gradient(#236e65, #7ecd73, #cff8d6); /* Gradient background */
-    background-clip: border-box; /* Clip the background to the border */
-    color: transparent; /* Make the text transparent */
-    -webkit-background-clip: text; /* For Safari compatibility */
-    background-clip: text; /* For standard browsers */
-    font-weight: bold; /* Make the header bold */
-    letter-spacing: 0.05em; /* Optional: Adjust letter spacing */
+    display: inline-block;
+    padding: 10px 20px;
+    border: 2px solid transparent;
+    background-image: linear-gradient(#236e65, #7ecd73, #cff8d6);
+    background-clip: border-box;
+    color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+    font-weight: bold;
+    letter-spacing: 0.05em;
 }
 
 @keyframes marquee {
@@ -112,25 +114,57 @@ h1 {
         transform: translateX(-100%);
     }
 }
-@media (max-width: 768px) {
+
+/* Tablet media query */
+@media (min-width: 768px) and (max-width: 1024px) {
+    .col-md-3{
+        margin-right: 10rem;
+    }
     .team-card {
-        width: calc(80% 0px); /* Two cards per row */
+        width: 300px; /* Slightly wider for tablets */
     }
 
     .team-name, .team-role {
-        font-size: 1rem; /* Adjust font size if needed */
+        font-size: 1.1rem; /* Adjust font size */
     }
 
     h1 {
-        font-size: 2rem; /* Adjust header size for tablets */
+        font-size: 2.2rem; /* Adjust header size for tablets */
+        margin-bottom: 80px;
+        margin-top: 30px !important;
+    }
+
+    .sponsor-image {
+        width: 120px; /* Reduce sponsor image size for tablets */
+        margin: 0 20px;
+    }
+    .col-md-4 {
+        flex: 0 0 auto;
+        width: 33.33333333%;
+        margin-right: 7rem;
     }
 }
 
+/* Small screens media query */
+@media (max-width: 768px) {
+    .team-card {
+        /* width: calc(80% - 20px);  */
+        /* Adjust card width */
+        grid-template-columns: repeat(2,1fr);
+    }
 
-/* Phone media query remains unchanged */
+    .team-name, .team-role {
+        font-size: 1rem;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+}
+
+/* Phone media query */
 @media (max-width: 480px) {
     .team-card {
         margin: auto;
-     /* Responsive width on smaller screens */
     }
 }
