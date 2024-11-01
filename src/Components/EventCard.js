@@ -6,6 +6,7 @@ const EventCard = ({ event }) => {
 
   // Modified handleClick function to redirect to the registration link
   const handleClick = () => {
+    console.log("Registration link:", registrationLink);
     if (registrationLink) {
       window.location.href = registrationLink;
     } else {
