@@ -1,5 +1,5 @@
 import React from 'react';
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 
 const EventCard = ({ event, onShowForm }) => {
   const { name, description, image, date, time, venue } = event;
@@ -10,36 +10,38 @@ const EventCard = ({ event, onShowForm }) => {
 
   return (
     <StyledWrapper>
-      <div className="card">
-        <div className="content">
-          {/* Front of the card with the event poster */}
-          <div className="front">
-            <div className="img">
-            <img src={image || "/images/default-event.jpg"} alt={`${name} event poster`} />
-            </div>
-            <div className="front-content">
-              <small className="badge">Event</small>
-              <div className="title">
-                <strong>{name}</strong>
-              </div>
-            </div>
-          </div>
+      <div className="gradient-border">
+        <div className="card">
+          <div className="content">
+            {/* Front of the card with title and event poster */}
+            <div className="front">
+              <div className="front-content">
+                <div className="img">
+                <img src={image || "/images/default-event.jpg"} alt={`${name} event poster`} />
 
-          {/* Back of the card with event details */}
-          <div className="back">
-            <div className="back-content">
-              <p className="event-name"><strong>{name}</strong></p>
-              <div className="details">
-                <p className="event-date">
-                  <span>Date:</span> {new Date(date).toLocaleDateString()} <br />
-                  <span>Time:</span> {time}
-                </p>
-                <p className="event-venue">
-                  <span>Venue:</span> {venue}
-                </p>
+                </div>
               </div>
-              <p className="event-description">{description}</p>
-              <button className="register-button" onClick={handleClick}>Register</button>
+            </div>
+
+            {/* Back of the card with title, date/time, venue, and description */}
+            <div className="back">
+              <div className="back-content">
+                {/* Title prominently displayed */}
+                <p className="event-title"><strong>{name}</strong></p>
+
+                {/* Date, Time, and Venue in smaller font */}
+                <div className="event-details">
+                  <p><span>Date:</span> {new Date(date).toLocaleDateString()}</p>
+                  <p><span>Time:</span> {time}</p>
+                  <p><span>Venue:</span> {venue}</p>
+                </div>
+
+                {/* Event description */}
+                <p className="event-description">{description}</p>
+
+                {/* Register button styled as per your theme */}
+                <button className="register-button" onClick={handleClick}>Register</button>
+              </div>
             </div>
           </div>
         </div>
@@ -48,387 +50,157 @@ const EventCard = ({ event, onShowForm }) => {
   );
 };
 
+// Subtle pulse animation for the gradient border
+const pulseAnimation = keyframes`
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(35, 110, 101, 0.6);
+  }
+  50% {
+    box-shadow: 0 0 25px rgba(35, 110, 101, 1);
+  }`
+;
+
+
+
 const StyledWrapper = styled.div`
-  .card {
-    width:300px;
-    height:300px;
+  .gradient-border {
+    width: 350px; /* Set to 350px */
+    height: 350px; /* Set to 350px */
+    border-radius: 10px; /* Rounded corners for the gradient border */
+    background: linear-gradient(0deg, #236e65, #7ecd73, #cff8d6); /* Gradient border */
+    padding: 5px; /* Reduced padding to control border thickness */
+    animation: ${pulseAnimation} 2s infinite; /* Subtle animation */
+    display: flex;
+    align-items: center;
+    justify-content: center;
     position: relative;
   }
-  .img img {
+
+  .card {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    perspective: 1000px;
+    position: relative;
+    border: none; /* Removed the border */
+    border-radius: 10px; /* Ensure the card has the same rounded corners */
+    background-color: #81b9a2; /* Keep the front color here */
   }
-
 
   .content {
     width: 100%;
     height: 100%;
     transform-style: preserve-3d;
-    transition: transform 300ms;
-    box-shadow: 0px 0px 10px 1px #000000ee;
-    border-radius: 5px;
+    transition: transform 0.6s;
   }
 
   .front, .back {
-    background-color: #151515;
     position: absolute;
     width: 100%;
     height: 100%;
     backface-visibility: hidden;
-    -webkit-backface-visibility: hidden;
-    border-radius: 5px;
+    border-radius: 10px;
     overflow: hidden;
   }
-    .front {
-    transform: rotateY(0deg); 
-  }
-.back {
-    transform: rotateY(180deg); 
-    width: 100%;
-    height: 100%;
-    justify-content: center;
+
+  .front {
     display: flex;
+    flex-direction: column;
     align-items: center;
-    overflow: hidden;
+    justify-content: center;
     color: white;
-    padding: 15px;
-  }
-  
-  .title {
-    font-size: 1rem;
-    margin-top: 6px;
   }
 
   .back {
-    width: 100%;
-    height: 100%;
-    justify-content: center;
+    background-color: black; /* Changed to black for the backside */
+    transform: rotateY(180deg); 
     display: flex;
     align-items: center;
-    overflow: hidden;
+    padding: 10px; /* Adjusted padding for smaller size */
     color: white;
-    padding:15px;
+    position: relative;
   }
 
-  .back::before {
-    position: absolute;
-    content: ' ';
-    display: block;
-    width: 160px;
-    height: 160%;
-    background: linear-gradient(90deg, transparent, #ff9966, #ff9966, #ff9966, #ff9966, transparent);
-    animation: rotation_481 5000ms infinite linear;
+  /* Front content styling to match example */
+  .front-content {
+    text-align: center;
+    height: 100%; /* Ensures the front content fills the height */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Center content vertically */
+  }
+
+  .img {
+    width: 100%; /* Set to 100% to make the image fill the card */
+    height: 100%; /* Ensure the div is 100% height */
+    display: flex; /* Use flex to center the image */
+    justify-content: center;
+    align-items: center;
+    overflow: hidden; /* Hide any overflow */
+  }
+
+  .img img {
+    width: 100%; /* Fill the entire width */
+    height: 100%; /* Fill the entire height */
+    object-fit: cover; /* Ensures the image covers the area */
+    border-radius: 8px;
   }
 
   .back-content {
-    position: absolute;
-    width: 99%;
-    height: 99%;
-    background-color: #151515;
-    border-radius: 5px;
-    color: white;
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
-    gap: 20px;
-  }
-
-  .card:hover .content {
-    transform: rotateY(180deg);
-  }
-    .event-name {
-    font-size: 1rem;
-    margin-bottom: 8px;
+    gap: 10px;
     text-align: center;
   }
 
-  .details {
-    font-size: 0.85rem;
-    margin-bottom: 10px;
-    line-height: 1.5;
+  .event-title {
+    font-size: 1.4rem; /* Adjusted font size for smaller card */
+    margin-bottom: 8px;
+    color: #ffffff;
   }
 
-  .event-date, .event-venue {
-    margin: 5px 0;
-    font-weight: 300;
+  .event-details {
+    font-size: 0.75rem; /* Adjusted font size for smaller card */
+    color: #ffffffcc;
   }
 
-  .event-date span, .event-venue span {
+  .event-details span {
     font-weight: 500;
-    color: #ff9966;
+    color: #ffffff;
   }
 
   .event-description {
-    font-size: 0.8rem;
-    margin: 10px 0;
+    font-size: 0.85rem; /* Slightly increased font size for description */
     color: #ffffffcc;
-    text-align: center;
+    text-align: justify;
   }
 
   .register-button {
-    display: block;
-    width: 100%;
-    padding: 8px 0;
-    background-color: #ff9966;
-    color: white;
+    background: linear-gradient(90deg, #236e65, #7ecd73, #cff8d6);
+    color: black;
     border: none;
+    font-weight: 1000;
+    width: 100%; /* Set to 100% to make it fill the container */
+  padding: 12px 15px; /* Increase padding for a larger button */
     border-radius: 5px;
+    margin-top: 10px; /* Adjust margin for better spacing */
+    font-size: 1rem; /* Increased font size for button */
     cursor: pointer;
-    font-size: 0.9rem;
-    text-align: center;
+    display: inline-block;
+    transition: background-color 0.3s ease;
+    align-self: center; /* Center the button */
+    position: relative;
+    z-index: 1;
   }
 
   .register-button:hover {
-    background-color: #ff8866;
+    background: linear-gradient(270deg, #236e65, #7ecd73, #cff8d6);
+    color: black;
   }
 
-  @keyframes rotation_481 {
-    0% {
-      transform: rotateZ(0deg);
-    }
-
-    0% {
-      transform: rotateZ(360deg);
-    }
+  /* Apply flipping effect on hover */
+  .card:hover .content {
+    transform: rotateY(180deg);
   }
-
-
-  .front .front-content {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    padding: 10px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-  }
-
-  .front-content .badge {
-    background-color: #00000055;
-    padding: 2px 10px;
-    border-radius: 10px;
-    backdrop-filter: blur(2px);
-    width: fit-content;
-  }
-
-  .description {
-    box-shadow: 0px 0px 10px 5px #00000088;
-    width: 100%;
-    padding: 10px;
-    background-color: #00000099;
-    backdrop-filter: blur(5px);
-    border-radius: 5px;
-  }
-
-  .title {
-    font-size: 11px;
-    max-width: 100%;
-    display: flex;
-    justify-content: space-between;
-  }
-
-  .title p {
-    width: 50%;
-  }
-
-  .card-footer {
-    color: #ffffff88;
-    margin-top: 5px;
-    font-size: 8px;
-  }
-
-  .front .img {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center;
-  }
-
-  .circle {
-    width: 90px;
-    height: 90px;
-    border-radius: 50%;
-    background-color: #ffbb66;
-    position: relative;
-    filter: blur(15px);
-    animation: floating 2600ms infinite linear;
-  }
-
-  #bottom {
-    background-color: #ff8866;
-    left: 50px;
-    top: 0px;
-    width: 150px;
-    height: 150px;
-    animation-delay: -800ms;
-  }
-
-
-  @keyframes floating {
-    0% {
-      transform: translateY(0px);
-    }
-
-    50% {
-      transform: translateY(10px);
-    }
-
-    100% {
-      transform: translateY(0px);
-    }
-  };
-
-
-.content {
-  width: 100%;
-  height: 100%;
-  transform-style: preserve-3d;
-  transition: transform 300ms;
-  box-shadow: 0px 0px 10px 1px #000000ee;
-  border-radius: 5px;
-}
-
-.front, .back {
-  background-color: #151515;
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  backface-visibility: hidden;
-  -webkit-backface-visibility: hidden;
-  border-radius: 5px;
-  overflow: hidden;
-}
-
-.back {
-  width: 100%;
-  height: 100%;
-  justify-content: center;
-  display: flex;
-  align-items: center;
-  overflow: hidden;
-}
-
-.back::before {
-  position: absolute;
-  content: ' ';
-  display: block;
-  width: 160px;
-  height: 160%;
-  background: linear-gradient(90deg, transparent, #ff9966, #ff9966, #ff9966, #ff9966, transparent);
-  animation: rotation_481 5000ms infinite linear;
-}
-
-.back-content {
-  position: absolute;
-  width: 99%;
-  height: 99%;
-  background-color: #151515;
-  border-radius: 5px;
-  color: white;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 30px;
-}
-
-.card:hover .content {
-  transform: rotateY(180deg);
-}
-
-@keyframes rotation_481 {
-  0% {
-    transform: rotateZ(0deg);
-  }
-
-  0% {
-    transform: rotateZ(360deg);
-  }
-}
-
-.front .front-content {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  padding: 10px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-
-.front-content .badge {
-  background-color: #00000055;
-  padding: 2px 10px;
-  border-radius: 10px;
-  backdrop-filter: blur(2px);
-  width: fit-content;
-}
-
-.description {
-  box-shadow: 0px 0px 10px 5px #00000088;
-  width: 100%;
-  padding: 10px;
-  background-color: #00000099;
-  backdrop-filter: blur(5px);
-  border-radius: 5px;
-}
-
-.title {
-  font-size: 11px;
-  max-width: 100%;
-  display: flex;
-  justify-content: space-between;
-}
-
-.title p {
-  width: 50%;
-}
-
-.card-footer {
-  color: #ffffff88;
-  margin-top: 5px;
-  font-size: 8px;
-}
-
-.front .img {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center;
-}
-
-.circle {
-  width: 90px;
-  height: 90px;
-  border-radius: 50%;
-  background-color: #ffbb66;
-  position: relative;
-  filter: blur(15px);
-  animation: floating 2600ms infinite linear;
-}
-
-#bottom {
-  background-color: #ff8866;
-  left: 50px;
-  top: 0px;
-  width: 150px;
-  height: 150px;
-  animation-delay: -800ms;
-}
-
-#right {
-  background-color: #ff2233;
-  left: 160px;
-  top: -80px;
-  width: 30px;
-  height: 30px;
-  animation-delay: -1800ms;
-}
-
-}`
-
-  export default EventCard;
+`;
+export default EventCard;
