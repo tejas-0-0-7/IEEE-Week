@@ -60,7 +60,7 @@ function Home() {
       <h2 className="flagship-title">Flagship Event</h2>
       <div className="flagship-container">
         <div className="flagship-event">
-          <img src="/images/sod.jpeg" alt="Flagship Event Poster" className="poster" />
+          <img src="/images/NCOH.jpg" alt="Flagship Event Poster" className="poster" />
           <div className="description">
             <h3>The Nine Circles of Hell </h3>
             <p>Join us for The Nine Circles of Hell, a thrilling non-technical flagship event by the BMSCE IEEE Student Branch! Inspired by Dante's Inferno, this immersive journey challenges participants with unique trials in each circle. Overcome the infernal obstacles to compete for exciting prizes! Are you ready to face the depths? Register now</p>
@@ -68,10 +68,11 @@ function Home() {
           </div>
         </div>
         <div className="flagship-event reverse">
-          <img src="/images/sod.jpeg" alt="Flagship Event Poster" className="poster" />
+          <img src="/images/API.jpg" alt="Flagship Event Poster" className="poster" />
           <div className="description">
-            <h3>Tech Expo</h3>
-            <p>Join us at the Tech Expo, where innovation meets opportunity! This event will showcase a variety of companies presenting their cutting-edge products and solutions, creating a vibrant platform for networking and collaboration within the tech community. </p>
+            <h3>API and REST</h3>
+            <p>
+            Join us at the API Workshop, where connectivity meets innovation! This hands-on session covers API essentials, including REST architecture, design, testing, and security. Perfect for developers and tech enthusiasts looking to enhance their skills and network within the tech community. </p>
             <button className="know-more-button">Know More</button>
           </div>
         </div>
