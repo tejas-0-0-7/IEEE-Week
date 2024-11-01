@@ -11,7 +11,11 @@
     font-size: 2.5rem;
     margin-bottom: 20px !important;
     font-weight: 1000;
-    color: #bfedc8; /* Gold color for the heading */
+    background: linear-gradient(0deg, #236e65, #7ecd73, #cff8d6); /* Gradient colors */
+    -webkit-background-clip: text; /* Clip the background to the text */
+    -webkit-text-fill-color: transparent; /* Make text color transparent for the gradient to show */
+    background-clip: text; /* For other browsers */
+    color: transparent;/* Gold color for the heading */
   }
   
   .about-us-container p {
@@ -28,6 +32,6 @@
     }
     .about-us-container P{
       margin: 0px 2px !important;
-      font-size: 0.6rem;
+      font-size: 0.8rem;
     }
   }
