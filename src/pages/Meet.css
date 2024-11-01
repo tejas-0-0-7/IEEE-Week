@@ -147,6 +147,7 @@ h1 {
 
 /* Small screens media query */
 @media (max-width: 768px) {
+    /* Apply grid structure for team cards */
     .team-card {
         /* width: calc(80% - 20px);  */
         /* Adjust card width */
@@ -162,7 +163,8 @@ h1 {
     }
 }
 
-/* Phone media query */
+
+/* Phone media query remains unchanged */
 @media (max-width: 480px) {
     .team-card {
         margin: auto;

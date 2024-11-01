@@ -7,6 +7,16 @@
         align-content: center;
     
 }
+.events-section{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: stretch;
+    align-content: space-evenly;
+    margin:20px;
+  
+}
       .modal {
         position: fixed !important;
         top: 0 !important;
@@ -27,9 +37,6 @@
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2) !important;
         width: 100% !important;
         max-width: 600px !important;
-      }
-      .cancel-btn svg{
-        color:#ffd700
       }
       h1 {
         font-size: 2.5rem;
