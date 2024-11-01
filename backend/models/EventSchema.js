@@ -12,7 +12,7 @@ const EventSchema = new mongoose.Schema({
   image: {
     type: String,
     required: true,
-    get: (v) => `https://ieee-week.onrender.com/images/${v}` 
+    get: (v) => https://ieee-week.onrender.com/images/${v} 
   },
   date: {
     type: String,
@@ -21,6 +21,14 @@ const EventSchema = new mongoose.Schema({
   time: {
     type: String,
     required: true,
+  },
+  price:{
+    type:String,
+    required:true,
+  },
+  priceIEEE:{
+    type:String,
+    required:true,
   },
   category: {
     type: String,
