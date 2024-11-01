@@ -1,13 +1,22 @@
-import React,{useState} from 'react'
-import '../pages/Slider.css'
+import React, { useState } from 'react';
+import '../pages/Slider.css';
+
 export default (props) => {
-  console.log(props);
   const [activeSlide, setactiveSlide] = useState(props.activeSlide || 0);
-  if(!props.data || props.data.length === 0){
+
+  if (!props.data || props.data.length === 0) {
     return <div>Loading...</div>;
   }
+	
   const handleSlideClick = (index) => {
     setactiveSlide(index); 
+  };
+
+  // Updated function for handling double-click to open link in a new tab
+  const handleDoubleClick = (registrationForm) => {
+    if (registrationForm) {
+      window.open(registrationForm, '_blank'); // Open the link in a new tab
+    }
   };
 
   const next = () =>
@@ -17,71 +26,54 @@ export default (props) => {
 
   const getStyles = (index) => {
     if (activeSlide === index) {
-      // Center card (fully visible)
       return {
         opacity: 1,
         transform: "translateX(0px) translateZ(0px) rotateY(0deg)",
         zIndex: 10
       };
-    } 
-    else if (activeSlide - 1 === index) {
-      // First card to the left
+    } else if (activeSlide - 1 === index) {
       return {
         opacity: 1,
         transform: "translateX(-240px) translateZ(-300px) rotateY(30deg)",
         zIndex: 9
       };
-    } 
-    else if (activeSlide + 1 === index) {
-      // First card to the right
+    } else if (activeSlide + 1 === index) {
       return {
         opacity: 1,
         transform: "translateX(240px) translateZ(-300px) rotateY(-30deg)",
         zIndex: 9
       };
-    } 
-    else if (activeSlide - 2 === index) {
-      // Second card to the left (wider angle, further back)
+    } else if (activeSlide - 2 === index) {
       return {
         opacity: 1,
         transform: "translateX(-480px) translateZ(-400px) rotateY(45deg)",
         zIndex: 8
       };
-    } 
-    else if (activeSlide + 2 === index) {
-      // Second card to the right (wider angle, further back)
+    } else if (activeSlide + 2 === index) {
       return {
         opacity: 1,
         transform: "translateX(480px) translateZ(-400px) rotateY(-45deg)",
         zIndex: 8
       };
-    } 
-    else if (activeSlide - 3 === index) {
-      // Third card to the left (even wider angle, even further back)
+    } else if (activeSlide - 3 === index) {
       return {
         opacity: 1,
         transform: "translateX(-720px) translateZ(-500px) rotateY(60deg)",
         zIndex: 7
       };
-    } 
-    else if (activeSlide + 3 === index) {
-      // Third card to the right (even wider angle, even further back)
+    } else if (activeSlide + 3 === index) {
       return {
         opacity: 1,
         transform: "translateX(720px) translateZ(-500px) rotateY(-60deg)",
         zIndex: 7
       };
-    } 
-    else if (index < activeSlide - 3) {
-      // Cards further left (barely visible)
+    } else if (index < activeSlide - 3) {
       return {
         opacity: 1,
         transform: "translateX(-960px) translateZ(-600px) rotateY(75deg)",
         zIndex: 6
       };
-    } 
-    else if (index > activeSlide + 3) {
-      // Cards further right (barely visible)
+    } else if (index > activeSlide + 3) {
       return {
         opacity: 1,
         transform: "translateX(960px) translateZ(-600px) rotateY(-75deg)",
@@ -89,22 +81,20 @@ export default (props) => {
       };
     }
   };
-  
-  
+
   return (
     <>
       {/* carousel */}
       <div className="slideC">
-        {console.log('props.data:', props.data)}  
-        {props.data && props.data.map((item, i) => (  // Add null check
+        {props.data && props.data.map((item, i) => (
           <React.Fragment key={item.id}>
-            {console.log('Rendering item:', item)}
             <div
               className="slide"
               style={{
                 ...getStyles(i)
               }}
               onClick={() => handleSlideClick(i)}
+              onDoubleClick={() => handleDoubleClick(item.registrationForm)} // Double-click handler for new tab
             >
               <SliderContent {...item} />
             </div>
@@ -130,9 +120,8 @@ const SliderContent = (props) => {
         width:"100%",
         objectFit:"cover",
         borderRadius: "12px",
-      }}>
+      }} alt="slide content">
       </img>
     </div>
   );
 };
-

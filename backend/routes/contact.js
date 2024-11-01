@@ -4,7 +4,7 @@ const Contact = require('../models/contact');
 
 // POST /api/contact - Submit contact form
 router.post('/contact', async (req, res) => {  // Notice it's just '/contact' now
-    console.log(req.body);  // For debugging, remove in production
+    // console.log(req.body); For debugging, remove in production
 
     const { name, email, message } = req.body;
 

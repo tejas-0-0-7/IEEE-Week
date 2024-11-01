@@ -5,9 +5,9 @@ const EventCard = ({ event }) => {
   const { name, description, image, date, time,price, priceIEEE,category,registrationOpen, registrationForm} = event;
   // Modified handleClick function to redirect to the registration link
   const handleClick = () => {
-    console.log("Registration link:", registrationForm);
+    // console.log("Registration link:", registrationForm);
     if (registrationForm) {
-      window.location.href = registrationForm;
+      window.open(registrationForm, '_blank');
     } else {
       console.warn("Registration link is not provided");
     }
@@ -83,7 +83,6 @@ const StyledWrapper = styled.div`
     width: 100%;
     height: 100%;
     border-radius: 8px;
-    background: rgba(35, 110, 101, 0.2);
     overflow: visible; /* Set overflow to visible to prevent clipping */
     display: flex;
     flex-direction: column;
