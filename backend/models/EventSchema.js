@@ -22,6 +22,14 @@ const EventSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
+  price:{
+    type:String,
+    required:true,
+  },
+  priceIEEE:{
+    type:String,
+    required:true,
+  },
   category: {
     type: String,
     required:true
