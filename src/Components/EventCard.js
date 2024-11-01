@@ -37,8 +37,8 @@ const EventCard = ({ event }) => {
                 <div className="event-details">
                   <span>{date}</span>
                   <span>{time}</span> 
-                  <span>{priceIEEE}</span> for IEEE Members<br></br>
-                  <span>{price}</span> for Non-IEEE Members
+                  <span>{priceIEEE}  for IEEE Members</span>
+                  <span>{price} for Non-IEEE Members</span>
                 </div>
 
                 {/* Event description */}
