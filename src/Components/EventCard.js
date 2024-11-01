@@ -69,28 +69,30 @@ const pulseAnimation = keyframes`
 const StyledWrapper = styled.div`
   .gradient-border {
     width: 400px; 
-    height: 450px; /* Increased height for more content space */
-    border-radius: 10px;
-    background: linear-gradient(0deg, #236e65, #7ecd73, #236e65);
+    height: 400px;
     padding: 5px;
-    animation: ${pulseAnimation} 2s infinite;
+    background: linear-gradient(0deg, #236e65, #7ecd73, #236e65);
+    border-radius: 10px;
     display: flex;
     align-items: center;
     justify-content: center;
-    position: relative;
+    margin-bottom: 20px; /* Added margin-bottom to create space between cards */
   }
 
   .card {
     width: 100%;
     height: 100%;
-    perspective: 1000px;
-    position: relative;
-    border-radius: 10px;
+    border-radius: 8px;
     background: rgba(35, 110, 101, 0.2);
-    margin: 15px;
-    overflow: visible; /* Allow overflow content to be shown */
+    overflow: visible; /* Set overflow to visible to prevent clipping */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 0.6s;
   }
-
   .content {
     width: 100%;
     height: 100%;
@@ -158,13 +160,13 @@ const StyledWrapper = styled.div`
   }
 
   .event-title {
-    font-size: 1.8rem; /* Larger font size */
+    font-size: 1.2rem; /* Larger font size */
     margin-bottom: 10px;
     color: #ffffff;
   }
 
   .event-details {
-    font-size: 1rem; /* Larger font size */
+    font-size: 0.85rem; /* Larger font size */
     color: #ffffffcc;
     margin-top: 10px; /* Add spacing between details */
   }
@@ -177,7 +179,7 @@ const StyledWrapper = styled.div`
   }
 
   .event-description {
-    font-size: 1.1rem; /* Larger font for better readability */
+    font-size: 0.9rem; /* Larger font for better readability */
     color: #ffffffcc;
     text-align: justify;
     margin: 10px 0; /* Margins for spacing */
