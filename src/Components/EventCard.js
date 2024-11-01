@@ -1,11 +1,16 @@
 import React from 'react';
 import styled, { keyframes } from 'styled-components';
 
-const EventCard = ({ event, onShowForm }) => {
-  const { name, description, image, date, time, venue } = event;
+const EventCard = ({ event }) => {
+  const { name, description, image, date, time, venue, registrationLink } = event;
 
+  // Modified handleClick function to redirect to the registration link
   const handleClick = () => {
-    onShowForm(event);
+    if (registrationLink) {
+      window.location.href = registrationLink;
+    } else {
+      console.warn("Registration link is not provided");
+    }
   };
 
   return (
@@ -17,8 +22,7 @@ const EventCard = ({ event, onShowForm }) => {
             <div className="front">
               <div className="front-content">
                 <div className="img">
-                <img src={image || "/images/default-event.jpg"} alt={`${name} event poster`} />
-
+                  <img src={image || "/images/default-event.jpg"} alt={`${name} event poster`} />
                 </div>
               </div>
             </div>
@@ -39,7 +43,7 @@ const EventCard = ({ event, onShowForm }) => {
                 {/* Event description */}
                 <p className="event-description">{description}</p>
 
-                {/* Register button styled as per your theme */}
+                {/* Register button redirects to external link */}
                 <button className="register-button" onClick={handleClick}>Register</button>
               </div>
             </div>
@@ -49,7 +53,6 @@ const EventCard = ({ event, onShowForm }) => {
     </StyledWrapper>
   );
 };
-
 // Subtle pulse animation for the gradient border
 const pulseAnimation = keyframes`
   0%, 100% {
