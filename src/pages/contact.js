@@ -52,6 +52,9 @@ const ContactUs = () => {
 
       if (response.status === 201) {
         alert("Message sent successfully!");
+        setName("");
+        setEmail("");
+        setMessage("");
       } else {
         alert("Error sending message. Please try again.");
         console.error("Error:", result.error);
