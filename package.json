@@ -49,6 +49,6 @@
     ]
   },
   "devDependencies": {
-    "@types/three": "^0.169.0"
+    "@babel/plugin-proposal-private-property-in-object": "^7.21.11"
   }
 }

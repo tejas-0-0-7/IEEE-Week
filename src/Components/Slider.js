@@ -1,4 +1,5 @@
 import React,{useState} from 'react'
+import '../pages/Slider.css'
 export default (props) => {
   console.log(props);
   const [activeSlide, setactiveSlide] = useState(props.activeSlide || 0);

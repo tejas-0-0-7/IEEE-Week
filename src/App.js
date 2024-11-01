@@ -6,9 +6,25 @@ import Meet from './pages/Meet';
 import Membership from './pages/Membership';
 import Membershipone from './pages/Membershipact';
 import Nopage from './pages/nopage';
+// import Loader from './Components/loader'; 
 import './App.css';
 
+
 function App() {
+  // const [loading, setLoading] = useState(true);
+
+  // useEffect(() => {
+  //   const timer = setTimeout(() => {
+  //     setLoading(false);
+  //   }, 2000); // Simulate a loading delay
+
+  //   return () => clearTimeout(timer);
+  // }, []);
+
+  // if (loading) {
+  //   return <Loader />;
+  // }
+
   return (
     <div>
       <BrowserRouter>

@@ -56,6 +56,10 @@ body, html {
 }
 
 /* Events and Flagship Styling Adjustments */
+.events-title{
+  margin-top: 3em;
+  margin-bottom: -1rem;
+}
 .events-title, .flagship-title {
   margin: 20px 0;
   text-align: center;

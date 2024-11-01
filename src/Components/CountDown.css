@@ -8,6 +8,7 @@
     text-align: center;
     margin: 0;
     padding: 0;
+    /* margin-top:2em; */
 }
 .countdown-image {
     width: 200%; /* Responsive width */
