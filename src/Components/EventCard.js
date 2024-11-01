@@ -2,7 +2,7 @@ import React from 'react';
 import styled, { keyframes } from 'styled-components';
 
 const EventCard = ({ event }) => {
-  const { name, description, image, date, time, category,registrationOpen, registrationLink } = event;
+  const { name, description, image, date, time,price, priceIEEE,category,registrationOpen, registrationLink } = event;
 
   // Modified handleClick function to redirect to the registration link
   const handleClick = () => {
@@ -36,8 +36,10 @@ const EventCard = ({ event }) => {
 
                 {/* Date, Time, and Venue in smaller font */}
                 <div className="event-details">
-                  <p><span>Date:</span> {date}</p>
-                  <p><span>Time:</span> {time}</p>
+                  <span>{date}</span>
+                  <span>{time}</span> 
+                  <p><span>{priceIEEE}</span>for IEEE Members</p>
+                  <p><span>{price}</span>for Non-IEEE Members</p>
                 </div>
 
                 {/* Event description */}
