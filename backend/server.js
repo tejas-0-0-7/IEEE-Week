@@ -17,7 +17,10 @@ connectDB()
   .catch((err) => console.error("MongoDB connection error:", err));
 
 // Middleware
-app.use(cors());
+
+app.use(cors({
+  origin: 'https://ieeeweek.netlify.app', // Replace with your actual Netlify URL
+}));
 app.use(express.json());
 
 // Routes
