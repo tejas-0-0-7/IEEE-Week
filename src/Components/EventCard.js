@@ -2,13 +2,13 @@ import React from 'react';
 import styled, { keyframes } from 'styled-components';
 
 const EventCard = ({ event }) => {
-  const { name, description, image, date, time,price, priceIEEE,category,registrationOpen, registrationLink } = event;
+  const { name, description, image, date, time,price, priceIEEE,category,registrationOpen, registrationForm } = event;
 
   // Modified handleClick function to redirect to the registration link
   const handleClick = () => {
-    console.log("Registration link:", registrationLink);
-    if (registrationLink) {
-      window.location.href = registrationLink;
+    console.log("Registration link:", registrationForm);
+    if (registrationForm) {
+      window.location.href = registrationForm;
     } else {
       console.warn("Registration link is not provided");
     }
