@@ -1,6 +1,7 @@
 import React, { useEffect, useState, useRef } from "react";
 import "./CountDown.css";
 
+
 const CountDown = () => {
     const [timerDays, setTimerDays] = useState('00');
     const [timerHours, setTimerHours] = useState('00');
@@ -41,39 +42,38 @@ const CountDown = () => {
 
     return (
         <section className="countdown-container">
-            <div className="border-grad">
-                <div className="countdown-header">
-                    <picture>
-                        <source media="(max-width: 768px)" srcSet="/images/small.png" />
-                        <img src="/images/large.png" alt="IEEE Week 2024" className="countdown-image" />
-                    </picture>
-                    <h3 className="ieee-week-dates">11th to 15th November</h3>
-                </div>
-                <section className="timer-container">
-                    <section className="timer">
-                        <div className="timer-body">
-                            <section className="HENRY">
-                                <p>{timerDays}</p>
-                                <p><small>Days</small></p>
-                            </section>
-                            <span>:</span>
-                            <section className="HENRY">
-                                <p>{timerHours}</p>
-                                <p><small>Hours</small></p>
-                            </section>
-                            <span>:</span>
-                            <section className="HENRY">
-                                <p>{timerMinutes}</p>
-                                <p><small>Minutes</small></p>
-                            </section>
-                            <span>:</span>
-                            <section className="HENRY">
-                                <p>{timerSeconds}</p>
-                                <p><small>Seconds</small></p>
-                            </section>
-                        </div>
-                    </section>
+           <div classname="border-grad"> <div className="countdown-header">
+            <picture>
+                    <source media="(max-width: 768px)" srcSet="/images/small.png" />
+                    <img src="/images/large.png" alt="IEEE Week 2024" className="countdown-image" />
+                </picture>
+                <h3 className="ieee-week-dates">11th to 15th November</h3>
+            </div>
+            <section className="timer-container">
+                <section className="timer">
+                    <div className="timer-body">
+                        <section className="HENRY">
+                            <p>{timerDays}</p>
+                            <p><small>Days</small></p>
+                        </section>
+                        <span>:</span>
+                        <section className="HENRY">
+                            <p>{timerHours}</p>
+                            <p><small>Hours</small></p>
+                        </section>
+                        <span>:</span>
+                        <section className="HENRY">
+                            <p>{timerMinutes}</p>
+                            <p><small>Minutes</small></p>
+                        </section>
+                        <span>:</span>
+                        <section className="HENRY">
+                            <p>{timerSeconds}</p>
+                            <p><small>Seconds</small></p>
+                        </section>
+                    </div>
                 </section>
+            </section>
             </div>
         </section>
     ); 

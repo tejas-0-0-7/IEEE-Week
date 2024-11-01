@@ -1,3 +1,39 @@
-.mem{
-    color: azure;
+body, html {
+    height: 100%; /* Ensure the body takes the full height */
+    margin: 0; /* Remove default margin */
+}
+
+.main-container {
+    display: flex; /* Enable flexbox */
+    flex-direction: column; /* Arrange children vertically */
+    min-height: 100vh; /* Full height of the viewport */
+}
+
+.content {
+    flex-grow: 1; /* Allow content to grow and take available space */
+    margin-top: 60px; /* Margin for the fixed navbar */
+    padding: 20px; /* Optional padding */
+    color: azure; /* Text color */
+}
+
+/* Media Queries */
+@media screen and (max-width: 768px) {
+    .content {
+        margin-top: 50px; /* Adjust for smaller screens */
+        padding: 15px; /* Optional: Reduce padding for smaller screens */
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .content {
+        margin-top: 400px !important; /* Further adjust for very small screens */
+        padding: 10px; /* Reduce padding if needed */
+    }
+}
+
+.footer {
+    background-color: #000; /* Example footer background color */
+    color: white; /* Footer text color */
+    padding: 20px; /* Example footer padding */
+    text-align: center; /* Center text */
 }

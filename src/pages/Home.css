@@ -186,7 +186,10 @@ body, html {
     width: 100%;
     padding: 10px;
   }
-  
+  .events-title, .flagship-title {
+    margin: 80px auto 40px auto;
+    font-size: 2.6rem !important;
+  }
   .flagship-event img {
     width: 80%;
     margin: 0 0 10px;

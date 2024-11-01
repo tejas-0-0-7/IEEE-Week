@@ -12,7 +12,7 @@ const Meet = () => {
                 {/* Faculty Coordinators */}
                 <div className="section-1">
                     <header className="text-center mb-4">
-                        <h1>Faculty Coordinators</h1>
+                        <h1  className="section-header">Faculty Coordinators</h1>
                     </header>
                 </div>
                     <Row className="justify-content-center">
@@ -39,7 +39,7 @@ const Meet = () => {
                 {/* Executive Committee Section */}
                 <div className="section-2">
                     <header className="text-center my-4">
-                        <h1>Executive Committee</h1>
+                        <h1  className="section-header">Executive Committee</h1>
                     </header>
                 </div>
                     <Row>
@@ -114,7 +114,7 @@ const Meet = () => {
                 {/* SAC Coordinators Section */}
                 <div className="section-3">
                     <header className="text-center my-4">
-                        <h1>SAC Coordinators</h1>
+                        <h1  className="section-header">SAC Coordinators</h1>
                     </header>
                 </div>
                     <Row>

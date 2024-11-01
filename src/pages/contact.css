@@ -1,14 +1,41 @@
-.birds{
+.birds {
     height: 100%;
-  width: 100%;
-  position: absolute;
-  left: 0;
-  top: 0;
-  z-index: -1;
+    width: 100%;
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: -1;
+    pointer-events: none !important; 
 }
+
 body {
     background-color: #000000 !important; /* Full black background */
 }
+.custom-error {
+    background: linear-gradient(45deg, #ff6a6a, #ff4d4d); /* Gradient background */
+    color: #fff; /* Text color */
+    padding: 6px 12px; /* Padding */
+    border-radius: 4px; /* Rounded corners */
+    font-size: 0.85em; /* Font size */
+    margin-top: 5px; /* Space above the error message */
+    display: inline-block;
+  }
+  
+  .input-group {
+    margin-bottom: 15px;
+  }
+  
+  input, textarea {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  input:focus, textarea:focus {
+    border-color: #6aaf72; /* Focus border color */
+  }
+  
 
 .contact-container {
     display: flex;
@@ -17,6 +44,7 @@ body {
     min-height: 90vh;
     padding-top: 10px;
     padding-bottom: 50px;
+    z-index: 1 !important;
 }
 
 .contact-card {
@@ -27,6 +55,7 @@ body {
     padding: 30px;
     position: relative;
     box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.3); /* Subtle shadow */
+    z-index: 2 !important;
 }
 
 .contact-title {
@@ -51,9 +80,10 @@ body {
 }
 
 .message-form {
-    background-color: rgba(255, 255, 255, 0.1); /* Transparent form background */
+    background-color: rgba(0, 0, 0, 0.8); /* Transparent form background */
     padding: 20px;
     border-radius: 10px;
+    z-index: 100 !important;
 }
 
 .message-form h2 {
@@ -111,5 +141,12 @@ body {
 @media (max-width: 768px) {
     .contact-card {
         width: 90%;
+    }
+    .contact-container{
+        margin-top: 20px;
+        margin-bottom: -200px;
+    }
+    .contact-title{
+        margin-top: -140px !important;
     }
 }

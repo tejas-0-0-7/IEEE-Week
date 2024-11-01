@@ -8,6 +8,7 @@
     color: white !important;
     /* position: fixed !important; */
     font-family: "Parata", serif;
+    position: fixed;
 }
 .links{
     position: relative;
@@ -49,3 +50,66 @@
 .links:hover:after{
     width: 100%;
 }
+
+
+  @media screen and (max-width: 768px) {
+    .navbar-toggler {
+        border-color: #7ecd73 !important; /* Change hamburger border color */
+    }
+
+    .navbar-toggler-icon {
+        background-image: none;
+        color: #cff8d6; /* Remove default background */
+    }
+    .navbar-nav-scroll{
+        max-height: 150px !important;
+    }
+    .bgu {
+        background-color: rgba(0, 0, 0, 0.9); /* Darker background for mobile */
+    }
+    .navbar-nav{
+        height: 200px;
+    }
+
+    .links {
+        margin: 4px;
+        opacity: 1; /* Show links when active */
+        transform: translateY(0); /* Reset slide effect */
+        transition: opacity 0.3s ease, transform 0.3s ease; /* Transition for animation */
+    }
+
+    /* Animation for active links */
+    .links.active {
+        opacity: 1; /* Fully visible when active */
+        transform: translateY(0); /* Slide back to original position */
+        transition: opacity 1s ease-out; /* Fade effect */
+    }
+
+    .links:not(.active):hover {
+        color: #ffffff !important; /* Change color on hover */
+    }
+
+    .links.active:after {
+        content: "";
+        position: absolute;
+        background-color: #7ecd73;
+        height: 3px;
+        width: 100%; /* Full width for hover effect */
+        left: 0;
+        bottom: -10px;
+        transition: transform 0.3s ease; /* Transition effect */
+        transform: scaleX(1); /* Scale to full width on active */
+    }
+
+    .links:not(.active):after {
+        content: "";
+        position: absolute;
+        background-color: #7ecd73;
+        height: 3px;
+        width: 0; /* Start with no width */
+        left: 0;
+        bottom: -10px;
+        transition: width 0.3s ease; /* Transition effect */
+    }
+}
+

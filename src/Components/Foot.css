@@ -1,8 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=Orbitron&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Red+Hat+Display:ital,wght@0,300..900;1,300..900&display=swap'); */
 
 html, body {
   height: 100%;
   margin: 0;
+  /* font: 'red hat display' !important; */
 }
 
 #root {
@@ -13,38 +14,115 @@ html, body {
 
 footer {
   margin-top: auto;
-  background-color: black; /* Change background to black */
+  background: black; /* Gradient colors */
+  color: transparent; /* Change background to black */
   color: white; /* Ensures text is white */
+  background: rgba(35, 110, 101, 0.2); /* Darker overlay for each event card */
+  transition: all 0.3s ease;
+}
+
+.footer-links {
+  font-size: 1rem; /* Set a base font size for the links */
+  padding: 5px 0; /* Add some padding to the top and bottom */
+}
+
+.footer-links a {
+  margin: 0 15px; /* Even spacing between links */
+  text-decoration: none; /* Removes underline */
+  color: white; /* Ensures link color is white */
+  display: inline-block; /* Ensures margin is applied correctly */
+  font-weight: 500;
+  letter-spacing: 2px;
+}
+
+.footer-links a:hover {
+  color: #236e65; /* Hover color for links */
+ 
+}
+
+.btnu {
+  display: inline-block; /* Make sure buttons align correctly */
+  margin: 25px 0 0 0;
 }
 
 .btnu a {
   border-radius: 33%;
-  margin: 1px 5px;
+  margin: 5PX 5px; /* Small margin for buttons */
   border: 2px solid #fff;
-  padding: 5px 6px; /* Adjust padding for consistency */
+  padding: 8px 8px; /* Adjust padding for consistency */
   color: white;
+  font-size: 0.9rem;
 }
 
 .btnu a:hover {
-  color: #236e65 !important;
+  color: #236e65;
   background-color: #236e65;  
 }
 
 .iconu {
   color: white;
   transition: color 0.3s ease; 
-  size: 400px;
 }
 
-.mb-478:hover {
-  color: #333 !important;
-  background-color: #fff !important;
+/* Copyright section styles */
+.copyright {
+  background-color: black !important; /* Set background color */
+  color: white; /* Ensure text is white */
+  padding: 15px 0; /* Add padding */
+  font-size: 0.8rem !important; /* Font size for copyright */
+  font-weight: 500;
+  letter-spacing: 1px;
 }
 
-.mb-478 {
-  width: 140px !important;
-  height: 40px !important;
-  font-size: 2em;
-  font-weight: 1000 !important;
-  font-family: 'Roboto Mono', sans-serif !important;
+/* Media Queries */
+@media (max-width: 768px) {
+  .btnu a {
+    font-size: 0.4rem;
+    margin: 5PX 5px; /* Further reduce font size */
+    padding: 8px 8px; 
+  }
+  .btnu {
+    margin: 25px 0 0 0;
+  }
+  
+  .iconu {
+    font-size: 1rem; /* Adjust icon size */
+  }
+  .footer-links a {
+    margin: 0 15px; /* Even spacing between links */
+  }
+  .footer-links {
+    font-size: 0.7rem;
+  }
+  .copyright {
+    font-size: 0.6rem !important; /* Font size for copyright */
+    font-weight: 500;
+    letter-spacing: 1px;
+  }
+}
+
+@media (max-width: 480px) {
+  .btnu a {
+    font-size: 0.4rem; /* Even smaller font size */
+    margin: 5PX 5px;
+    padding: 8px 8px; 
+  }
+  .btnu {
+    margin: 25px 0 0 0;
+  }
+  
+  .iconu {
+    font-size: 0.9rem; /* Adjust icon size */
+  }
+  .footer-links a {
+    margin: 5px 15px; /* Even spacing between links */
+  }
+  .footer-links {
+    font-size: 0.7rem;
+  }
+  .copyright {
+    font-size: 0.6rem !important; /* Font size for copyright */
+    font-weight: 500;
+    letter-spacing: 1px;
+  }
 }
