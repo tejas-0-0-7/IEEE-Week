@@ -8,7 +8,7 @@ router.get('/', async (req, res) => {
   try {
     const events = await EventSchema.find();
     res.status(200).json(events);
-    console.log('events: in router', events);
+    // console.log('events: in router', events);
   } catch (error) {
     res.status(500).json({ message: error.message });
   }

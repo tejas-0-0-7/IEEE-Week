@@ -62,11 +62,11 @@ const ContactUs = () => {
         setEmail("");
         setMessage("");
       } else {
-        alert("Error sending message. Please try again.");
+        // alert("Error sending message. Please try again.");
       }
     } catch (error) {
       console.error("Error:", error);
-      alert("Error sending message. Please try again.");
+      // alert("Error sending message. Please try again.");
     }
   };
 

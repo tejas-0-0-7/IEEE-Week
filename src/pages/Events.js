@@ -18,7 +18,7 @@ const Events = () => {
             try {
                 setLoading(true);
                 const fetchedEvents = await fetchEvents();
-                console.log('Fetched events:', fetchedEvents);
+                // console.log('Fetched events:', fetchedEvents);
                 setEvents(fetchedEvents);
                 setLoading(false);
             } catch (err) {
