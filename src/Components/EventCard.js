@@ -83,7 +83,7 @@ const StyledWrapper = styled.div`
     width: 100%;
     height: 100%;
     border-radius: 8px;
-    background: rgbargba(35, 110, 101, 0.2);
+    background: rgba(35, 110, 101, 0.1);
     overflow: visible; /* Set overflow to visible to prevent clipping */
     display: flex;
     flex-direction: column;
