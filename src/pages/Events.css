@@ -7,6 +7,16 @@
         align-content: center;
     
 }
+.events-section{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: stretch;
+    align-content: space-evenly;
+    margin:20px;
+  
+}
       .modal {
         position: fixed !important;
         top: 0 !important;

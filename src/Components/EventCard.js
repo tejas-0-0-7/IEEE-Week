@@ -2,13 +2,12 @@ import React from 'react';
 import styled, { keyframes } from 'styled-components';
 
 const EventCard = ({ event }) => {
-  const { name, description, image, date, time,price, priceIEEE,category,registrationOpen, registrationForm } = event;
-
+  const { name, description, image, date, time,price, priceIEEE,category,registrationOpen, registrationLink } = event;
   // Modified handleClick function to redirect to the registration link
   const handleClick = () => {
-    console.log("Registration link:", registrationForm);
-    if (registrationForm) {
-      window.location.href = registrationForm;
+    console.log("Registration link:", registrationLink);
+    if (registrationLink) {
+      window.location.href = registrationLink;
     } else {
       console.warn("Registration link is not provided");
     }
@@ -38,8 +37,8 @@ const EventCard = ({ event }) => {
                 <div className="event-details">
                   <span>{date}</span>
                   <span>{time}</span> 
-                  <p><span>{priceIEEE}</span>for IEEE Members</p>
-                  <p><span>{price}</span>for Non-IEEE Members</p>
+                  <p><span>{priceIEEE}</span> for IEEE Members</p>
+                  <p><span>{price}</span> for Non-IEEE Members</p>
                 </div>
 
                 {/* Event description */}
@@ -69,12 +68,12 @@ const pulseAnimation = keyframes`
 
 const StyledWrapper = styled.div`
   .gradient-border {
-    width: 350px; /* Set to 350px */
-    height: 350px; /* Set to 350px */
-    border-radius: 10px; /* Rounded corners for the gradient border */
-    background: linear-gradient(0deg, #236e65, #7ecd73, #cff8d6); /* Gradient border */
-    padding: 5px; /* Reduced padding to control border thickness */
-    animation: ${pulseAnimation} 2s infinite; /* Subtle animation */
+    width: 400px; 
+    height: 450px; /* Increased height for more content space */
+    border-radius: 10px;
+    background: linear-gradient(0deg, #236e65, #7ecd73, #236e65);
+    padding: 5px;
+    animation: ${pulseAnimation} 2s infinite;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -86,9 +85,10 @@ const StyledWrapper = styled.div`
     height: 100%;
     perspective: 1000px;
     position: relative;
-    border: none; /* Removed the border */
-    border-radius: 10px; /* Ensure the card has the same rounded corners */
-    background-color: #81b9a2; /* Keep the front color here */
+    border-radius: 10px;
+    background: rgba(35, 110, 101, 0.2);
+    margin: 15px;
+    overflow: visible; /* Allow overflow content to be shown */
   }
 
   .content {
@@ -104,7 +104,6 @@ const StyledWrapper = styled.div`
     height: 100%;
     backface-visibility: hidden;
     border-radius: 10px;
-    overflow: hidden;
   }
 
   .front {
@@ -116,37 +115,36 @@ const StyledWrapper = styled.div`
   }
 
   .back {
-    background-color: black; /* Changed to black for the backside */
+    background-color: black; 
     transform: rotateY(180deg); 
     display: flex;
     align-items: center;
-    padding: 10px; /* Adjusted padding for smaller size */
+    padding: 20px; /* Increased padding */
     color: white;
-    position: relative;
+    overflow: visible; /* Overflow content will be visible */
   }
 
-  /* Front content styling to match example */
   .front-content {
     text-align: center;
-    height: 100%; /* Ensures the front content fills the height */
+    height: 100%;
     display: flex;
     flex-direction: column;
-    justify-content: center; /* Center content vertically */
+    justify-content: center;
   }
 
   .img {
-    width: 100%; /* Set to 100% to make the image fill the card */
-    height: 100%; /* Ensure the div is 100% height */
-    display: flex; /* Use flex to center the image */
+    width: 100%;
+    height: 100%;
+    display: flex;
     justify-content: center;
     align-items: center;
-    overflow: hidden; /* Hide any overflow */
+    overflow: hidden;
   }
 
   .img img {
-    width: 100%; /* Fill the entire width */
-    height: 100%; /* Fill the entire height */
-    object-fit: cover; /* Ensures the image covers the area */
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
     border-radius: 8px;
   }
 
@@ -154,30 +152,36 @@ const StyledWrapper = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 10px;
+    gap: 12px; /* Increased spacing */
     text-align: center;
+    font-weight: bold; /* Make text bold */
   }
 
   .event-title {
-    font-size: 1.4rem; /* Adjusted font size for smaller card */
-    margin-bottom: 8px;
+    font-size: 1.8rem; /* Larger font size */
+    margin-bottom: 10px;
     color: #ffffff;
   }
 
   .event-details {
-    font-size: 0.75rem; /* Adjusted font size for smaller card */
+    font-size: 1rem; /* Larger font size */
     color: #ffffffcc;
+    margin-top: 10px; /* Add spacing between details */
   }
 
   .event-details span {
-    font-weight: 500;
+    display: block; /* Line break between details */
+    font-weight: 600;
     color: #ffffff;
+    margin-top: 5px; /* Spacing for better readability */
   }
 
   .event-description {
-    font-size: 0.85rem; /* Slightly increased font size for description */
+    font-size: 1.1rem; /* Larger font for better readability */
     color: #ffffffcc;
     text-align: justify;
+    margin: 10px 0; /* Margins for spacing */
+    line-height: 1.5; /* Improved line spacing */
   }
 
   .register-button {
@@ -185,15 +189,15 @@ const StyledWrapper = styled.div`
     color: black;
     border: none;
     font-weight: 1000;
-    width: 100%; /* Set to 100% to make it fill the container */
-  padding: 12px 15px; /* Increase padding for a larger button */
+    width: 100%;
+    padding: 14px 20px; /* Larger button */
     border-radius: 5px;
-    margin-top: 10px; /* Adjust margin for better spacing */
-    font-size: 1rem; /* Increased font size for button */
+    margin-top: 15px; /* Increase margin for spacing */
+    font-size: 1.2rem; /* Larger font for button */
     cursor: pointer;
     display: inline-block;
     transition: background-color 0.3s ease;
-    align-self: center; /* Center the button */
+    align-self: center;
     position: relative;
     z-index: 1;
   }
@@ -203,7 +207,6 @@ const StyledWrapper = styled.div`
     color: black;
   }
 
-  /* Apply flipping effect on hover */
   .card:hover .content {
     transform: rotateY(180deg);
   }
