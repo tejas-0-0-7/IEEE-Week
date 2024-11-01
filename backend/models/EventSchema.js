@@ -12,7 +12,7 @@ const EventSchema = new mongoose.Schema({
   image: {
     type: String,
     required: true,
-    get: (v) => `http://localhost:5000/images/${v}` 
+    get: (v) => `http://ieee-week.onrender.com/images/${v}` 
   },
   date: {
     type: String,
