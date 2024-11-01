@@ -113,8 +113,13 @@ h1 {
     }
 }
 @media (max-width: 768px) {
+    /* Apply grid structure for team cards */
     .team-card {
-        width: calc(80% 0px); /* Two cards per row */
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr); /* Two cards per row */
+        grid-gap: 200px; /* Spacing between grid items */
+        margin: auto;
     }
 
     .team-name, .team-role {
@@ -125,8 +130,6 @@ h1 {
         font-size: 2rem; /* Adjust header size for tablets */
     }
 }
-
-
 /* Phone media query remains unchanged */
 @media (max-width: 480px) {
     .team-card {
