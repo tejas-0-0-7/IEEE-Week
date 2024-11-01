@@ -1,12 +1,39 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import Navbaring from "../Components/Nav";
 import Footer from "../Components/Foot";
 import "./contact.css";
+import VANTA from 'vanta/dist/vanta.birds.min.js'; // Import Vanta.js effect
 
 const ContactUs = () => {
+  const vantaRef = useRef(null);
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
+ 
+  useEffect(() => {
+    // Initialize Vanta effect and store instance in vantaRef.current
+    const vantaEffect = window.VANTA.BIRDS({
+      el: ".birds",
+      mouseControls: true,
+      touchControls: true,
+      gyroControls: false,
+      minHeight: 200.00,
+      minWidth: 200.00,
+      scale: 1.00,
+      scaleMobile: 1.00,
+      backgroundColor: 0x0,
+      color1: 0x236e65,
+      color2: 0x7ecd73,
+      colorMode: "variance"
+    });
+
+    // Cleanup Vanta effect on component unmount
+    return () => {
+      if (vantaRef.current && typeof vantaRef.current.destroy === "function") {
+        vantaRef.current.destroy();
+      }
+    };
+  }, []);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -23,19 +50,11 @@ const ContactUs = () => {
 
       const result = await response.json();
 
-      // Check the response status
       if (response.status === 201) {
         alert("Message sent successfully!");
-        // Do NOT reset the fields after successful submission
-      //   formData({
-      //     name: "",
-      //     email: "",
-      //     message: ""
-      // });
-
       } else {
-        alert('Error sending message. Please tr.');
-        console.error('Error:', result.error);
+        alert("Error sending message. Please try again.");
+        console.error("Error:", result.error);
       }
     } catch (error) {
       console.error("Error:", error);
@@ -46,10 +65,9 @@ const ContactUs = () => {
   return (
     <div>
       <Navbaring />
-      <div className="contact-container">
+      <div className="contact-container" id="birds">
         <div className="contact-card">
-          <h1 className="contact-title">CONTACT US</h1>
-
+          <h1 className="contact-title">Contact Us</h1>
           <div className="message-form">
             <form onSubmit={handleSubmit}>
               <input

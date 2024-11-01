@@ -10,6 +10,7 @@
   .about-us-container h2 {
     font-size: 2.5rem;
     margin-bottom: 20px !important;
+    font-weight: 1000;
     color: #bfedc8; /* Gold color for the heading */
   }
   
@@ -20,3 +21,13 @@
     margin: 0px 20px !important;
   }
   
+  @media (max-width: 768px) {
+    .about-us-container h2{
+      font-size: 1.5rem;
+      margin-bottom: 10px !important;
+    }
+    .about-us-container P{
+      margin: 0px 2px !important;
+      font-size: 0.6rem;
+    }
+  }

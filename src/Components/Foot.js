@@ -38,7 +38,7 @@ export default function Footer() {
 
         </section>
 
-        <section className=''>
+        {/* <section className=''>
           <form action=''>
             <MDBRow className='d-flex justify-content-center'>
               <MDBCol size="auto">
@@ -58,21 +58,21 @@ export default function Footer() {
               </MDBCol>
             </MDBRow>
           </form>
-        </section>
+        </section> */}
 
         <section className='mb-4'>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt distinctio earum repellat quaerat
-            voluptatibus placeat nam, commodi optio pariatur est quia magnam eum harum corrupti dicta, aliquam
-            sequi voluptate quas.
-          </p>
+           <a href='#https://www.ieee.org/' className='text-white me-2' style={{ fontSize: '1.2rem' }}>IEEE</a>{'\t'}{'\t'}
+           {'\t'}{'\t'}<a href='#https://ieeeindiacouncil.org/' className='text-white me-2' style={{ fontSize: '1.2rem' }}>Region 10</a>{'\t'}{'\t'}{'\t'}
+           {'\t'}{'\t'}<a href='#https://ieeebangalore.org/' className='text-white me-2' style={{ fontSize: '1.2rem' }}>Bangalore Section</a>{'\t'}{'\t'}{'\t'}
+           {'\t'}{'\t'}<a href='#https://ieee-collabratec.ieee.org/app/home' className='text-white me-2' style={{ fontSize: '1.2rem' }}>IEEE Collabratec</a>{'\t'}{'\t'}{'\t'}
+           {'\t'}{'\t'}{'\t'}<a href='#https://www.bmsce.ac.in/' className='text-white' style={{ fontSize: '1.2rem' }}>BMS College of Engineering</a>{'\t'}{'\t'}
+          
         </section>
       </MDBContainer>
 
       <div className='text-center p-3' style={{ backgroundColor: 'rgba(0, 0, 0, 0.2)' }}>
-        © 2024 Copyright:
-        <a className='text-white' href='https://bmsceieee.com/'>
-          BMSCE IEEE        </a>
+        © 2024 Copyright: 
+        <a className='text-white' href='https://bmsceieee.com/'> BMSCE IEEE </a>
       </div>
     </MDBFooter>
   );

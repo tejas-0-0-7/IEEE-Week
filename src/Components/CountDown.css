@@ -9,39 +9,45 @@
     margin: 0;
     padding: 0;
 }
-.countdown-content {
+.countdown-image {
+    width: 200%; /* Responsive width */
+    max-width: 1000px; /* Maximum width for larger screens */
+    height: auto; /* Maintain aspect ratio */
+    margin: 25px 0px;
+}
+.countdown-container {
     display: flex;
-    flex-direction: column; /* Stack title, dates, and timer */
+    flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 10px; /* Adjust this for spacing between title and timer */
+    height: 100vh;
+    text-align: center;
+    margin: 0;
+    padding: 0;
 }
+/* .countdown-content {
+    display: flex;
+    flex-direction: column; 
+    align-items: center;
+    justify-content: center;
+    gap: 10px; 
+} */
 
 /* Title and Date styles */
 .countdown-header {
     margin-bottom: 0px;
 }
 
-.ieee-week-title {
-    margin-top: 100px;
-    font-size: 5rem;
-    font-weight: bold;
-    background: linear-gradient(90deg, #236e65, #7ecd73, #cff8d6); /* Gradient colors */
-    -webkit-background-clip: text; /* Clip the background to the text */
-    -webkit-text-fill-color: transparent; /* Make text color transparent for the gradient to show */
-    background-clip: text;
-    color: transparent;
-    margin: 0px 0;
-}
-
 .ieee-week-dates {
-    font-size: 4rem;
-    background: linear-gradient(90deg, #236e65, #7ecd73, #cff8d6);
+    font-size: 3.5rem;
+    background: linear-gradient(0deg, #236e65, #7ecd73, #cff8d6);
     -webkit-background-clip: text; /* Clip the background to the text */
     -webkit-text-fill-color: transparent;
     background-clip: text;
     color: transparent;
+    margin-top: 15px;
     margin-bottom: 0px; 
+    font-weight: 1000 !important;
 }
 
 /* Timer container styles */
@@ -67,11 +73,11 @@
 }
 
 .timer div {
-    border: 1px solid #fff;
+    border: 3px solid;
     border-radius: 10px;
     display: grid;
     grid-template-columns: repeat(7, 1fr);
-    margin-top: 1em;
+    margin-top: 0em;
     padding: 3em;
     background: rgba(0, 0, 0, 0.8);
     box-shadow: 0 8px 15px rgba(0, 0, 0, 0.6);
@@ -82,18 +88,21 @@
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.9);
 }
 
-/* Countdown numbers and colon */
+.timer div::before{
+    text-shadow:#7ecd73;
+}
+/* Countdown numbers and colon  linear-gradient(0deg, #236e65, #7ecd73, #cff8d6); */
 .HENRY p:first-child, .timer div span {
     font-size: 3em;
     font-family: 'Orbitron', sans-serif;
-    color: #00FFFF;
-    text-shadow: 0 4px 10px rgba(0, 255, 255, 0.8);
+    color: #cff8d6 !important;
+    /* text-shadow: 0 4px 10px #7ecd73 !important; */
     transition: color 0.3s ease-in-out, text-shadow 0.3s ease-in-out;
 }
 
 .timer div span:hover, .HENRY p:first-child:hover {
-    color: #428679;
-    text-shadow: 0 4px 20px #428679;
+    color: #cff8d6!important;
+    text-shadow: 0 4px 20px #cff8d6 !important;
 }
 
 /* Label below countdown numbers */
@@ -120,17 +129,22 @@
 }
 
 /* Responsive design for mobile */
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 768px) {
     .countdown-container{
         grid-template-columns: repeat(2, 1fr);
         width: 100vw;
+        margin-top: 40px;
     }
     .ieee-week-dates{
         margin-bottom: 3rem;
     }
-    .timer{
-        width: 200% !important;
+    .ieee-week-title{
+        margin-top: 0px !important;
     }
+    .timer{
+        width: 100% !important;
+    }
+   
     .timer div {
         grid-template-columns: repeat(2, 1fr);
         margin-left: 1em;
@@ -153,10 +167,14 @@
     }
 
     .ieee-week-title {
-        font-size: 2.5rem;
+        font-size: 3rem;
+        margin-bottom: 1.6rem;
     }
 
     .ieee-week-dates {
-        font-size: 1.2rem;
+        font-size: 2rem;
+    }
+    .countdown-image {
+        max-width: 100%; /* Full width for smaller screens */
     }
 }

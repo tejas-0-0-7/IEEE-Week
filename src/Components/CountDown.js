@@ -7,7 +7,7 @@ const CountDown = () => {
     const [timerMinutes, setTimerMinutes] = useState('00');
     const [timerSeconds, setTimerSeconds] = useState('00');
 
-    let interval = useRef(null); // Correct initialization of interval
+    let interval = useRef(null);
 
     const startTimer = () => {
         const countDownDate = new Date('Oct 21, 2024 00:00:00').getTime();
@@ -35,19 +35,23 @@ const CountDown = () => {
     useEffect(() => {
         startTimer();
         return () => {
-            clearInterval(interval.current); // Properly clear the interval
+            clearInterval(interval.current);
         };
-    }, []); // Ensure effect only runs once
+    }, []);
 
     return (
-            <section className="countdown-container">
+        <section className="countdown-container">
+            <div className="border-grad">
                 <div className="countdown-header">
-                    <h1 className="ieee-week-title">IEEE WEEK 2024</h1>
+                    <picture>
+                        <source media="(max-width: 768px)" srcSet="/images/small.png" />
+                        <img src="/images/large.png" alt="IEEE Week 2024" className="countdown-image" />
+                    </picture>
                     <h3 className="ieee-week-dates">11th to 15th November</h3>
                 </div>
                 <section className="timer-container">
                     <section className="timer">
-                        <div>
+                        <div className="timer-body">
                             <section className="HENRY">
                                 <p>{timerDays}</p>
                                 <p><small>Days</small></p>
@@ -70,8 +74,9 @@ const CountDown = () => {
                         </div>
                     </section>
                 </section>
-            </section>
-        ); 
+            </div>
+        </section>
+    ); 
 };
 
 export default CountDown;

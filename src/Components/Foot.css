@@ -15,7 +15,6 @@ footer {
   margin-top: auto;
   background-color: black; /* Change background to black */
   color: white; /* Ensures text is white */
-  font-family: 'Roboto Mono', sans-serif !important;
 }
 
 .btnu a {
@@ -27,13 +26,14 @@ footer {
 }
 
 .btnu a:hover {
-  color: #333 !important;
-  background-color: #7b611a;  
+  color: #236e65 !important;
+  background-color: #236e65;  
 }
 
 .iconu {
   color: white;
   transition: color 0.3s ease; 
+  size: 400px;
 }
 
 .mb-478:hover {
@@ -44,5 +44,7 @@ footer {
 .mb-478 {
   width: 140px !important;
   height: 40px !important;
+  font-size: 2em;
+  font-weight: 1000 !important;
   font-family: 'Roboto Mono', sans-serif !important;
 }

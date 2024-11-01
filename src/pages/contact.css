@@ -1,3 +1,11 @@
+.birds{
+    height: 100%;
+  width: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: -1;
+}
 body {
     background-color: #000000 !important; /* Full black background */
 }
@@ -25,7 +33,7 @@ body {
     text-align: center;
     font-size: 60px;
     font-weight: bold;
-    background: linear-gradient(90deg, #236e65, #7ecd73, #cff8d6); /* Gradient colors */
+    background: linear-gradient(0deg, #236e65, #7ecd73, #cff8d6); /* Gradient colors */
     -webkit-background-clip: text; /* Clip the background to the text */
     -webkit-text-fill-color: transparent; /* Make text color transparent for the gradient to show */
     background-clip: text; /* For other browsers */
@@ -86,8 +94,9 @@ body {
 
 .message-form button {
     padding: 12px;
-    background-color: #f39c12; /* Accent color for button */
-    color: white;
+    background: linear-gradient(90deg, #236e65, #7ecd73, #cff8d6);  /* Accent color for button */
+    color: black;
+    font-weight: 1000 !important;
     border: none;
     border-radius: 5px;
     cursor: pointer;
@@ -96,7 +105,7 @@ body {
 }
 
 .message-form button:hover {
-    background-color: #d35400; /* Darker accent on hover */
+    background-color: #236e65; /* Darker accent on hover */
 }
 
 @media (max-width: 768px) {

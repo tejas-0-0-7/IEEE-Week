@@ -13,12 +13,10 @@ function Navbaring() {
       <Container fluid>
         <Navbar.Brand href="/home"><img src="./BMSCEIEEE.png" alt="BMSCE IEEE" style={{height:"40px"}}/></Navbar.Brand>
         <Navbar.Toggle aria-controls="navbarScroll" />
-        <Navbar.Collapse id="navbarScroll">
-          <Nav
-            className="me-auto my-1 my-lg-0"
+        <Navbar.Collapse id="navbarScroll" className='justify-content-end'>
+          <Nav className="my-1 my-lg-0" 
             style={{ maxHeight: '100px' }}
-            navbarScroll
-          >
+            navbarScroll>
             <Nav.Link href="/meet" className='links'>Meet the Team</Nav.Link>
             <Nav.Link href="/events" className='links'>Events</Nav.Link>
             <Nav.Link href="/membership" className='links'>Membership</Nav.Link>

@@ -69,7 +69,7 @@ function Home() {
         <div className="flagship-event reverse">
           <img src="/images/sod.jpeg" alt="Flagship Event Poster" className="poster" />
           <div className="description">
-            <h3>TECH EXPO</h3>
+            <h3>Tech Expo</h3>
             <p>Join us at the Tech Expo, where innovation meets opportunity! This event will showcase a variety of companies presenting their cutting-edge products and solutions, creating a vibrant platform for networking and collaboration within the tech community. </p>
             <button className="know-more-button">Know More</button>
           </div>
@@ -81,3 +81,12 @@ function Home() {
 }
 
 export default Home;
+
+
+
+// PS C:\Users\vigne\OneDrive\Desktop\IEEE_DAY_WEBSITE\IEEE-Week\backend> cd..
+// PS C:\Users\vigne\OneDrive\Desktop\IEEE_DAY_WEBSITE\IEEE-Week> git add .
+// PS C:\Users\vigne\OneDrive\Desktop\IEEE_DAY_WEBSITE\IEEE-Week> git commit -m "homepage done" 
+// [master f5e2908] homepage done
+//  56 files changed, 324 insertions(+), 224 deletions(-)
+// PS C:\Users\vigne\OneDrive\Desktop\IEEE_DAY_WEBSITE\IEEE-Week> git push 
