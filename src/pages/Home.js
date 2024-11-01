@@ -65,7 +65,7 @@ function Home() {
             <h3>The Nine Circles of Hell </h3>
             <p>Join us for The Nine Circles of Hell, a thrilling non-technical flagship event by the BMSCE IEEE Student Branch! Inspired by Dante's Inferno, this immersive journey challenges participants with unique trials in each circle. Overcome the infernal obstacles to compete for exciting prizes! Are you ready to face the depths? Register now</p>
             <a href="https://forms.gle/oXV7BCGUDs6yL5jm6">
-             <button className="know-more-button">Know More</button>
+             <button className="know-more-button">Register!</button>
             </a>
           </div>
         </div>
@@ -76,7 +76,7 @@ function Home() {
             <p>
             Join us at the API Workshop, where connectivity meets innovation! This hands-on session covers API essentials, including REST architecture, design, testing, and security. Perfect for developers and tech enthusiasts looking to enhance their skills and network within the tech community. </p>
             <a href="https://forms.gle/H2bzi6CzFST3ZctT6">
-              <button className="know-more-button">Know More</button>
+              <button className="know-more-button">Register!</button>
             </a>
           </div>
         </div>
