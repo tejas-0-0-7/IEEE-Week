@@ -62,18 +62,17 @@ body {
 
 /* Responsive adjustments */
 @media screen and (max-width: 1024px) {
-  /*For tablets in landscape orientation */
+  /* For tablets in landscape orientation */
   .slideC {
     display: flex;
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
-    -webkit-overflow-scrolling: touch;
-    gap: 1rem;
+    overflow-x: auto; /* Enable horizontal scrolling */
+    scroll-snap-type: x mandatory; /* Snap effect for smoother swipe */
+    -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
   }
 
   .slide {
-    flex: 0 0 50%; /* Show more of the next slide on larger screens */
-    scroll-snap-align: center;
+    flex: 0 0 auto; /* Keep original width and height */
+    scroll-snap-align: center; /* Center alignment of each slide */
   }
 }
 
@@ -81,15 +80,14 @@ body {
   /* For tablets in portrait orientation */
   .slideC {
     display: flex;
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
-    -webkit-overflow-scrolling: touch;
-    gap: 1rem;
+    overflow-x: auto; /* Enable horizontal scrolling */
+    scroll-snap-type: x mandatory; /* Snap effect for smoother swipe */
+    -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
   }
 
   .slide {
-    flex: 0 0 70%; /* Slightly larger slides on smaller screens */
-    scroll-snap-align: center;
+    flex: 0 0 auto; /* Keep original width and height */
+    scroll-snap-align: center; /* Center alignment of each slide */
   }
 }
 
@@ -97,15 +95,14 @@ body {
   /* For typical mobile screens */
   .slideC {
     display: flex;
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
-    -webkit-overflow-scrolling: touch;
-    gap: 1rem;
+    overflow-x: auto; /* Enable horizontal scrolling */
+    scroll-snap-type: x mandatory; /* Snap effect for smoother swipe */
+    -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
   }
 
   .slide {
-    flex: 0 0 80%; /* Slides take up more of the screen */
-    scroll-snap-align: center;
+    flex: 0 0 auto; /* Keep original width and height */
+    scroll-snap-align: center; /* Center alignment of each slide */
   }
 }
 
@@ -113,14 +110,13 @@ body {
   /* For very small mobile screens */
   .slideC {
     display: flex;
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
-    -webkit-overflow-scrolling: touch;
-    gap: 1rem;
+    overflow-x: auto; /* Enable horizontal scrolling */
+    scroll-snap-type: x mandatory; /* Snap effect for smoother swipe */
+    -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
   }
 
   .slide {
-    flex: 0 0 90%; /* Almost full-width for small screens */
-    scroll-snap-align: center;
+    flex: 0 0 auto; /* Keep original width and height */
+    scroll-snap-align: center; /* Center alignment of each slide */
   }
 }
