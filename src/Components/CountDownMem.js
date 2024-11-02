@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useRef } from "react";
 import "./CountDownMem.css";
 
-const CountDown = () => {
+const CountDownMem = () => {
     const [timerDays, setTimerDays] = useState('00');
     const [timerHours, setTimerHours] = useState('00');
     const [timerMinutes, setTimerMinutes] = useState('00');
@@ -70,4 +70,4 @@ const CountDown = () => {
     );
 }
 
-export default CountDown;
+export default CountDownMem;

@@ -134,9 +134,17 @@
 
 @media (max-width: 414px) {
     .timer {
-        margin: 20px 0 0px 0 !important; /* Less margin for mobile */
+        margin: auto !important; /* Less margin for mobile */
         padding: 0px;
         z-index: -1;
+       
+    }
+    .HENRY{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        align-content: center;
     }
     .timer div {
         border: 1px solid #fff;
@@ -146,5 +154,7 @@
     .contact-title{
         margin: 100px 0 50px 0;
     }   
-    
+    .timer-container{
+        margin-top: 12rem !important;
+    }
 }
