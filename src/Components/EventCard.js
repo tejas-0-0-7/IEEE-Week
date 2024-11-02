@@ -76,15 +76,15 @@ const StyledWrapper = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-bottom: 20px; /* Added margin-bottom to create space between cards */
+    margin-bottom: 20px;
   }
 
   .card {
     width: 100%;
     height: 100%;
     border-radius: 8px;
-    background: rgba(35, 110, 101, 0.1);
-    overflow: visible; /* Set overflow to visible to prevent clipping */
+    background: rgba(35, 110, 101, 0.2);
+    overflow: visible;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -93,6 +93,7 @@ const StyledWrapper = styled.div`
     transform-style: preserve-3d;
     transition: transform 0.6s;
   }
+
   .content {
     width: 100%;
     height: 100%;
@@ -117,13 +118,13 @@ const StyledWrapper = styled.div`
   }
 
   .back {
-    background-color: black; 
-    transform: rotateY(180deg); 
+    background-color: black;
+    transform: rotateY(180deg);
     display: flex;
     align-items: center;
-    padding: 20px; /* Increased padding */
+    padding: 20px;
     color: white;
-    overflow: visible; /* Overflow content will be visible */
+    overflow: visible;
   }
 
   .front-content {
@@ -154,36 +155,36 @@ const StyledWrapper = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 12px; /* Increased spacing */
+    gap: 12px;
     text-align: center;
-    font-weight: bold; /* Make text bold */
+    font-weight: bold;
   }
 
   .event-title {
-    font-size: 1.2rem; /* Larger font size */
+    font-size: 1.2rem;
     margin-bottom: 10px;
     color: #ffffff;
   }
 
   .event-details {
-    font-size: 0.85rem; /* Larger font size */
+    font-size: 0.85rem;
     color: #ffffffcc;
-    margin-top: 10px; /* Add spacing between details */
+    margin-top: 10px;
   }
 
   .event-details span {
-    display: block; /* Line break between details */
+    display: block;
     font-weight: 600;
     color: #ffffff;
-    margin-top: 5px; /* Spacing for better readability */
+    margin-top: 5px;
   }
 
   .event-description {
-    font-size: 0.9rem; /* Larger font for better readability */
+    font-size: 0.9rem;
     color: #ffffffcc;
     text-align: justify;
-    margin: 10px 0; /* Margins for spacing */
-    line-height: 1.5; /* Improved line spacing */
+    margin: 10px 0;
+    line-height: 1.5;
   }
 
   .register-button {
@@ -192,10 +193,10 @@ const StyledWrapper = styled.div`
     border: none;
     font-weight: 1000;
     width: 100%;
-    padding: 14px 20px; /* Larger button */
+    padding: 14px 20px;
     border-radius: 5px;
-    margin-top: 15px; /* Increase margin for spacing */
-    font-size: 1.2rem; /* Larger font for button */
+    margin-top: 15px;
+    font-size: 1.2rem;
     cursor: pointer;
     display: inline-block;
     transition: background-color 0.3s ease;
@@ -212,5 +213,100 @@ const StyledWrapper = styled.div`
   .card:hover .content {
     transform: rotateY(180deg);
   }
+
+  /* Responsive adjustments */
+  @media (max-width: 1024px) {
+    .gradient-border {
+      width: 300px;
+      height: 300px;
+    }
+
+    .event-title {
+      font-size: 1.1rem;
+    }
+
+    .event-description {
+      font-size: 0.85rem;
+    }
+
+    .register-button {
+      font-size: 1rem;
+      padding: 12px 18px;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .gradient-border {
+      width: 250px;
+      height: 250px;
+    }
+
+    .event-title {
+      font-size: 1rem;
+    }
+
+    .event-details {
+      font-size: 0.8rem;
+    }
+
+    .event-description {
+      font-size: 0.8rem;
+    }
+
+    .register-button {
+      font-size: 0.9rem;
+      padding: 10px 16px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .gradient-border {
+      width: 200px;
+      height: 200px;
+    }
+
+    .event-title {
+      font-size: 0.9rem;
+    }
+
+    .event-details {
+      font-size: 0.75rem;
+    }
+
+    .event-description {
+      font-size: 0.75rem;
+    }
+
+    .register-button {
+      font-size: 0.8rem;
+      padding: 8px 14px;
+    }
+  }
+
+  /* Specific styling for 375px width */
+  @media (max-width: 375px) {
+    .gradient-border {
+      width: 180px;
+      height: 180px;
+    }
+
+    .event-title {
+      font-size: 0.85rem;
+    }
+
+    .event-details {
+      font-size: 0.7rem;
+    }
+
+    .event-description {
+      font-size: 0.7rem;
+    }
+
+    .register-button {
+      font-size: 0.75rem;
+      padding: 6px 12px;
+    }
+  }
+
 `;
 export default EventCard;
