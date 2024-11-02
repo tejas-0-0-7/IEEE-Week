@@ -49,7 +49,7 @@ const CountDown = () => {
                 </picture>
                 <h3 className="ieee-week-dates">11th to 15th November</h3>
             </div>
-            <section className="timer-container">
+            <section className="timer-container1">
                 <section className="timer">
                     <div className="timer-body">
                         <section className="HENRY">

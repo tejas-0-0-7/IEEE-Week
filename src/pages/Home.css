@@ -190,7 +190,8 @@ body, html {
 
   .events-title, .flagship-title {
     font-size: 2rem;
-    margin: 60px auto 30px;
+    margin: 30px auto 30px auto;
+
   }
 
   .flagship-event img {
@@ -211,6 +212,7 @@ body, html {
 @media (max-width: 480px) {
   .events-title, .flagship-title {
     font-size: 1.8rem;
+    margin: 30px auto 30px auto;
   }
 
   .flagship-event img {
@@ -226,7 +228,7 @@ body, html {
 @media (max-width: 412px) {
   .events-title, .flagship-title {
     font-size: 1.8rem;
-    margin:150px 0 0 0;
+    margin: 80px auto 30px auto;
   }
   .description{
     text-align: justify;

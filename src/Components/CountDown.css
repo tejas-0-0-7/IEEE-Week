@@ -52,7 +52,7 @@
 }
 
 /* Timer container styles */
-.timer-container {
+.timer-container1{
     box-sizing: border-box;
     padding: 0;
     display: flex;
@@ -129,6 +129,7 @@
     }
 }
 
+
 /* Responsive design for mobile */
 @media screen and (max-width: 768px) {
     .countdown-container{
@@ -147,7 +148,7 @@
     .timer{
         width: 60% !important;
     }
-   .timer-container{
+   .timer-container1{
     margin: 5px auto 5px auto !important;
     padding: 0px !important    ;
    }
@@ -183,7 +184,7 @@
     }
     .countdown-image {
         max-width: 80%; /* Full width for smaller screens */
-        margin: 0px auto -50px auto;
+        margin: 0px auto -50px auto !important;
     }
 }
 @media screen and (max-width: 480px) {
@@ -203,7 +204,7 @@
     .timer{
         width: 60% !important;
     }
-   .timer-container{
+   .timer-container1{
     margin: 5px auto 5px auto !important;
     padding: 0px !important    ;
    }
@@ -244,27 +245,65 @@
 
 }
 @media screen and (max-width: 412px) {
-    .timer-container{
-        margin: -140px auto 100px auto !important;
+    .timer-container1{
+        margin: -10px auto 10px auto !important;
         padding: 0px !important;
+        margin-top: -10px !important;
 
        }
        .countdown-image{
-        margin: 10px auto -50px auto !important;
+        margin: 40px auto -50px auto !important;
        }
-       .countdown-image {
-        max-width: 75%; /* Further reduce width for smaller devices */
-        margin: 150px auto -60px auto !important; /* Center the image with margin */
-    }
+      
     .ieee-week-dates{
         margin: 10px auto 10px auto !important;
     }
     .timer{
-        height: 77vh !important;
+        height: 60vh !important;
     }
 }
 @media screen and (max-width: 375px) {
 .countdown-image{
-    margin:40px 0 -10px 0 !important;
+    margin:30px 0 -10px 0 !important;
     }
  }
+ @media (max-width: 390px) {
+    .countdown-image {
+    margin: 0px 0 -10px 0 !important;
+    }
+ }
+ /* Responsive design for tablet */
+@media screen and (min-width: 600px) and (max-width: 900px) {
+    .countdown-container {
+        flex-direction: column; /* Maintain vertical layout */
+        padding: 0 1em; /* Add padding for better spacing */
+    }
+    
+    .countdown-image {
+        max-width: 90%; /* Slightly reduce image size */
+        margin: 20px auto; /* Center image with margin */
+    }
+
+    .ieee-week-dates {
+        font-size: 2.5rem; /* Adjust font size for tablet */
+        margin: 10px 0; /* Add spacing above and below */
+    }
+
+    .timer {
+        width: 70%; /* Adjust timer width */
+        height: 50vh; /* Reduce height for better fit */
+    }
+
+    .timer div {
+        grid-template-columns: repeat(3, 1fr); /* Change columns for better distribution */
+        padding: 2em 1em; /* Adjust padding */
+    }
+
+    .HENRY p:first-child, .timer div span {
+        font-size: 2.5em; /* Adjust font size */
+    }
+
+    .HENRY p small {
+        font-size: 1.1em; /* Slightly larger small text */
+    }
+}
