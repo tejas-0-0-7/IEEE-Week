@@ -14,9 +14,9 @@
     justify-content: center;
     width: 100%;
     height: calc(100vh - 60px); /* Adjust height if needed */
-    padding-top: 2em;
+    padding-top: 1em;
     padding-bottom: 3em;
-    margin: 20px 0; /* Add top and bottom margins */
+    margin: 0px 0; /* Add top and bottom margins */
 }
 
 
@@ -57,6 +57,18 @@
     text-transform: uppercase;
     letter-spacing: 1px;
 }
+.contact-title {
+    text-align: center;
+    font-size: 60px;
+    font-weight: bold;
+    background: linear-gradient(0deg, #236e65, #7ecd73, #cff8d6); /* Gradient colors */
+    -webkit-background-clip: text; /* Clip the background to the text */
+    -webkit-text-fill-color: transparent; /* Make text color transparent for the gradient to show */
+    background-clip: text; /* For other browsers */
+    color: transparent; /* Keep this in case you need it for older browsers */
+    margin-bottom: 20px;
+    letter-spacing: 2px; /* Increased letter spacing */
+}
 
 @keyframes pulse {
     0%,
@@ -74,56 +86,65 @@
 }
 
 @media screen and (max-width: 768px) {
-
     .timer {
-        height: calc(100vh - 40px); /* Adjust for mobile if necessary */
-        margin: 10px 0; /* Less margin for mobile */
+        margin: 150px 0 100px 0; /* Less margin for mobile */
     }
     .timer div {
-        margin-left: auto; 
-        margin-right: auto; 
         padding: 2em; 
         grid-template-columns: repeat(4, 1fr); 
         width: calc(100% - 2em); 
-        text-align: center; 
     }
-
-   .HENRY p:first-child,
-   .timer div span {
-       font-size: 3em; 
-       text-align: center; 
-       margin-bottom:.5em; 
-   }
+    .HENRY p:first-child,
+    .timer div span {
+        font-size: 3em; 
+    }
+    .contact-title{
+        margin: 100px 0 50px 0;
+    }
 }
 
 @media screen and (max-width: 480px) {
     .timer {
-        height: calc(100vh - 40px); /* Adjust for mobile if necessary */
-        margin: 95px 0 50px 0; /* Less margin for mobile */
+        margin: 0px 0 0px 0; /* Less margin for mobile */
     }
-   .timer div {
-       margin-left: auto; 
-       margin-right: auto; 
-       margin-top: 1000px !important;
-       margin-bottom: 1000px;
-       padding: 1.5em; 
-       grid-template-columns: repeat(1, 1fr); 
-       width: calc(100% - 2em); 
-       text-align: center; 
-   }
-   
-   .HENRY p:first-child,
-   .timer div span {
-       font-size: 2.5em; 
-       text-align: center; 
-       margin-bottom:.5em; 
-   }
+    .timer div {
+        margin-top: 1000px !important;
+        margin-bottom: 1000px;
+        padding: 1.5em; 
+        grid-template-columns: repeat(1, 1fr); 
+        width: calc(100% - 2em); 
+    }
+    .HENRY p:first-child,
+    .timer div span {
+        font-size: 2.5em; 
+    }
+    .HENRY p small {
+        font-size: 1em; 
+    }
+    span {
+        display: none; 
+    }
+}
 
-   .HENRY p small {
-       font-size:1em; 
-   }
-   
-   span {
-       display: none; 
-   }
+@media (max-width: 390px) {
+    .timer {
+        margin: 20px 0 0px 0; /* Less margin for mobile */
+    }
+}
+
+@media (max-width: 414px) {
+    .timer {
+        margin: 20px 0 0px 0 !important; /* Less margin for mobile */
+        padding: 0px;
+        z-index: -1;
+    }
+    .timer div {
+        border: 1px solid #fff;
+        border-radius: 5px;
+        padding: 0px;
+    }    
+    .contact-title{
+        margin: 100px 0 50px 0;
+    }   
+    
 }

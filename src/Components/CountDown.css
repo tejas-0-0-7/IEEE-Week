@@ -238,7 +238,33 @@
         margin: 0, 0, 10px, 0;
     }
     .countdown-image {
-        max-width: 80%; /* Full width for smaller screens */
-        margin: 0px auto -50px auto;
+        max-width: 80%; /* Reduce width for small screens */
+        margin: 15px auto; /* Center the image with margin */
+    }
+
+}
+@media screen and (max-width: 412px) {
+    .timer-container{
+        margin: -140px auto 100px auto !important;
+        padding: 0px !important;
+
+       }
+       .countdown-image{
+        margin: 10px auto -50px auto !important;
+       }
+       .countdown-image {
+        max-width: 75%; /* Further reduce width for smaller devices */
+        margin: 150px auto -60px auto !important; /* Center the image with margin */
+    }
+    .ieee-week-dates{
+        margin: 10px auto 10px auto !important;
+    }
+    .timer{
+        height: 77vh !important;
     }
 }
+@media screen and (max-width: 375px) {
+.countdown-image{
+    margin:40px 0 -10px 0 !important;
+    }
+ }
