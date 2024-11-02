@@ -205,7 +205,7 @@
         width: 60% !important;
     }
    .timer-container1{
-    margin: 5px auto 5px auto !important;
+    margin: 60px auto 5px auto !important;
     padding: 0px !important    ;
    }
     .timer div {
@@ -248,8 +248,7 @@
     .timer-container1{
         margin: -10px auto 10px auto !important;
         padding: 0px !important;
-        margin-top: -10px !important;
-
+        margin-top: 60px !important;
        }
        .countdown-image{
         margin: 40px auto -50px auto !important;
