@@ -5,9 +5,9 @@ const EventCard = ({ event }) => {
   const { name, description, image, date, time,price, priceIEEE,category,registrationOpen, registrationForm} = event;
   // Modified handleClick function to redirect to the registration link
   const handleClick = () => {
-    window.open(registrationForm, '_blank');
     if (registrationForm) {
-      window.location.href = registrationForm;
+      window.open(registrationForm, '_blank');
+      // window.location.href = registrationForm;
     } else {
       console.warn("Registration link is not provided");
     }
