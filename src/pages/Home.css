@@ -71,7 +71,7 @@ body, html {
 
 .flagship-event {
   display: flex;
-  flex-direction: row;
+  /* flex-direction: row; */
   width: 90%;
   max-width: 1000px;
   margin: 40px auto 20px;
