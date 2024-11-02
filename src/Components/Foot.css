@@ -79,7 +79,7 @@ footer {
   .btnu a {
     font-size: 0.4rem;
     margin: 5PX 5px; /* Further reduce font size */
-    padding: 8px 8px; 
+    padding: 14px 8px;
   }
   .btnu {
     margin: 25px 0 0 0;
@@ -105,7 +105,7 @@ footer {
   .btnu a {
     font-size: 0.4rem; /* Even smaller font size */
     margin: 5PX 5px;
-    padding: 8px 8px; 
+    padding: 14px 8px; 
   }
   .btnu {
     margin: 25px 0 0 0;
