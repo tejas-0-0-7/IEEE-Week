@@ -239,13 +239,16 @@ const StyledWrapper = styled.div`
       width: 250px;
       height: 250px;
     }
-
+    .back{
+      overflow:scroll;
+    }
     .event-title {
       font-size: 0.85rem;
     }
 
     .event-details {
       font-size: 0.75rem;
+      margin-top:1rem;
     }
 
     .event-description {
