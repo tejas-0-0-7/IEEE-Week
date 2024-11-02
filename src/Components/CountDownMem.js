@@ -1,45 +1,48 @@
-import React, {useEffect, useState, useRef} from "react";
+import React, { useEffect, useState, useRef } from "react";
 import "./CountDownMem.css";
+
 const CountDown = () => {
-    const  [timerDays, setTimerDays] = React.useState('00');
-    const  [timerHours, setTimerHours] = React.useState('00');
-    const  [timerMinutes, setTimerMinutes] = React.useState('00');
-    const  [timerSeconds, setTimerSeconds] = React.useState('00');
+    const [timerDays, setTimerDays] = useState('00');
+    const [timerHours, setTimerHours] = useState('00');
+    const [timerMinutes, setTimerMinutes] = useState('00');
+    const [timerSeconds, setTimerSeconds] = useState('00');
 
     let interval = useRef();
 
-    const startTimer = () =>{
-        const  countDownDate = new Date('Nov 18, 2024 00:00:00').getTime();
+    const startTimer = () => {
+        const countDownDate = new Date('Nov 18, 2024 00:00:00').getTime();
 
-        interval = setInterval(()=>{
+        interval.current = setInterval(() => {
             const now = new Date().getTime();
-            const  distance = countDownDate - now;
+            const distance = countDownDate - now;
 
             const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)/(1000*60*60)));
-            const minutes = Math.floor((distance % (1000 * 60 * 60)/(1000*60)));
-            const seconds = Math.floor((distance % (1000 * 60)/(1000)));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-            if(distance < 0){
+            if (distance < 0) {
                 clearInterval(interval.current);
-            }else{
+            } else {
                 setTimerDays(days);
                 setTimerHours(hours);
                 setTimerMinutes(minutes);
                 setTimerSeconds(seconds);
             }
 
-        },1000);
+        }, 1000);
     }
 
     useEffect(() => {
         startTimer();
-        return() =>{
+        return () => {
             clearInterval(interval.current);
         };
-    });
+    }, []);
+
     return ( 
         <section className="timer-container">
+            <h1 className="contact-title">Stay Tuned!</h1>
             <section className="timer">
                 <div>
                     <section className="HENRY">
@@ -64,7 +67,7 @@ const CountDown = () => {
                 </div>
             </section>
         </section>
-     );
+    );
 }
- 
+
 export default CountDown;

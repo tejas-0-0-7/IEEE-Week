@@ -7,6 +7,7 @@ body, html {
     display: flex; /* Enable flexbox */
     flex-direction: column; /* Arrange children vertically */
     min-height: 100vh; /* Full height of the viewport */
+    margin-top: 0px;
 }
 
 .content {
@@ -15,12 +16,37 @@ body, html {
     padding: 20px; /* Optional padding */
     color: azure; /* Text color */
 }
+.contact-title {
+    text-align: center;
+    font-size: 60px;
+    font-weight: bold;
+    background: linear-gradient(0deg, #236e65, #7ecd73, #cff8d6); /* Gradient colors */
+    -webkit-background-clip: text; /* Clip the background to the text */
+    -webkit-text-fill-color: transparent; /* Make text color transparent for the gradient to show */
+    background-clip: text; /* For other browsers */
+    color: transparent; /* Keep this in case you need it for older browsers */
+    margin-bottom: 10px;
+    margin-top: 20px;
+    letter-spacing: 2px; /* Increased letter spacing */
+}
 
-/* Media Queries */
+@media screen and (max-width: 1024px) {
+    .content {
+        margin-top: 50px; /* Adjust for smaller screens */
+        padding: 15px; /* Optional: Reduce padding for smaller screens */
+    }
+    .contact-title {
+        font-size: 50px;
+    }
+}
+
 @media screen and (max-width: 768px) {
     .content {
         margin-top: 50px; /* Adjust for smaller screens */
         padding: 15px; /* Optional: Reduce padding for smaller screens */
+    }
+    .contact-title {
+        font-size: 50px;
     }
 }
 
@@ -31,9 +57,8 @@ body, html {
     }
 }
 
-.footer {
-    background-color: #000; /* Example footer background color */
-    color: white; /* Footer text color */
-    padding: 20px; /* Example footer padding */
-    text-align: center; /* Center text */
+@media (max-width: 375px) {
+    .contact-title {
+        font-size: 40px;
+    }
 }

@@ -222,3 +222,23 @@ body, html {
     padding: 6px 12px;
   }
 }
+
+@media (max-width: 412px) {
+  .events-title, .flagship-title {
+    font-size: 1.8rem;
+    margin:150px 0 0 0;
+  }
+  .description{
+    text-align: justify;
+  }
+
+  .flagship-event img {
+    width: 90%;
+  }
+
+  .know-more-button {
+    font-size: 0.8rem;
+    padding: 6px 12px;
+  }
+
+}
