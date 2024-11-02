@@ -60,6 +60,7 @@ body {
   display: flex !important;
 }
 
+
 .slideC .slide:nth-child(2) {
   transform: translateX(-150px) translateZ(-200px) rotateY(20deg);
   opacity: 0.8;
