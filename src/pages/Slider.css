@@ -1,122 +1,50 @@
-/* Container for the slide */
+.slideC {
+  position: relative;
+  perspective: 1200px;
+  transform-style: preserve-3d;
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+  aspect-ratio: 4/3;
+  margin: 0 auto;
+  display: flex !important;
+  overflow: hidden;
+}
 
-/* Individual slide */
 .slide {
-  transition: transform 500ms ease 0s, opacity 500ms ease 0s, visibility 500ms ease 0s;
+  transition: transform 500ms ease, opacity 500ms ease, visibility 500ms ease;
   position: absolute;
   top: 0;
   border-radius: 12px;
   overflow: hidden;
 }
 
-/* Reflection effect */
-
-
-/* Flexbox settings for content */
 .sliderContent {
-  display: flex !important;
+  display: flex;
   flex-direction: column;
   color: white;
-  padding: 1.5rem; /* Use rem for responsiveness */
+  padding: 1.5rem;
   align-items: flex-start;
   font-family: "Lucida Sans", "Lucida Grande", sans-serif;
 }
 
-.sliderContent h2 {
-  margin: 1rem 0;
-}
-
-.sliderContent p {
-  margin: 0;
-  margin-bottom: 1rem;
-}
-
-/* Global settings */
-body {
-  width: 100vw;
-  min-height: 100vh;
-  overflow-x: hidden;
-  font-size: 16px;
-}
-
-.center {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  width: 100vw;
-  height: 70vh;
-  margin-bottom: 15em;
-}
-.slideC {
-  position: relative;
-  perspective: 1200px;
-  transform-style: preserve-3d;
-  width: 90%;
-  max-width: 400px;
-  height: auto;
-  aspect-ratio: 4/3;
-  margin: 0 auto;
-  display: flex !important;
-}
-
-/* Responsive adjustments */
-@media screen and (max-width: 1024px) {
-  /* For tablets in landscape orientation */
-  .slideC {
-    display: flex;
-    overflow-x: auto; /* Enable horizontal scrolling */
-    scroll-snap-type: x mandatory; /* Snap effect for smoother swipe */
-    -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
-  }
-
-  .slide {
-    flex: 0 0 auto; /* Keep original width and height */
-    scroll-snap-align: center; /* Center alignment of each slide */
-  }
-}
-
 @media screen and (max-width: 768px) {
-  /* For tablets in portrait orientation */
   .slideC {
-    display: flex;
-    overflow-x: auto; /* Enable horizontal scrolling */
-    scroll-snap-type: x mandatory; /* Snap effect for smoother swipe */
-    -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
+    max-width: 100%;
+    height: auto;
   }
 
-  .slide {
-    flex: 0 0 auto; /* Keep original width and height */
-    scroll-snap-align: center; /* Center alignment of each slide */
+  .sliderContent {
+    padding: 1rem;
   }
 }
 
 @media screen and (max-width: 480px) {
-  /* For typical mobile screens */
   .slideC {
-    display: flex;
-    overflow-x: auto; /* Enable horizontal scrolling */
-    scroll-snap-type: x mandatory; /* Snap effect for smoother swipe */
-    -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
+    max-width: 90%;
   }
 
-  .slide {
-    flex: 0 0 auto; /* Keep original width and height */
-    scroll-snap-align: center; /* Center alignment of each slide */
-  }
-}
-
-@media screen and (max-width: 360px) {
-  /* For very small mobile screens */
-  .slideC {
-    display: flex;
-    overflow-x: auto; /* Enable horizontal scrolling */
-    scroll-snap-type: x mandatory; /* Snap effect for smoother swipe */
-    -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
-  }
-
-  .slide {
-    flex: 0 0 auto; /* Keep original width and height */
-    scroll-snap-align: center; /* Center alignment of each slide */
+  .sliderContent {
+    padding: 0.75rem;
   }
 }
