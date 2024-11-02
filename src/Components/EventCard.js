@@ -84,7 +84,6 @@ const StyledWrapper = styled.div`
     height: 100%;
     border-radius: 8px;
     background: rgba(35, 110, 101, 0.2);
-    overflow: visible;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -122,9 +121,9 @@ const StyledWrapper = styled.div`
     transform: rotateY(180deg);
     display: flex;
     align-items: center;
-    padding: 20px;
+    padding: 10px; /* Reduced padding for more room */
     color: white;
-    overflow: visible;
+    overflow: hidden;
   }
 
   .front-content {
@@ -146,7 +145,7 @@ const StyledWrapper = styled.div`
 
   .img img {
     width: 100%;
-    height: 100%;
+    height: auto; /* Adjust image height for smaller screens */
     object-fit: cover;
     border-radius: 8px;
   }
@@ -155,36 +154,36 @@ const StyledWrapper = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 12px;
+    gap: 6px; /* Reduced gap for compact layout */
     text-align: center;
     font-weight: bold;
   }
 
   .event-title {
-    font-size: 1.2rem;
-    margin-bottom: 10px;
+    font-size: 1rem;
+    margin-bottom: 6px;
     color: #ffffff;
   }
 
   .event-details {
-    font-size: 0.85rem;
+    font-size: 0.8rem;
     color: #ffffffcc;
-    margin-top: 10px;
+    margin-top: 4px;
   }
 
   .event-details span {
     display: block;
     font-weight: 600;
     color: #ffffff;
-    margin-top: 5px;
+    margin-top: 4px;
   }
 
   .event-description {
-    font-size: 0.9rem;
+    font-size: 0.75rem;
     color: #ffffffcc;
     text-align: justify;
-    margin: 10px 0;
-    line-height: 1.5;
+    line-height: 1.3;
+    margin: 5px 0; /* Reduced margins */
   }
 
   .register-button {
@@ -193,10 +192,10 @@ const StyledWrapper = styled.div`
     border: none;
     font-weight: 1000;
     width: 100%;
-    padding: 14px 20px;
+    padding: 10px 12px; /* Smaller button for compact fit */
     border-radius: 5px;
-    margin-top: 15px;
-    font-size: 1.2rem;
+    margin-top: 10px;
+    font-size: 0.9rem;
     cursor: pointer;
     display: inline-block;
     transition: background-color 0.3s ease;
@@ -222,16 +221,16 @@ const StyledWrapper = styled.div`
     }
 
     .event-title {
-      font-size: 1.1rem;
+      font-size: 0.95rem;
     }
 
     .event-description {
-      font-size: 0.85rem;
+      font-size: 0.7rem;
     }
 
     .register-button {
-      font-size: 1rem;
-      padding: 12px 18px;
+      font-size: 0.8rem;
+      padding: 8px 10px;
     }
   }
 
@@ -242,31 +241,7 @@ const StyledWrapper = styled.div`
     }
 
     .event-title {
-      font-size: 1rem;
-    }
-
-    .event-details {
-      font-size: 0.8rem;
-    }
-
-    .event-description {
-      font-size: 0.8rem;
-    }
-
-    .register-button {
-      font-size: 0.9rem;
-      padding: 10px 16px;
-    }
-  }
-
-  @media (max-width: 480px) {
-    .gradient-border {
-      width: 200px;
-      height: 200px;
-    }
-
-    .event-title {
-      font-size: 0.9rem;
+      font-size: 0.85rem;
     }
 
     .event-details {
@@ -274,12 +249,12 @@ const StyledWrapper = styled.div`
     }
 
     .event-description {
-      font-size: 0.75rem;
+      font-size: 0.7rem;
     }
 
     .register-button {
-      font-size: 0.8rem;
-      padding: 8px 14px;
+      font-size: 0.75rem;
+      padding: 8px 10px;
     }
   }
 
@@ -291,20 +266,24 @@ const StyledWrapper = styled.div`
     }
 
     .event-title {
-      font-size: 0.85rem;
+      font-size: 0.75rem;
     }
 
     .event-details {
-      font-size: 0.7rem;
+      font-size: 0.65rem;
     }
 
     .event-description {
-      font-size: 0.7rem;
+      font-size: 0.65rem;
     }
 
     .register-button {
-      font-size: 0.75rem;
-      padding: 6px 12px;
+      font-size: 0.65rem;
+      padding: 6px 8px;
+    }
+
+    .back-content {
+      gap: 4px; /* Further reduced gap */
     }
   }
 
