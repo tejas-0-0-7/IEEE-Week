@@ -1,50 +1,103 @@
-.slideC {
-  position: relative;
-  perspective: 1200px;
-  transform-style: preserve-3d;
-  width: 100%;
-  max-width: 400px;
-  height: auto;
-  aspect-ratio: 4/3;
-  margin: 0 auto;
-  display: flex !important;
-  overflow: hidden;
-}
+/* Container for the slide */
 
+/* Individual slide */
 .slide {
-  transition: transform 500ms ease, opacity 500ms ease, visibility 500ms ease;
+  transition: transform 500ms ease 0s, opacity 500ms ease 0s, visibility 500ms ease 0s;
   position: absolute;
   top: 0;
   border-radius: 12px;
   overflow: hidden;
 }
 
+/* Reflection effect */
+
+
+/* Flexbox settings for content */
 .sliderContent {
-  display: flex;
+  display: flex !important;
   flex-direction: column;
   color: white;
-  padding: 1.5rem;
+  padding: 1.5rem; /* Use rem for responsiveness */
   align-items: flex-start;
   font-family: "Lucida Sans", "Lucida Grande", sans-serif;
 }
 
+.sliderContent h2 {
+  margin: 1rem 0;
+}
+
+.sliderContent p {
+  margin: 0;
+  margin-bottom: 1rem;
+}
+
+/* Global settings */
+body {
+  width: 100vw;
+  min-height: 100vh;
+  overflow-x: hidden;
+  font-size: 16px;
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100vw;
+  height: 70vh;
+  margin-bottom: 15em;
+}
+.slideC {
+  position: relative;
+  perspective: 1200px;
+  transform-style: preserve-3d;
+  width: 90%;
+  max-width: 400px;
+  height: auto;
+  aspect-ratio: 4/3;
+  margin: 0 auto;
+  display: flex !important;
+}
+
+/* Responsive adjustments */
 @media screen and (max-width: 768px) {
   .slideC {
-    max-width: 100%;
+    max-width: 100%; /* Use full width on smaller screens */
     height: auto;
   }
 
+  .slide {
+    height: auto; /* Allow height to be flexible */
+  }
+
   .sliderContent {
-    padding: 1rem;
+    padding: 1rem; /* Reduce padding on smaller screens */
+  }
+
+  .reflection {
+    height: 15%; /* Adjust reflection height for smaller screens */
+  }
+
+  .btns {
+    padding-top: 2rem;
+  }
+
+  .btns .btn:last-child {
+    margin-left: 1.5rem;
   }
 }
 
 @media screen and (max-width: 480px) {
   .slideC {
-    max-width: 90%;
+    max-width: 90%; /* Reduce width on very small screens */
   }
 
   .sliderContent {
-    padding: 0.75rem;
+    padding: 0.75rem; /* Further reduce padding */
+  }
+
+  .btns .btn {
+    font-size: 0.9rem; /* Adjust button font size */
   }
 }
