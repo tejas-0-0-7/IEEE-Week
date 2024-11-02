@@ -123,7 +123,7 @@ const StyledWrapper = styled.div`
     align-items: center;
     padding: 10px; /* Reduced padding for more room */
     color: white;
-    overflow: scroll;
+    overflow: hidden;
   }
 
   .front-content {
@@ -239,7 +239,9 @@ const StyledWrapper = styled.div`
       width: 250px;
       height: 250px;
     }
-
+    .back{
+      overflow:scroll;
+    }
     .event-title {
       font-size: 0.85rem;
     }
