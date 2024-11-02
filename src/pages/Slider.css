@@ -60,44 +60,53 @@ body {
   display: flex !important;
 }
 
-/* Responsive adjustments */
-@media screen and (max-width: 768px) {
-  .slideC {
-    max-width: 100%; /* Use full width on smaller screens */
-    height: auto;
-  }
-
-  .slide {
-    height: auto; /* Allow height to be flexible */
-  }
-
-  .sliderContent {
-    padding: 1rem; /* Reduce padding on smaller screens */
-  }
-
-  .reflection {
-    height: 15%; /* Adjust reflection height for smaller screens */
-  }
-
-  .btns {
-    padding-top: 2rem;
-  }
-
-  .btns .btn:last-child {
-    margin-left: 1.5rem;
-  }
+.slideC .slide:nth-child(2) {
+  transform: translateX(-150px) translateZ(-200px) rotateY(20deg);
+  opacity: 0.8;
+  z-index: 9;
+}
+.slideC .slide:nth-child(4) {
+  transform: translateX(150px) translateZ(-200px) rotateY(-20deg);
+  opacity: 0.8;
+  z-index: 9;
 }
 
-@media screen and (max-width: 480px) {
-  .slideC {
-    max-width: 90%; /* Reduce width on very small screens */
+/* Next layer slides */
+.slideC .slide:nth-child(1) {
+  transform: translateX(-300px) translateZ(-400px) rotateY(30deg);
+  opacity: 0.6;
+  z-index: 8;
+}
+.slideC .slide:nth-child(5) {
+  transform: translateX(300px) translateZ(-400px) rotateY(-30deg);
+  opacity: 0.6;
+  z-index: 8;
+}
+
+/* Responsive adjustments for mobile screens */
+@media screen and (max-width: 768px) {
+  .slideC .slide:nth-child(3) {
+    transform: translateX(0) translateZ(0) rotateY(0deg);
+    opacity: 1;
+    z-index: 10;
   }
 
-  .sliderContent {
-    padding: 0.75rem; /* Further reduce padding */
+  .slideC .slide:nth-child(2) {
+    transform: translateX(-100px) translateZ(-150px) rotateY(15deg);
+    opacity: 0.8;
+    z-index: 9;
   }
 
-  .btns .btn {
-    font-size: 0.9rem; /* Adjust button font size */
+  .slideC .slide:nth-child(4) {
+    transform: translateX(100px) translateZ(-150px) rotateY(-15deg);
+    opacity: 0.8;
+    z-index: 9;
+  }
+
+  .slideC .slide:nth-child(1),
+  .slideC .slide:nth-child(5) {
+    transform: translateX(0px) translateZ(-200px) rotateY(0deg);
+    opacity: 0.5;
+    z-index: 8;
   }
 }
