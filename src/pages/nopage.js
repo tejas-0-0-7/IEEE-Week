@@ -8,7 +8,6 @@ const Nopage = () => {
     return ( 
         <div>
             <Navbaring />
-            <CountDown />
             <div className="error-page">
                 <div className="error-content">
                     <h1>404</h1>
