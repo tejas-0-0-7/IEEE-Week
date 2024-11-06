@@ -105,7 +105,22 @@
 
 @media screen and (max-width: 480px) {
     .timer {
-        margin: 0px 0 0px 0; /* Less margin for mobile */
+        margin: 50px auto;
+    }
+    .timer-container{
+        margin-top: 11rem;
+    }
+    .contact-title {
+        text-align: center;
+        font-size: 65px;
+        font-weight: bold;
+        background: linear-gradient(0deg, #236e65, #7ecd73, #cff8d6); /* Gradient colors */
+        -webkit-background-clip: text; /* Clip the background to the text */
+        -webkit-text-fill-color: transparent; /* Make text color transparent for the gradient to show */
+        background-clip: text; /* For other browsers */
+        color: transparent; /* Keep this in case you need it for older browsers */
+        margin-bottom: 20px;
+        letter-spacing: 2px; /* Increased letter spacing */
     }
     .timer div {
         margin-top: 1000px !important;
@@ -117,6 +132,7 @@
     .HENRY p:first-child,
     .timer div span {
         font-size: 2.5em; 
+        text-align: center;
     }
     .HENRY p small {
         font-size: 1em; 
