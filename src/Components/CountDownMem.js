@@ -10,7 +10,7 @@ const CountDownMem = () => {
     let interval = useRef();
 
     const startTimer = () => {
-        const countDownDate = new Date('Nov 18, 2024 00:00:00').getTime();
+        const countDownDate = new Date('Nov 18, 2024 18:15:00').getTime();
 
         interval.current = setInterval(() => {
             const now = new Date().getTime();
