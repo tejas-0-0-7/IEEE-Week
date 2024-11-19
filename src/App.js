@@ -33,8 +33,8 @@ function App() {
           <Route path="/home" element={<Home />} />
           <Route path="/events" element={<Events />} />
           <Route path="/meet" element={<Meet />} />
-          <Route path="/membership" element={<Membership />} />
-          <Route path="/membershipact" element={<Membershipone />} />
+          <Route path="/membershipact" element={<Membership />} />
+          <Route path="/membership" element={<Membershipone />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="*" element={<Nopage />} />
         </Routes>
