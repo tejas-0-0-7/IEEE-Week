@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Roboto:wght@400;500&display=swap');
 
 body {
-  font-family: 'Roboto', sans-serif;
+  /* font-family: 'Roboto', sans-serif; */
 }
 
 /* Container to hold two cards side by side */
@@ -16,24 +16,60 @@ body {
 
 /* Individual card styling */
 .descriptive-card-container {
+  position: relative;
   display: flex;
   flex-direction: column;
   width: 40vw;
   max-width: 100%;
   border-radius: 0.625em;
-  box-shadow: 0 0.5em 1em rgb(213, 165, 68);
   margin: 1.25em;
   overflow: hidden;
   background-color: #1a1a1a;
   transition: transform 0.3s;
   justify-content: center;
   align-items: center;
-  border: 2px solid #d4af37;
+  
+  /* Gradient box shadow */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2),
+              0 0 20px 5px rgba(37, 179, 163, 0.4);
+}
+
+.descriptive-card-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: inherit; /* Match container's border radius */
+  padding: 2px; /* Thickness of gradient border */
+  background: linear-gradient(270deg, #236e65, #7ecd73, #cff8d6);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: destination-out;
+  mask-composite: exclude;
+  pointer-events: none; /* Ensure it doesn't block interactions */
+  z-index: 1;
 }
 
 .descriptive-card-container:hover {
   transform: scale(1.05);
 }
+
+.card-content {
+  position: relative;
+  z-index: 2; /* Ensure content appears above the gradient border */
+  width: 80%;
+  padding: 2em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+
+/* .descriptive-card-container:hover {
+  transform: scale(1.05);
+} */
 
 .card-image-container {
   width: 50%;
@@ -55,37 +91,46 @@ body {
 }
 
 .card-titleee {
-  font-family: 'Playfair Display', serif;
+  /* font-family: 'Playfair Display', serif; */
   font-size: 2.5em;
   margin-bottom: 0.75em;
-  color: #f1c40f;
+  /* color: #f1c40f; */
+  background: linear-gradient(270deg, #236e65, #7ecd73, #cff8d6);
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+    background-clip: text;
   font-weight: 700;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+  text-shadow: 2px 2px 4px linear-gradient(0deg, #236e65, #7ecd73, #cff8d6);
 }
 
 .card-description {
-  font-family: 'Roboto', sans-serif;
+  /* font-family: 'Roboto', sans-serif; */
   font-size: 1.2em;
   color: #ddd;
   margin-bottom: 1.5em;
   font-weight: 300;
+  text-align: justify;
 }
 
 .know-more-btn {
-  font-family: 'Roboto', sans-serif;
-  background-color: #f1c40f;
-  color: #1a1a1a;
+  background: linear-gradient(90deg, #236e65, #7ecd73, #cff8d6);
+  color: black;
   border: none;
-  padding: 0.75em 1.5em;
+  font-weight: 1000;
+  padding: 8px 15px;
+  border-radius: 5px;
+  margin-top: 5%;
+  font-size: 0.9rem;
   cursor: pointer;
-  border-radius: 0.3125em;
-  font-size: 1em;
-  transition: background-color 0.3s;
+  transition: background-color 0.3s ease;
   align-self: flex-start;
+  position: relative;
+  z-index: 1;
 }
 
 .know-more-btn:hover {
-  background-color: #b7950b;
+  background: linear-gradient(270deg, #236e65, #7ecd73, #cff8d6) !important;
+  color: black;
 }
 
 /* Responsive Design for tablets and smaller */

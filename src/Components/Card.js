@@ -1,6 +1,6 @@
 import './Card.css'
 
-const Card = ({ title, description, imageUrl }) => {
+const Card = ({ title, description, imageUrl, link }) => {
     return ( 
       <div className="descriptive-card-container">
       <div className="card-content">
@@ -13,13 +13,16 @@ const Card = ({ title, description, imageUrl }) => {
         </center>
         <p className="card-description">{description}</p><br />
         <center>
-          <button className="know-more-btn">
-            Know More
-          </button>
+          <a href={link} target="_blank" rel="noopener noreferrer">
+            <button className="know-more-btn">
+              Know More
+            </button>
+          </a>
         </center>
       </div>
     </div>
      );
 }
+
  
 export default Card;

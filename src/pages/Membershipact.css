@@ -27,7 +27,9 @@
     grid-column: span 2; 
     justify-content: center;
   }
-  
+  .SSIT img{
+    filter: invert(100%);
+  }
   @media (max-width: 768px) {
     .card-grid {
       grid-template-columns: 1fr; 
