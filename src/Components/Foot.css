@@ -14,11 +14,30 @@ html, body {
 
 footer {
   margin-top: auto;
-  background: black; /* Gradient colors */
-  color: transparent; /* Change background to black */
-  color: white; /* Ensures text is white */
-  background: rgba(35, 110, 101, 0.2); /* Darker overlay for each event card */
+  background: linear-gradient(180deg, 
+    rgba(35, 110, 101, 0) 0%,
+    rgba(35, 110, 101, 0.1) 50%,
+    rgba(35, 110, 101, 0.2) 100%
+  );
+  color: white;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-top: 1px solid rgba(35, 110, 101, 0.3);
+  padding: 2rem 0;
+  position: relative;
+  overflow: hidden;
   transition: all 0.3s ease;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: var(--primary-gradient);
+    opacity: 0.5;
+  }
 }
 
 .footer-links {
@@ -41,27 +60,37 @@ footer {
 }
 
 .btnu {
-  display: inline-block; /* Make sure buttons align correctly */
-  margin: 25px 0 0 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  padding: 10px 0;
+  margin: 0;
 }
 
 .btnu a {
-  border-radius: 33%;
-  margin: 5PX 5px; /* Small margin for buttons */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
   border: 2px solid #fff;
-  padding: 8px 8px; /* Adjust padding for consistency */
   color: white;
-  font-size: 0.9rem;
+  transition: all 0.3s ease;
 }
 
 .btnu a:hover {
   color: #236e65;
-  background-color: #236e65;  
+  background-color: #fff;
+  border-color: #236e65;
+  transform: translateY(-2px);
 }
 
 .iconu {
-  color: white;
-  transition: color 0.3s ease; 
+  color: inherit;
+  font-size: 1.2rem;
+  transition: all 0.3s ease;
 }
 
 /* Copyright section styles */
@@ -76,53 +105,31 @@ footer {
 
 /* Media Queries */
 @media (max-width: 768px) {
-  .btnu a {
-    font-size: 0.4rem;
-    margin: 5PX 5px; /* Further reduce font size */
-    padding: 14px 8px;
-  }
   .btnu {
-    margin: 25px 0 0 0;
+    gap: 15px;
+  }
+  
+  .btnu a {
+    width: 35px;
+    height: 35px;
   }
   
   .iconu {
-    font-size: 1rem; /* Adjust icon size */
-  }
-  .footer-links a {
-    margin: 0 15px; /* Even spacing between links */
-  }
-  .footer-links {
-    font-size: 0.7rem;
-  }
-  .copyright {
-    font-size: 0.6rem !important; /* Font size for copyright */
-    font-weight: 500;
-    letter-spacing: 1px;
+    font-size: 1rem;
   }
 }
 
 @media (max-width: 480px) {
-  .btnu a {
-    font-size: 0.4rem; /* Even smaller font size */
-    margin: 5PX 5px;
-    padding: 14px 8px; 
-  }
   .btnu {
-    margin: 25px 0 0 0;
+    gap: 10px;
+  }
+  
+  .btnu a {
+    width: 30px;
+    height: 30px;
   }
   
   .iconu {
-    font-size: 0.9rem; /* Adjust icon size */
-  }
-  .footer-links a {
-    margin: 5px 15px; /* Even spacing between links */
-  }
-  .footer-links {
-    font-size: 0.7rem;
-  }
-  .copyright {
-    font-size: 0.6rem !important; /* Font size for copyright */
-    font-weight: 500;
-    letter-spacing: 1px;
+    font-size: 0.9rem;
   }
 }

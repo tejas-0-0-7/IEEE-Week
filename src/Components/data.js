@@ -1,6 +1,6 @@
 const fetchEvents = async () => {
   try {
-    const response = await fetch(`${process.env.REACT_APP_API_URL}/api/events`);
+    const response = await fetch(`${import.meta.env.VITE_API_URL}/api/events`);
     if (!response.ok) {
       throw new Error(`HTTP error! status: ${response.status}`);
     }

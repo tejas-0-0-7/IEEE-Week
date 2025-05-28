@@ -2,44 +2,63 @@ import Button from 'react-bootstrap/Button';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
+import { useNavigate, useLocation } from 'react-router-dom';
 import './Nav.css';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 function Navbaring() {
-  const [activeLink, setActiveLink] = useState(null);
+  const navigate = useNavigate();
+  const location = useLocation();
   const [isAnimating, setIsAnimating] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
 
-  const handleLinkClick = (event, href, index) => {
+  useEffect(() => {
+    const handleScroll = () => {
+      const isScrolled = window.scrollY > 50;
+      if (isScrolled !== scrolled) {
+        setScrolled(isScrolled);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, [scrolled]);
+
+  const handleLinkClick = (event, path) => {
+    event.preventDefault();
     if (window.innerWidth <= 768) {
-      event.preventDefault(); // Prevent immediate navigation on mobile
-      setActiveLink(index); // Set the active link
-      setIsAnimating(true); // Trigger the hover effect
-
+      setIsAnimating(true);
       setTimeout(() => {
-        window.location.href = href; // Navigate after the animation
-      }, 1000); // Delay matches your CSS transition duration
+        navigate(path);
+        setIsAnimating(false);
+      }, 300);
     } else {
-      window.location.href = href; // Navigate immediately on desktop
+      navigate(path);
     }
   };
 
+  const navLinks = [
+    { path: '/meet', label: 'Meet the Team' },
+    { path: '/events', label: 'Events' },
+    { path: '/membership', label: 'Membership' },
+    { path: '/contact', label: 'Contact Us' }
+  ];
+
   return (
-    <Navbar expand="lg" className='bgu'>
+    <Navbar expand="lg" className={`bgu ${scrolled ? 'scrolled' : ''}`}>
       <Container fluid>
-        <Navbar.Brand href="/home">
-          <img src="./BMSCEIEEE.png" alt="BMSCE IEEE" style={{ height: "40px" }} />
-        </Navbar.Brand>
-        <Navbar.Toggle aria-controls="navbarScroll" />
+        <Navbar.Brand onClick={(e) => handleLinkClick(e, '/home')} style={{ cursor: 'pointer' }}>
+          <img src="/BMSCEIEEE.png" alt="BMSCE IEEE" style={{ height: "40px" }} />
+        </Navbar.Brand> 
         <Navbar.Collapse id="navbarScroll" className='justify-content-end'>
           <Nav className="my-1 my-lg-0" style={{ maxHeight: '100px' }} navbarScroll>
-            {['/meet', '/events', '/membership', '/contact'].map((href, index) => (
+            {navLinks.map(({ path, label }) => (
               <Nav.Link 
-                key={href}
-                href={href} 
-                className={`links ${isAnimating && activeLink === index ? 'active' : ''}`} 
-                onClick={(e) => handleLinkClick(e, href, index)}
+                key={path}
+                onClick={(e) => handleLinkClick(e, path)}
+                className={`links ${location.pathname === path ? 'active' : ''} ${isAnimating ? 'animating' : ''}`}
               >
-                {href === '/meet' ? 'Meet the Team' : href === '/events' ? 'Events' : href === '/membership' ? 'Membership' : 'Contact Us'}
+                {label}
               </Nav.Link>
             ))}
           </Nav>

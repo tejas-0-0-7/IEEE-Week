@@ -42,20 +42,28 @@ body {
     justify-content: center;
     align-items: center;
     min-height: 90vh;
-    padding-top: 10px;
-    padding-bottom: 50px;
-    z-index: 1 !important;
+    padding: 2rem;
+    position: relative;
+    z-index: 1;
+    animation: fadeIn 0.8s ease-out;
 }
 
 .contact-card {
-    background: rgba(0, 0, 0, 0.5); /* Transparent card background */
-    border-radius: 10px;
+    background: rgba(35, 110, 101, 0.05);
+    border-radius: 20px;
     width: 70%;
     max-width: 800px;
-    padding: 30px;
+    padding: 2.5rem;
     position: relative;
-    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.3); /* Subtle shadow */
-    z-index: 2 !important;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(35, 110, 101, 0.2);
+    box-shadow: 
+        0 8px 32px rgba(35, 110, 101, 0.1),
+        0 2px 8px rgba(35, 110, 101, 0.1);
+    z-index: 2;
+    transform: translateY(20px);
+    animation: slideUp 0.8s ease-out forwards;
 }
 
 .contact-title {
@@ -102,13 +110,27 @@ body {
 .message-form input,
 .message-form textarea {
     width: 100%;
-    padding: 12px;
-    border: 1px solid #444; /* Dark border */
-    border-radius: 5px;
-    background-color: rgba(255, 255, 255, 0.2); /* Transparent input fields */
-    color: #fff; /* White text in input fields */
+    padding: 1rem;
+    border: 1px solid rgba(35, 110, 101, 0.3);
+    border-radius: 10px;
+    background-color: rgba(35, 110, 101, 0.05);
+    color: #fff;
     font-size: 14px;
-    letter-spacing: 1px; /* Increased letter spacing */
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.message-form input:focus,
+.message-form textarea:focus {
+    outline: none;
+    border-color: #7ecd73;
+    box-shadow: 
+        inset 0 2px 4px rgba(0, 0, 0, 0.1),
+        0 0 0 3px rgba(126, 205, 115, 0.1);
+    background-color: rgba(35, 110, 101, 0.1);
 }
 
 ::placeholder {

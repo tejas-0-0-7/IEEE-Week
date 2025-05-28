@@ -11,21 +11,23 @@ export default function Footer() {
     <MDBFooter className='text-center fnu' color='white'>
       <MDBContainer className='p-0'>
         <section className='mb-4'>
-          <span className="btnu">
-            <a href="https://www.facebook.com/bmsce.ieee/" target='_blank'><FaFacebook size={20} className='iconu' /></a>
-          </span>
-          <span className="btnu">
-            <a href="https://www.instagram.com/bmsce_ieee/profilecard/?igsh=MTN1cTEwaWlweWxvdQ==" target='_blank'><FaInstagram size={20} className='iconu' /></a>
-          </span>
-          <span className="btnu">
-            <a href="https://www.linkedin.com/company/bmsce-ieee/" target='_blank'><FaLinkedin size={20} className='iconu' /></a>
-          </span>
-          <span className="btnu">
-            <a href="https://youtube.com/@bmsceieee?si=34nyqBDgKDiIXYFv" target='_blank'><FaYoutube size={20} className='iconu' /></a>
-          </span>
-          <span className="btnu">
-            <a href="https://bmsceieee.com/" target='_blank'><FaGoogle size={20} className='iconu' /></a>
-          </span>
+          <div className="btnu">
+            <a href="https://www.facebook.com/bmsce.ieee/" target='_blank' rel="noopener noreferrer">
+              <FaFacebook className='iconu' />
+            </a>
+            <a href="https://www.instagram.com/bmsce_ieee/profilecard/?igsh=MTN1cTEwaWlweWxvdQ==" target='_blank' rel="noopener noreferrer">
+              <FaInstagram className='iconu' />
+            </a>
+            <a href="https://www.linkedin.com/company/bmsce-ieee/" target='_blank' rel="noopener noreferrer">
+              <FaLinkedin className='iconu' />
+            </a>
+            <a href="https://youtube.com/@bmsceieee?si=34nyqBDgKDiIXYFv" target='_blank' rel="noopener noreferrer">
+              <FaYoutube className='iconu' />
+            </a>
+            <a href="https://bmsceieee.com/" target='_blank' rel="noopener noreferrer">
+              <FaGoogle className='iconu' />
+            </a>
+          </div>
         </section>
 
         <section className='footer-links mb-4'>

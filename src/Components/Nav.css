@@ -1,115 +1,101 @@
-.bgu:after, .bgu:before{
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-}
-.bgu{
-    background-color: rgba(0, 0, 0, 1) !important;
+.bgu {
+    background-color: rgba(0, 0, 0, 0.95) !important;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
     color: white !important;
-    /* position: fixed !important; */
-    font-family: "Parata", serif;
-    position: fixed;
+    position: fixed !important;
+    width: 100%;
+    z-index: 1000;
+    padding: 0.5rem 1rem;
+    box-shadow: 0 2px 20px rgba(35, 110, 101, 0.1);
+    transition: all 0.3s ease-in-out !important;
+}
+
+.bgu.scrolled {
+    background-color: rgba(0, 0, 0, 0.98) !important;
+    padding: 0.3rem 1rem;
+    box-shadow: 0 2px 20px rgba(35, 110, 101, 0.2);
 }
 .links{
+    text-decoration: none !important;
     position: relative;
-    text-align: left !important;
+    text-align: right !important;
     color: #a0a0a0 !important;
     padding: 0px 10px !important;
-    font-weight: 1000 !important;
+    font-weight: 600 !important;
     margin-left: 15px;
     margin-right: 15px;
     letter-spacing: 0.5px;
+    transition: all 0.3s ease-in-out !important;
 }
-.links:hover{
-    color: #ffffff !important;
-    /* background: #d9dbdd; */
+.container-fluid {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
-.btnnnn{
-    /* color: #7ecd73 !important;
-    border-color: #7ecd73 !important; */
-    background: linear-gradient(90deg, #236e65, #7ecd73, #cff8d6);
-    margin-right: 15px;
-}
-.btnnnn:hover{
-    color: #0a0a0a !important;
-    border-color: #7ecd73 !important;
-    background-color: #7ecd73 !important;
-    box-shadow: rgb(25, 76, 135) !important;
+.navbar-nav-scroll{
+    padding: 2px 5px !important;
 }
 .links:after {
-    content: "";
+    content: '';
     position: absolute;
-    background-color: #7ecd73;
-    height: 3px;
     width: 0;
-    left: 0px;
-    bottom: -10px;
-    transition: width 0.3s ease-in, right 0.3s ease-out !important;
+    height: 2px;
+    background: linear-gradient(90deg, #236e65, #7ecd73);
+    bottom: 0;
+    left: 0;
+    transition: width 0.3s ease-in-out;
 }
-
-.links:hover:after{
+.links:hover, .links.active {
+    color: #ffffff !important;
+}
+.links:hover:after, .links.active:after {
     width: 100%;
 }
+.links.animating {
+    transform: scale(0.95);
+    opacity: 0.8;
+}
+.navbar-brand {
+    transition: transform 0.3s ease-in-out;
+}
+.navbar-brand:hover {
+    transform: scale(1.05);
+}
 
-
-  @media screen and (max-width: 768px) {
+@media screen and (max-width: 768px) {
     .navbar-toggler {
-        border-color: #7ecd73 !important; /* Change hamburger border color */
+        border-color: #7ecd73 !important;
+        padding: 4px 8px;
+    }
+
+    .navbar-toggler:focus {
+        box-shadow: 0 0 0 0.2rem rgba(126, 205, 115, 0.25);
     }
 
     .navbar-toggler-icon {
-        background-image: none;
-        color: #cff8d6; /* Remove default background */
+        background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3e%3cpath stroke='rgba(126, 205, 115, 1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
     }
-    .navbar-nav-scroll{
-        max-height: 150px !important;
-    }
+
     .bgu {
-        background-color: rgba(0, 0, 0, 0.9); /* Darker background for mobile */
+        background-color: rgba(0, 0, 0, 0.98);
     }
-    .navbar-nav{
-        height: 200px;
+
+    .navbar-collapse {
+        background-color: rgba(0, 0, 0, 0.98);
+        padding: 1rem;
+        border-radius: 0 0 10px 10px;
     }
 
     .links {
-        margin: 4px;
-        opacity: 1; /* Show links when active */
-        transform: translateY(0); /* Reset slide effect */
-        transition: opacity 0.3s ease, transform 0.3s ease; /* Transition for animation */
+        margin: 8px 0;
+        padding: 8px 16px !important;
+        border-radius: 4px;
+        transition: all 0.3s ease-in-out;
     }
 
-    /* Animation for active links */
-    .links.active {
-        opacity: 1; /* Fully visible when active */
-        transform: translateY(0); /* Slide back to original position */
-        transition: opacity 1s ease-out; /* Fade effect */
-    }
-
-    .links:not(.active):hover {
-        color: #ffffff !important; /* Change color on hover */
-    }
-
-    .links.active:after {
-        content: "";
-        position: absolute;
-        background-color: #7ecd73;
-        height: 3px;
-        width: 100%; /* Full width for hover effect */
-        left: 0;
-        bottom: -10px;
-        transition: transform 0.3s ease; /* Transition effect */
-        transform: scaleX(1); /* Scale to full width on active */
-    }
-
-    .links:not(.active):after {
-        content: "";
-        position: absolute;
-        background-color: #7ecd73;
-        height: 3px;
-        width: 0; /* Start with no width */
-        left: 0;
-        bottom: -10px;
-        transition: width 0.3s ease; /* Transition effect */
+    .links:hover, .links.active {
+        background-color: rgba(126, 205, 115, 0.1);
     }
 }
 
